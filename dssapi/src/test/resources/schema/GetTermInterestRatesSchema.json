@@ -1,0 +1,109 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "getInterestRates": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "term": {
+              "type": "string"
+            },
+            "Amount": {
+              "type": "null"
+            },
+            "Interest Rate": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "term",
+            "Amount",
+            "Interest Rate"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "term": {
+              "type": "string"
+            },
+            "Amount": {
+              "type": "null"
+            },
+            "Interest Rate": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "term",
+            "Amount",
+            "Interest Rate"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "term": {
+              "type": "string"
+            },
+            "Amount": {
+              "type": "null"
+            },
+            "Interest Rate": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "term",
+            "Amount",
+            "Interest Rate"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "term": {
+              "type": "string"
+            },
+            "Amount": {
+              "type": "null"
+            },
+            "Interest Rate": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "term",
+            "Amount",
+            "Interest Rate"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "term": {
+              "type": "string"
+            },
+            "Amount": {
+              "type": "null"
+            },
+            "Interest Rate": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "term",
+            "Amount",
+            "Interest Rate"
+          ]
+        }
+      ]
+    }
+  },
+  "required": [
+    "getInterestRates"
+  ]
+}

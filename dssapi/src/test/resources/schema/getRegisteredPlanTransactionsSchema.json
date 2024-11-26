@@ -1,0 +1,431 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "registeredPlanTransactions": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "portfolioId": {
+              "type": "string"
+            },
+            "planType": {
+              "type": "string"
+            },
+            "customerId": {
+              "type": "string"
+            },
+            "customerName": {
+              "type": "string"
+            },
+            "transactionReference": {
+              "type": "string"
+            },
+            "debitCreditIndicator": {
+              "type": "string"
+            },
+            "transactionCode": {
+              "type": "string"
+            },
+            "transactionDescription": {
+              "type": "string"
+            },
+            "valueDate": {
+              "type": "string"
+            },
+            "currency": {
+              "type": "string"
+            },
+            "transactionAmount": {
+              "type": "string"
+            },
+            "provinceTax": {
+              "type": "string"
+            },
+            "federalTax": {
+              "type": "string"
+            },
+            "nonResidenceTax": {
+              "type": "string"
+            },
+            "provinceTaxWithinPeriod": {
+              "type": "string"
+            },
+            "federalTaxWithinPeriod": {
+              "type": "string"
+            },
+            "nonResidenceTaxWithinPeriod": {
+              "type": "string"
+            },
+            "provinceTaxAfterPeriod": {
+              "type": "string"
+            },
+            "federalTaxAfterPeriod": {
+              "type": "string"
+            },
+            "nonResidenceTaxAfterPeriod": {
+              "type": "string"
+            },
+            "accountId": {
+              "type": "string"
+            },
+            "spouse": {
+              "type": "null"
+            },
+            "province": {
+              "type": "string"
+            },
+            "residence": {
+              "type": "string"
+            },
+            "transactionPurpose": {
+              "type": "string"
+            },
+            "signatureRequired": {
+              "type": "null"
+            },
+            "minimumAmount": {
+              "type": "string"
+            },
+            "excessAmount": {
+              "type": "string"
+            },
+            "beneficiaryId": {
+              "type": "null"
+            },
+            "transactionType": {
+              "type": "string"
+            },
+            "ourCharges": {
+              "type": "string"
+            },
+            "bookingDate": {
+              "type": "string"
+            },
+            "balanceAmount": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "portfolioId",
+            "planType",
+            "customerId",
+            "customerName",
+            "transactionReference",
+            "debitCreditIndicator",
+            "transactionCode",
+            "transactionDescription",
+            "valueDate",
+            "currency",
+            "transactionAmount",
+            "provinceTax",
+            "federalTax",
+            "nonResidenceTax",
+            "provinceTaxWithinPeriod",
+            "federalTaxWithinPeriod",
+            "nonResidenceTaxWithinPeriod",
+            "provinceTaxAfterPeriod",
+            "federalTaxAfterPeriod",
+            "nonResidenceTaxAfterPeriod",
+            "accountId",
+            "spouse",
+            "province",
+            "residence",
+            "transactionPurpose",
+            "signatureRequired",
+            "minimumAmount",
+            "excessAmount",
+            "beneficiaryId",
+            "transactionType",
+            "ourCharges",
+            "bookingDate",
+            "balanceAmount"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "portfolioId": {
+              "type": "string"
+            },
+            "planType": {
+              "type": "string"
+            },
+            "customerId": {
+              "type": "string"
+            },
+            "customerName": {
+              "type": "string"
+            },
+            "transactionReference": {
+              "type": "string"
+            },
+            "debitCreditIndicator": {
+              "type": "string"
+            },
+            "transactionCode": {
+              "type": "string"
+            },
+            "transactionDescription": {
+              "type": "string"
+            },
+            "valueDate": {
+              "type": "string"
+            },
+            "currency": {
+              "type": "string"
+            },
+            "transactionAmount": {
+              "type": "string"
+            },
+            "provinceTax": {
+              "type": "string"
+            },
+            "federalTax": {
+              "type": "string"
+            },
+            "nonResidenceTax": {
+              "type": "string"
+            },
+            "provinceTaxWithinPeriod": {
+              "type": "string"
+            },
+            "federalTaxWithinPeriod": {
+              "type": "string"
+            },
+            "nonResidenceTaxWithinPeriod": {
+              "type": "string"
+            },
+            "provinceTaxAfterPeriod": {
+              "type": "string"
+            },
+            "federalTaxAfterPeriod": {
+              "type": "string"
+            },
+            "nonResidenceTaxAfterPeriod": {
+              "type": "string"
+            },
+            "accountId": {
+              "type": "string"
+            },
+            "spouse": {
+              "type": "null"
+            },
+            "province": {
+              "type": "string"
+            },
+            "residence": {
+              "type": "string"
+            },
+            "transactionPurpose": {
+              "type": "string"
+            },
+            "signatureRequired": {
+              "type": "null"
+            },
+            "minimumAmount": {
+              "type": "string"
+            },
+            "excessAmount": {
+              "type": "string"
+            },
+            "beneficiaryId": {
+              "type": "null"
+            },
+            "transactionType": {
+              "type": "string"
+            },
+            "ourCharges": {
+              "type": "string"
+            },
+            "bookingDate": {
+              "type": "string"
+            },
+            "balanceAmount": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "portfolioId",
+            "planType",
+            "customerId",
+            "customerName",
+            "transactionReference",
+            "debitCreditIndicator",
+            "transactionCode",
+            "transactionDescription",
+            "valueDate",
+            "currency",
+            "transactionAmount",
+            "provinceTax",
+            "federalTax",
+            "nonResidenceTax",
+            "provinceTaxWithinPeriod",
+            "federalTaxWithinPeriod",
+            "nonResidenceTaxWithinPeriod",
+            "provinceTaxAfterPeriod",
+            "federalTaxAfterPeriod",
+            "nonResidenceTaxAfterPeriod",
+            "accountId",
+            "spouse",
+            "province",
+            "residence",
+            "transactionPurpose",
+            "signatureRequired",
+            "minimumAmount",
+            "excessAmount",
+            "beneficiaryId",
+            "transactionType",
+            "ourCharges",
+            "bookingDate",
+            "balanceAmount"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "portfolioId": {
+              "type": "string"
+            },
+            "planType": {
+              "type": "string"
+            },
+            "customerId": {
+              "type": "string"
+            },
+            "customerName": {
+              "type": "string"
+            },
+            "transactionReference": {
+              "type": "string"
+            },
+            "debitCreditIndicator": {
+              "type": "string"
+            },
+            "transactionCode": {
+              "type": "string"
+            },
+            "transactionDescription": {
+              "type": "string"
+            },
+            "valueDate": {
+              "type": "string"
+            },
+            "currency": {
+              "type": "string"
+            },
+            "transactionAmount": {
+              "type": "string"
+            },
+            "provinceTax": {
+              "type": "string"
+            },
+            "federalTax": {
+              "type": "string"
+            },
+            "nonResidenceTax": {
+              "type": "string"
+            },
+            "provinceTaxWithinPeriod": {
+              "type": "string"
+            },
+            "federalTaxWithinPeriod": {
+              "type": "string"
+            },
+            "nonResidenceTaxWithinPeriod": {
+              "type": "string"
+            },
+            "provinceTaxAfterPeriod": {
+              "type": "string"
+            },
+            "federalTaxAfterPeriod": {
+              "type": "string"
+            },
+            "nonResidenceTaxAfterPeriod": {
+              "type": "string"
+            },
+            "accountId": {
+              "type": "string"
+            },
+            "spouse": {
+              "type": "null"
+            },
+            "province": {
+              "type": "string"
+            },
+            "residence": {
+              "type": "string"
+            },
+            "transactionPurpose": {
+              "type": "string"
+            },
+            "signatureRequired": {
+              "type": "null"
+            },
+            "minimumAmount": {
+              "type": "string"
+            },
+            "excessAmount": {
+              "type": "string"
+            },
+            "beneficiaryId": {
+              "type": "null"
+            },
+            "transactionType": {
+              "type": "string"
+            },
+            "ourCharges": {
+              "type": "string"
+            },
+            "bookingDate": {
+              "type": "string"
+            },
+            "balanceAmount": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "portfolioId",
+            "planType",
+            "customerId",
+            "customerName",
+            "transactionReference",
+            "debitCreditIndicator",
+            "transactionCode",
+            "transactionDescription",
+            "valueDate",
+            "currency",
+            "transactionAmount",
+            "provinceTax",
+            "federalTax",
+            "nonResidenceTax",
+            "provinceTaxWithinPeriod",
+            "federalTaxWithinPeriod",
+            "nonResidenceTaxWithinPeriod",
+            "provinceTaxAfterPeriod",
+            "federalTaxAfterPeriod",
+            "nonResidenceTaxAfterPeriod",
+            "accountId",
+            "spouse",
+            "province",
+            "residence",
+            "transactionPurpose",
+            "signatureRequired",
+            "minimumAmount",
+            "excessAmount",
+            "beneficiaryId",
+            "transactionType",
+            "ourCharges",
+            "bookingDate",
+            "balanceAmount"
+          ]
+        }
+      ]
+    }
+  },
+  "required": [
+    "registeredPlanTransactions"
+  ]
+}

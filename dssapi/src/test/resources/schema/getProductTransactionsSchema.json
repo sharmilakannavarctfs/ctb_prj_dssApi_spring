@@ -1,0 +1,413 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "productTransactions": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "narratives": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "narrative": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "narrative"
+                  ]
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "narrative": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "narrative"
+                  ]
+                }
+              ]
+            },
+            "accountId": {
+              "type": "string"
+            },
+            "bookingDate": {
+              "type": "string"
+            },
+            "transactionReference": {
+              "type": "string"
+            },
+            "transactionCode": {
+              "type": "string"
+            },
+            "valueDate": {
+              "type": "string"
+            },
+            "debitAmount": {
+              "type": "null"
+            },
+            "creditAmount": {
+              "type": "string"
+            },
+            "closingBalance": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "narratives",
+            "accountId",
+            "bookingDate",
+            "transactionReference",
+            "transactionCode",
+            "valueDate",
+            "debitAmount",
+            "creditAmount",
+            "closingBalance"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "narratives": {
+              "type": "null"
+            },
+            "accountId": {
+              "type": "string"
+            },
+            "bookingDate": {
+              "type": "string"
+            },
+            "transactionReference": {
+              "type": "string"
+            },
+            "transactionCode": {
+              "type": "string"
+            },
+            "valueDate": {
+              "type": "string"
+            },
+            "debitAmount": {
+              "type": "null"
+            },
+            "creditAmount": {
+              "type": "string"
+            },
+            "closingBalance": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "narratives",
+            "accountId",
+            "bookingDate",
+            "transactionReference",
+            "transactionCode",
+            "valueDate",
+            "debitAmount",
+            "creditAmount",
+            "closingBalance"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "narratives": {
+              "type": "null"
+            },
+            "accountId": {
+              "type": "string"
+            },
+            "bookingDate": {
+              "type": "string"
+            },
+            "transactionReference": {
+              "type": "string"
+            },
+            "transactionCode": {
+              "type": "string"
+            },
+            "valueDate": {
+              "type": "string"
+            },
+            "debitAmount": {
+              "type": "null"
+            },
+            "creditAmount": {
+              "type": "string"
+            },
+            "closingBalance": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "narratives",
+            "accountId",
+            "bookingDate",
+            "transactionReference",
+            "transactionCode",
+            "valueDate",
+            "debitAmount",
+            "creditAmount",
+            "closingBalance"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "narratives": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "narrative": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "narrative"
+                  ]
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "narrative": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "narrative"
+                  ]
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "narrative": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "narrative"
+                  ]
+                }
+              ]
+            },
+            "accountId": {
+              "type": "string"
+            },
+            "bookingDate": {
+              "type": "string"
+            },
+            "transactionReference": {
+              "type": "string"
+            },
+            "transactionCode": {
+              "type": "string"
+            },
+            "valueDate": {
+              "type": "string"
+            },
+            "debitAmount": {
+              "type": "string"
+            },
+            "creditAmount": {
+              "type": "null"
+            },
+            "closingBalance": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "narratives",
+            "accountId",
+            "bookingDate",
+            "transactionReference",
+            "transactionCode",
+            "valueDate",
+            "debitAmount",
+            "creditAmount",
+            "closingBalance"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "narratives": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "narrative": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "narrative"
+                  ]
+                }
+              ]
+            },
+            "accountId": {
+              "type": "string"
+            },
+            "bookingDate": {
+              "type": "string"
+            },
+            "transactionReference": {
+              "type": "string"
+            },
+            "transactionCode": {
+              "type": "string"
+            },
+            "valueDate": {
+              "type": "string"
+            },
+            "debitAmount": {
+              "type": "string"
+            },
+            "creditAmount": {
+              "type": "null"
+            },
+            "closingBalance": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "narratives",
+            "accountId",
+            "bookingDate",
+            "transactionReference",
+            "transactionCode",
+            "valueDate",
+            "debitAmount",
+            "creditAmount",
+            "closingBalance"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "narratives": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "narrative": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "narrative"
+                  ]
+                }
+              ]
+            },
+            "accountId": {
+              "type": "string"
+            },
+            "bookingDate": {
+              "type": "string"
+            },
+            "transactionReference": {
+              "type": "string"
+            },
+            "transactionCode": {
+              "type": "string"
+            },
+            "valueDate": {
+              "type": "string"
+            },
+            "debitAmount": {
+              "type": "null"
+            },
+            "creditAmount": {
+              "type": "string"
+            },
+            "closingBalance": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "narratives",
+            "accountId",
+            "bookingDate",
+            "transactionReference",
+            "transactionCode",
+            "valueDate",
+            "debitAmount",
+            "creditAmount",
+            "closingBalance"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "narratives": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "narrative": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "narrative"
+                  ]
+                }
+              ]
+            },
+            "accountId": {
+              "type": "string"
+            },
+            "bookingDate": {
+              "type": "string"
+            },
+            "transactionReference": {
+              "type": "string"
+            },
+            "transactionCode": {
+              "type": "string"
+            },
+            "valueDate": {
+              "type": "string"
+            },
+            "debitAmount": {
+              "type": "null"
+            },
+            "creditAmount": {
+              "type": "string"
+            },
+            "closingBalance": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "narratives",
+            "accountId",
+            "bookingDate",
+            "transactionReference",
+            "transactionCode",
+            "valueDate",
+            "debitAmount",
+            "creditAmount",
+            "closingBalance"
+          ]
+        }
+      ]
+    }
+  },
+  "required": [
+    "productTransactions"
+  ]
+}

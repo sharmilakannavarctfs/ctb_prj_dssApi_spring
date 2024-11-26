@@ -1,0 +1,119 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "productDetails": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "ccySpecific": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "creditInterestType": {
+                      "type": "string"
+                    },
+                    "fees": {
+                      "type": "array",
+                      "items": [
+                        {
+                          "type": "object",
+                          "properties": {
+                            "fee": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "fee"
+                          ]
+                        }
+                      ]
+                    },
+                    "creditInterest": {
+                      "type": "string"
+                    },
+                    "minimumAmount": {
+                      "type": "string"
+                    },
+                    "currency": {
+                      "type": "string"
+                    },
+                    "creditInterestMarginRate": {
+                      "type": "string"
+                    },
+                    "periodicIndex": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "creditInterestType",
+                    "fees",
+                    "creditInterest",
+                    "minimumAmount",
+                    "currency",
+                    "creditInterestMarginRate",
+                    "periodicIndex"
+                  ]
+                }
+              ]
+            },
+            "facilities": {
+              "type": "null"
+            },
+            "productId": {
+              "type": "string"
+            },
+            "productGroupId": {
+              "type": "string"
+            },
+            "productLine": {
+              "type": "string"
+            },
+            "productDescription": {
+              "type": "string"
+            },
+            "productLineDisplayName": {
+              "type": "string"
+            },
+            "productGroupDisplayName": {
+              "type": "string"
+            },
+            "printingAttributePosition": {
+              "type": "null"
+            },
+            "productCoCode": {
+              "type": "string"
+            },
+            "availableFromDate": {
+              "type": "string"
+            },
+            "availableToDate": {
+              "type": "null"
+            }
+          },
+          "required": [
+            "ccySpecific",
+            "facilities",
+            "productId",
+            "productGroupId",
+            "productLine",
+            "productDescription",
+            "productLineDisplayName",
+            "productGroupDisplayName",
+            "printingAttributePosition",
+            "productCoCode",
+            "availableFromDate",
+            "availableToDate"
+          ]
+        }
+      ]
+    }
+  },
+  "required": [
+    "productDetails"
+  ]
+}

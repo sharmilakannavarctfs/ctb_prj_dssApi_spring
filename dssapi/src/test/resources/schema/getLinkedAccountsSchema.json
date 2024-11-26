@@ -1,0 +1,126 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Generated schema for Root",
+  "type": "object",
+  "properties": {
+    "linkedAccounts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "cardId": {},
+          "customerId": {
+            "type": "string"
+          },
+          "accountTitle1": {},
+          "accountTitle2": {},
+          "accountName": {},
+          "ownAccount": {},
+          "companyId": {
+            "type": "string"
+          },
+          "beneficiaryId": {
+            "type": "string"
+          },
+          "nickName": {},
+          "categoryId": {},
+          "beneficiaryAccountId": {
+            "type": "string"
+          },
+          "beneficiaryCustomerId": {
+            "type": "string"
+          },
+          "transactionType": {},
+          "bankSortCode": {
+            "type": "string"
+          },
+          "BIC": {},
+          "IBAN": {},
+          "linkBeneficiaryId": {},
+          "customerReference": {},
+          "accountWithBank": {},
+          "paymentCurrencyId": {},
+          "preferredPaymentAmount": {},
+          "ourCharges": {},
+          "paymentCountry": {},
+          "transactionName": {},
+          "beneficiaryNickName": {},
+          "preferredPaymentProduct": {},
+          "defaultNarrative": {},
+          "dateTime": {
+            "type": "string"
+          },
+          "shortName": {},
+          "bankName": {},
+          "beneficiaryAddress": {},
+          "beneficiaryAddressCity": {},
+          "postCode": {},
+          "beneficiaryCountryName": {},
+          "versionNumber": {
+            "type": "string"
+          },
+          "departmentId": {},
+          "subDepartmentId": {},
+          "buildingNumber": {},
+          "buildingName": {},
+          "floorNumber": {},
+          "postBoxNumber": {},
+          "apartmentNumber": {},
+          "town": {},
+          "districtName": {},
+          "state": {}
+        },
+        "required": [
+          "cardId",
+          "customerId",
+          "accountTitle1",
+          "accountTitle2",
+          "accountName",
+          "ownAccount",
+          "companyId",
+          "beneficiaryId",
+          "nickName",
+          "categoryId",
+          "beneficiaryAccountId",
+          "beneficiaryCustomerId",
+          "transactionType",
+          "bankSortCode",
+          "BIC",
+          "IBAN",
+          "linkBeneficiaryId",
+          "customerReference",
+          "accountWithBank",
+          "paymentCurrencyId",
+          "preferredPaymentAmount",
+          "ourCharges",
+          "paymentCountry",
+          "transactionName",
+          "beneficiaryNickName",
+          "preferredPaymentProduct",
+          "defaultNarrative",
+          "dateTime",
+          "shortName",
+          "bankName",
+          "beneficiaryAddress",
+          "beneficiaryAddressCity",
+          "postCode",
+          "beneficiaryCountryName",
+          "versionNumber",
+          "departmentId",
+          "subDepartmentId",
+          "buildingNumber",
+          "buildingName",
+          "floorNumber",
+          "postBoxNumber",
+          "apartmentNumber",
+          "town",
+          "districtName",
+          "state"
+        ]
+      }
+    }
+  },
+  "required": [
+    "linkedAccounts"
+  ]
+}

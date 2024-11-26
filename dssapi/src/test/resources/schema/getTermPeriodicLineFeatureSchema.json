@@ -1,0 +1,187 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "getTermPeriodicLineFeature": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "ccySpecific": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "creditInterestType": {
+                      "type": "string"
+                    },
+                    "fees": {
+                      "type": "array",
+                      "items": [
+                        {
+                          "type": "object",
+                          "properties": {
+                            "fee": {
+                              "type": "string"
+                            },
+                            "feeAmount": {
+                              "type": "null"
+                            },
+                            "feeFrequency": {
+                              "type": "null"
+                            }
+                          },
+                          "required": [
+                            "fee",
+                            "feeAmount",
+                            "feeFrequency"
+                          ]
+                        }
+                      ]
+                    },
+                    "creditInterest": {
+                      "type": "string"
+                    },
+                    "minimumAmount": {
+                      "type": "string"
+                    },
+                    "currency": {
+                      "type": "string"
+                    },
+                    "creditInterestMarginRate": {
+                      "type": "string"
+                    },
+                    "periodicIndex": {
+                      "type": "string"
+                    },
+                    "creditInterestMinimumBalance": {
+                      "type": "null"
+                    },
+                    "creditInterestMaximumBalance": {
+                      "type": "null"
+                    },
+                    "debitInterest": {
+                      "type": "null"
+                    },
+                    "debitInterestType": {
+                      "type": "null"
+                    },
+                    "debitInterestMinimumBalance": {
+                      "type": "null"
+                    },
+                    "debitInterestMaximumBalance": {
+                      "type": "null"
+                    },
+                    "debitInterestMarginRate": {
+                      "type": "null"
+                    },
+                    "overdraftAmount": {
+                      "type": "null"
+                    },
+                    "amount": {
+                      "type": "null"
+                    },
+                    "noticePeriod": {
+                      "type": "null"
+                    },
+                    "term": {
+                      "type": "null"
+                    },
+                    "minimumTerm": {
+                      "type": "null"
+                    },
+                    "maximumTerm": {
+                      "type": "null"
+                    },
+                    "interestRates": {
+                      "type": "null"
+                    },
+                    "maximumAmount": {
+                      "type": "null"
+                    }
+                  },
+                  "required": [
+                    "creditInterestType",
+                    "fees",
+                    "creditInterest",
+                    "minimumAmount",
+                    "currency",
+                    "creditInterestMarginRate",
+                    "periodicIndex",
+                    "creditInterestMinimumBalance",
+                    "creditInterestMaximumBalance",
+                    "debitInterest",
+                    "debitInterestType",
+                    "debitInterestMinimumBalance",
+                    "debitInterestMaximumBalance",
+                    "debitInterestMarginRate",
+                    "overdraftAmount",
+                    "amount",
+                    "noticePeriod",
+                    "term",
+                    "minimumTerm",
+                    "maximumTerm",
+                    "interestRates",
+                    "maximumAmount"
+                  ]
+                }
+              ]
+            },
+            "facilities": {
+              "type": "null"
+            },
+            "productId": {
+              "type": "string"
+            },
+            "productGroupId": {
+              "type": "string"
+            },
+            "productLine": {
+              "type": "string"
+            },
+            "productDescription": {
+              "type": "string"
+            },
+            "productLineDisplayName": {
+              "type": "string"
+            },
+            "productGroupDisplayName": {
+              "type": "string"
+            },
+            "printingAttributePosition": {
+              "type": "null"
+            },
+            "productCoCode": {
+              "type": "string"
+            },
+            "availableFromDate": {
+              "type": "string"
+            },
+            "availableToDate": {
+              "type": "null"
+            }
+          },
+          "required": [
+            "ccySpecific",
+            "facilities",
+            "productId",
+            "productGroupId",
+            "productLine",
+            "productDescription",
+            "productLineDisplayName",
+            "productGroupDisplayName",
+            "printingAttributePosition",
+            "productCoCode",
+            "availableFromDate",
+            "availableToDate"
+          ]
+        }
+      ]
+    }
+  },
+  "required": [
+    "getTermPeriodicLineFeature"
+  ]
+}

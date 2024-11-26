@@ -1,0 +1,85 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "getPortfolios": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "managedAccount": {
+              "type": "string"
+            },
+            "portfolioId": {
+              "type": "string"
+            },
+            "referenceCurrency": {
+              "type": "string"
+            },
+            "valuationCurrency": {
+              "type": "string"
+            },
+            "accountName": {
+              "type": "string"
+            },
+            "investmentProgram": {
+              "type": "string"
+            },
+            "customerId": {
+              "type": "string"
+            },
+            "unrealisedProfitLossPercentage": {
+              "type": "string"
+            },
+            "valuationAmt": {
+              "type": "number"
+            },
+            "customerName": {
+              "type": "string"
+            },
+            "unrealProfitLoss": {
+              "type": "integer"
+            },
+            "depositoryId": {
+              "type": "null"
+            },
+            "subAccount": {
+              "type": "null"
+            },
+            "subAcctExtId": {
+              "type": "null"
+            },
+            "jointCustomer": {
+              "type": "null"
+            },
+            "jointCustomerName": {
+              "type": "null"
+            }
+          },
+          "required": [
+            "managedAccount",
+            "portfolioId",
+            "referenceCurrency",
+            "valuationCurrency",
+            "accountName",
+            "investmentProgram",
+            "customerId",
+            "unrealisedProfitLossPercentage",
+            "valuationAmt",
+            "customerName",
+            "unrealProfitLoss",
+            "depositoryId",
+            "subAccount",
+            "subAcctExtId",
+            "jointCustomer",
+            "jointCustomerName"
+          ]
+        }
+      ]
+    }
+  },
+  "required": [
+    "getPortfolios"
+  ]
+}

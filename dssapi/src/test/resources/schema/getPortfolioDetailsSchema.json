@@ -1,0 +1,231 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "portFolioList": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "planType": {
+              "type": "string"
+            },
+            "referenceCurrency": {
+              "type": "string"
+            },
+            "valuationCurrency": {
+              "type": "string"
+            },
+            "accountName": {
+              "type": "string"
+            },
+            "contributionTillDate": {
+              "type": "string"
+            },
+            "unrealisedProfitLossPercentage": {
+              "type": "string"
+            },
+            "valuationAmt": {
+              "type": "string"
+            },
+            "paymentAmount": {
+              "type": "string"
+            },
+            "customerName": {
+              "type": "string"
+            },
+            "unrealProfitLoss": {
+              "type": "string"
+            },
+            "managedAccount": {
+              "type": "string"
+            },
+            "portfolioId": {
+              "type": "string"
+            },
+            "branchId": {
+              "type": "null"
+            },
+            "lockedInIndicator": {
+              "type": "string"
+            },
+            "annuitantDetails": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "branchId": {
+                      "type": "string"
+                    },
+                    "holderName": {
+                      "type": "string"
+                    },
+                    "dateOfBirth": {
+                      "type": "string"
+                    },
+                    "holderReference": {
+                      "type": "string"
+                    },
+                    "Title": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "branchId",
+                    "holderName",
+                    "dateOfBirth",
+                    "holderReference",
+                    "Title"
+                  ]
+                }
+              ]
+            },
+            "accountIds": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "accountId": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "accountId"
+                  ]
+                }
+              ]
+            },
+            "beneficiaryDetails": {
+              "type": "null"
+            },
+            "defaultSettlementAccount": {
+              "type": "string"
+            },
+            "investmentProgram": {
+              "type": "string"
+            },
+            "customerId": {
+              "type": "string"
+            },
+            "contributionSincePlanDate": {
+              "type": "string"
+            },
+            "openDate": {
+              "type": "string"
+            },
+            "planGroupId": {
+              "type": "string"
+            },
+            "holderName": {
+              "type": "null"
+            },
+            "beneficiaryDOB": {
+              "type": "null"
+            },
+            "beneficiaryDateOfDeath": {
+              "type": "null"
+            },
+            "dateOfBirth": {
+              "type": "null"
+            },
+            "dateOfDeath": {
+              "type": "null"
+            },
+            "additionalTitle": {
+              "type": "null"
+            },
+            "beneficiaryName": {
+              "type": "null"
+            },
+            "paymentDate": {
+              "type": "null"
+            },
+            "lastPaymentDate": {
+              "type": "null"
+            },
+            "paymentFrequency": {
+              "type": "null"
+            },
+            "paymentIndicator": {
+              "type": "null"
+            },
+            "holderReference": {
+              "type": "null"
+            },
+            "depositoryId": {
+              "type": "null"
+            },
+            "subAccount": {
+              "type": "null"
+            },
+            "subAcctExtId": {
+              "type": "null"
+            },
+            "jointCustomer": {
+              "type": "null"
+            },
+            "jointCustomerName": {
+              "type": "null"
+            },
+            "Title": {
+              "type": "null"
+            },
+            "Balance": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "planType",
+            "referenceCurrency",
+            "valuationCurrency",
+            "accountName",
+            "contributionTillDate",
+            "unrealisedProfitLossPercentage",
+            "valuationAmt",
+            "paymentAmount",
+            "customerName",
+            "unrealProfitLoss",
+            "managedAccount",
+            "portfolioId",
+            "branchId",
+            "lockedInIndicator",
+            "annuitantDetails",
+            "accountIds",
+            "beneficiaryDetails",
+            "defaultSettlementAccount",
+            "investmentProgram",
+            "customerId",
+            "contributionSincePlanDate",
+            "openDate",
+            "planGroupId",
+            "holderName",
+            "beneficiaryDOB",
+            "beneficiaryDateOfDeath",
+            "dateOfBirth",
+            "dateOfDeath",
+            "additionalTitle",
+            "beneficiaryName",
+            "paymentDate",
+            "lastPaymentDate",
+            "paymentFrequency",
+            "paymentIndicator",
+            "holderReference",
+            "depositoryId",
+            "subAccount",
+            "subAcctExtId",
+            "jointCustomer",
+            "jointCustomerName",
+            "Title",
+            "Balance"
+          ]
+        }
+      ]
+    }
+  },
+  "required": [
+    "portFolioList"
+  ]
+}

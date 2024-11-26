@@ -1,0 +1,12 @@
+screenshots/
+logs/
+target/
+test-output/
+.idea
+*.iml
+drivers/
+.settings
+.classpath
+.project
+
+

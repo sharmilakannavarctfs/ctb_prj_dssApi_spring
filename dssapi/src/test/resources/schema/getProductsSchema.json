@@ -1,0 +1,524 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "productInformation": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "productId": {
+              "type": "string"
+            },
+            "availableFromDate": {
+              "type": "string"
+            },
+            "currencyName": {
+              "type": "string"
+            },
+            "productLineName": {
+              "type": "string"
+            },
+            "productGroupId": {
+              "type": "string"
+            },
+            "productGroupName": {
+              "type": "string"
+            },
+            "currencyId": {
+              "type": "string"
+            },
+            "productName": {
+              "type": "string"
+            },
+            "productLineId": {
+              "type": "string"
+            },
+            "minimumTerm": {
+              "type": "null"
+            },
+            "maximumTerm": {
+              "type": "null"
+            }
+          },
+          "required": [
+            "productId",
+            "availableFromDate",
+            "currencyName",
+            "productLineName",
+            "productGroupId",
+            "productGroupName",
+            "currencyId",
+            "productName",
+            "productLineId",
+            "minimumTerm",
+            "maximumTerm"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "productId": {
+              "type": "string"
+            },
+            "availableFromDate": {
+              "type": "string"
+            },
+            "currencyName": {
+              "type": "string"
+            },
+            "productLineName": {
+              "type": "string"
+            },
+            "productGroupId": {
+              "type": "string"
+            },
+            "productGroupName": {
+              "type": "string"
+            },
+            "currencyId": {
+              "type": "string"
+            },
+            "productName": {
+              "type": "string"
+            },
+            "productLineId": {
+              "type": "string"
+            },
+            "minimumTerm": {
+              "type": "null"
+            },
+            "maximumTerm": {
+              "type": "null"
+            }
+          },
+          "required": [
+            "productId",
+            "availableFromDate",
+            "currencyName",
+            "productLineName",
+            "productGroupId",
+            "productGroupName",
+            "currencyId",
+            "productName",
+            "productLineId",
+            "minimumTerm",
+            "maximumTerm"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "productId": {
+              "type": "string"
+            },
+            "availableFromDate": {
+              "type": "string"
+            },
+            "currencyName": {
+              "type": "string"
+            },
+            "productLineName": {
+              "type": "string"
+            },
+            "productGroupId": {
+              "type": "string"
+            },
+            "productGroupName": {
+              "type": "string"
+            },
+            "currencyId": {
+              "type": "string"
+            },
+            "productName": {
+              "type": "string"
+            },
+            "productLineId": {
+              "type": "string"
+            },
+            "minimumTerm": {
+              "type": "null"
+            },
+            "maximumTerm": {
+              "type": "null"
+            }
+          },
+          "required": [
+            "productId",
+            "availableFromDate",
+            "currencyName",
+            "productLineName",
+            "productGroupId",
+            "productGroupName",
+            "currencyId",
+            "productName",
+            "productLineId",
+            "minimumTerm",
+            "maximumTerm"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "productId": {
+              "type": "string"
+            },
+            "availableFromDate": {
+              "type": "string"
+            },
+            "currencyName": {
+              "type": "string"
+            },
+            "productLineName": {
+              "type": "string"
+            },
+            "productGroupId": {
+              "type": "string"
+            },
+            "productGroupName": {
+              "type": "string"
+            },
+            "currencyId": {
+              "type": "string"
+            },
+            "productName": {
+              "type": "string"
+            },
+            "productLineId": {
+              "type": "string"
+            },
+            "minimumTerm": {
+              "type": "null"
+            },
+            "maximumTerm": {
+              "type": "null"
+            }
+          },
+          "required": [
+            "productId",
+            "availableFromDate",
+            "currencyName",
+            "productLineName",
+            "productGroupId",
+            "productGroupName",
+            "currencyId",
+            "productName",
+            "productLineId",
+            "minimumTerm",
+            "maximumTerm"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "productId": {
+              "type": "string"
+            },
+            "availableFromDate": {
+              "type": "string"
+            },
+            "currencyName": {
+              "type": "string"
+            },
+            "productLineName": {
+              "type": "string"
+            },
+            "productGroupId": {
+              "type": "string"
+            },
+            "productGroupName": {
+              "type": "string"
+            },
+            "currencyId": {
+              "type": "string"
+            },
+            "productName": {
+              "type": "string"
+            },
+            "productLineId": {
+              "type": "string"
+            },
+            "minimumTerm": {
+              "type": "null"
+            },
+            "maximumTerm": {
+              "type": "null"
+            }
+          },
+          "required": [
+            "productId",
+            "availableFromDate",
+            "currencyName",
+            "productLineName",
+            "productGroupId",
+            "productGroupName",
+            "currencyId",
+            "productName",
+            "productLineId",
+            "minimumTerm",
+            "maximumTerm"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "productId": {
+              "type": "string"
+            },
+            "availableFromDate": {
+              "type": "string"
+            },
+            "currencyName": {
+              "type": "string"
+            },
+            "productLineName": {
+              "type": "string"
+            },
+            "productGroupId": {
+              "type": "string"
+            },
+            "productGroupName": {
+              "type": "string"
+            },
+            "currencyId": {
+              "type": "string"
+            },
+            "productName": {
+              "type": "string"
+            },
+            "productLineId": {
+              "type": "string"
+            },
+            "minimumTerm": {
+              "type": "null"
+            },
+            "maximumTerm": {
+              "type": "null"
+            }
+          },
+          "required": [
+            "productId",
+            "availableFromDate",
+            "currencyName",
+            "productLineName",
+            "productGroupId",
+            "productGroupName",
+            "currencyId",
+            "productName",
+            "productLineId",
+            "minimumTerm",
+            "maximumTerm"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "productId": {
+              "type": "string"
+            },
+            "availableFromDate": {
+              "type": "string"
+            },
+            "currencyName": {
+              "type": "string"
+            },
+            "productLineName": {
+              "type": "string"
+            },
+            "productGroupId": {
+              "type": "string"
+            },
+            "productGroupName": {
+              "type": "string"
+            },
+            "currencyId": {
+              "type": "string"
+            },
+            "productName": {
+              "type": "string"
+            },
+            "productLineId": {
+              "type": "string"
+            },
+            "minimumTerm": {
+              "type": "null"
+            },
+            "maximumTerm": {
+              "type": "null"
+            }
+          },
+          "required": [
+            "productId",
+            "availableFromDate",
+            "currencyName",
+            "productLineName",
+            "productGroupId",
+            "productGroupName",
+            "currencyId",
+            "productName",
+            "productLineId",
+            "minimumTerm",
+            "maximumTerm"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "productId": {
+              "type": "string"
+            },
+            "availableFromDate": {
+              "type": "string"
+            },
+            "currencyName": {
+              "type": "string"
+            },
+            "productLineName": {
+              "type": "string"
+            },
+            "productGroupId": {
+              "type": "string"
+            },
+            "productGroupName": {
+              "type": "string"
+            },
+            "currencyId": {
+              "type": "string"
+            },
+            "productName": {
+              "type": "string"
+            },
+            "productLineId": {
+              "type": "string"
+            },
+            "minimumTerm": {
+              "type": "null"
+            },
+            "maximumTerm": {
+              "type": "null"
+            }
+          },
+          "required": [
+            "productId",
+            "availableFromDate",
+            "currencyName",
+            "productLineName",
+            "productGroupId",
+            "productGroupName",
+            "currencyId",
+            "productName",
+            "productLineId",
+            "minimumTerm",
+            "maximumTerm"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "productId": {
+              "type": "string"
+            },
+            "availableFromDate": {
+              "type": "string"
+            },
+            "currencyName": {
+              "type": "string"
+            },
+            "productLineName": {
+              "type": "string"
+            },
+            "productGroupId": {
+              "type": "string"
+            },
+            "productGroupName": {
+              "type": "string"
+            },
+            "currencyId": {
+              "type": "string"
+            },
+            "productName": {
+              "type": "string"
+            },
+            "productLineId": {
+              "type": "string"
+            },
+            "minimumTerm": {
+              "type": "null"
+            },
+            "maximumTerm": {
+              "type": "null"
+            }
+          },
+          "required": [
+            "productId",
+            "availableFromDate",
+            "currencyName",
+            "productLineName",
+            "productGroupId",
+            "productGroupName",
+            "currencyId",
+            "productName",
+            "productLineId",
+            "minimumTerm",
+            "maximumTerm"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "productId": {
+              "type": "string"
+            },
+            "availableFromDate": {
+              "type": "string"
+            },
+            "currencyName": {
+              "type": "string"
+            },
+            "productLineName": {
+              "type": "string"
+            },
+            "productGroupId": {
+              "type": "string"
+            },
+            "productGroupName": {
+              "type": "string"
+            },
+            "currencyId": {
+              "type": "string"
+            },
+            "productName": {
+              "type": "string"
+            },
+            "productLineId": {
+              "type": "string"
+            },
+            "minimumTerm": {
+              "type": "null"
+            },
+            "maximumTerm": {
+              "type": "null"
+            }
+          },
+          "required": [
+            "productId",
+            "availableFromDate",
+            "currencyName",
+            "productLineName",
+            "productGroupId",
+            "productGroupName",
+            "currencyId",
+            "productName",
+            "productLineId",
+            "minimumTerm",
+            "maximumTerm"
+          ]
+        }
+      ]
+    }
+  },
+  "required": [
+    "productInformation"
+  ]
+}

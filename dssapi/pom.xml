@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://maven.apache.org/POM/4.0.0"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<parent>
+		<artifactId>DSSframework</artifactId>
+		<groupId>DSSframework</groupId>
+		<version>1.0-SNAPSHOT</version>
+		<relativePath>../pom.xml</relativePath>
+	</parent>
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>dssapi</artifactId>
+
+	<properties>
+		<allure.results.directory>
+			${project.build.directory}/allure-results
+		</allure.results.directory>
+		<extent.report.directory>report</extent.report.directory>
+	</properties>
+
+	<dependencies>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-jdbc</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>DSSframework</groupId>
+			<artifactId>framework</artifactId>
+			<version>1.0-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>io.rest-assured</groupId>
+			<artifactId>json-schema-validator</artifactId>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-remote-resources-plugin</artifactId>
+				<version>1.7.0</version>
+				<configuration>
+					<resourceBundles>
+						<resourceBundle>DSSframework:framework:1.0-SNAPSHOT
+						</resourceBundle>
+					</resourceBundles>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>process</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>tech.grasshopper</groupId>
+				<artifactId>cucumber-rest-assured-extent-report-plugin</artifactId>
+				<version>2.2.0</version>
+				<executions>
+					<execution>
+						<id>report</id>
+						<phase>post-integration-test</phase>
+						<goals>
+							<goal>extentreport</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<allureResultsDirectory>${allure.results.directory}
+					</allureResultsDirectory>
+					<reportDirectory>${extent.report.directory}</reportDirectory>
+					<reportDirectoryTimeStamp>dd-MM-yyyy HH_mm_ss
+					</reportDirectoryTimeStamp>
+					<sparkGenerate>true</sparkGenerate>
+					<pdfGenerate>true</pdfGenerate>
+					<sparkConfigFilePath>src/test/resources/spark-config.xml
+					</sparkConfigFilePath>
+					<systemInfoFilePath>src/test/resources/systeminfo.properties
+					</systemInfoFilePath>
+					<sparkViewOrder>
+						DASHBOARD,TEST,EXCEPTION,CATEGORY,AUTHOR,DEVICE
+                    </sparkViewOrder>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>

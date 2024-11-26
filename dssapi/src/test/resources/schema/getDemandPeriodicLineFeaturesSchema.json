@@ -1,0 +1,145 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Generated schema for Root",
+  "type": "object",
+  "properties": {
+    "PeriodicLineFeatures": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "productLine": {
+            "type": "string"
+          },
+          "ccySpecific": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "paymentSchedule": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "property": {
+                        "type": "string"
+                      },
+                      "paymentMethod": {
+                        "type": "string"
+                      },
+                      "paymentTypes": {
+                        "type": "string"
+                      },
+                      "paymentFrequency": {
+                        "type": "string"
+                      },
+                      "scheduleId": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "property",
+                      "paymentMethod",
+                      "paymentTypes",
+                      "paymentFrequency",
+                      "scheduleId"
+                    ]
+                  }
+                },
+                "currency": {
+                  "type": "string"
+                },
+                "interests": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "marginRate": {
+                        "type": "number"
+                      },
+                      "marginOperand": {
+                        "type": "string"
+                      },
+                      "floatingIndex": {
+                        "type": "string"
+                      },
+                      "marginType": {
+                        "type": "string"
+                      },
+                      "interestId": {
+                        "type": "string"
+                      },
+                      "interestType": {
+                        "type": "string"
+                      },
+                      "description": {
+                        "type": "string"
+                      },
+                      "dayBasis": {
+                        "type": "string"
+                      },
+                      "rateTierType": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "marginRate",
+                      "marginOperand",
+                      "floatingIndex",
+                      "marginType",
+                      "interestId",
+                      "interestType",
+                      "description",
+                      "dayBasis",
+                      "rateTierType"
+                    ]
+                  }
+                }
+              },
+              "required": [
+                "paymentSchedule",
+                "currency",
+                "interests"
+              ]
+            }
+          },
+          "productId": {
+            "type": "string"
+          },
+          "availableFromDate": {
+            "type": "string"
+          },
+          "productGroupId": {
+            "type": "string"
+          },
+          "productLineDisplayName": {
+            "type": "string"
+          },
+          "productGroupDisplayName": {
+            "type": "string"
+          },
+          "productDescription": {
+            "type": "string"
+          },
+          "productCoCode": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "productLine",
+          "ccySpecific",
+          "productId",
+          "availableFromDate",
+          "productGroupId",
+          "productLineDisplayName",
+          "productGroupDisplayName",
+          "productDescription",
+          "productCoCode"
+        ]
+      }
+    }
+  },
+  "required": [
+    "PeriodicLineFeatures"
+  ]
+}

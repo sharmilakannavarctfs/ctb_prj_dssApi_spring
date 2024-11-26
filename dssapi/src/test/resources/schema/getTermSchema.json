@@ -1,0 +1,236 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "termProductOutput": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "customers": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "customerId": {
+                      "type": "string"
+                    },
+                    "customerName": {
+                      "type": "string"
+                    },
+                    "roleDisplayName": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "customerId",
+                    "customerName",
+                    "roleDisplayName"
+                  ]
+                }
+              ]
+            },
+            "interests": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "interestProperty": {
+                      "type": "string"
+                    },
+                    "interestAmount": {
+                      "type": "string"
+                    },
+                    "interestRates": {
+                      "type": "array",
+                      "items": [
+                        {
+                          "type": "object",
+                          "properties": {
+                            "interestRate": {
+                              "type": "string"
+                            },
+                            "period": {
+                              "type": "null"
+                            }
+                          },
+                          "required": [
+                            "interestRate",
+                            "period"
+                          ]
+                        }
+                      ]
+                    }
+                  },
+                  "required": [
+                    "interestProperty",
+                    "interestAmount",
+                    "interestRates"
+                  ]
+                }
+              ]
+            },
+            "postingRestrictDisplayNames": {
+              "type": "null"
+            },
+            "arrangementId": {
+              "type": "string"
+            },
+            "numericCurrencyCode": {
+              "type": "string"
+            },
+            "settlementCurrency": {
+              "type": "string"
+            },
+            "originalContractDate": {
+              "type": "null"
+            },
+            "renewalDate": {
+              "type": "string"
+            },
+            "firstInterestDate": {
+              "type": "string"
+            },
+            "nextInterestDate": {
+              "type": "string"
+            },
+            "maturityIndicator": {
+              "type": "string"
+            },
+            "portfolio": {
+              "type": "string"
+            },
+            "planType": {
+              "type": "string"
+            },
+            "renewalRate": {
+              "type": "string"
+            },
+            "rolloverType": {
+              "type": "string"
+            },
+            "term": {
+              "type": "null"
+            },
+            "payoutAccountId": {
+              "type": "string"
+            },
+            "transferIndicator": {
+              "type": "string"
+            },
+            "lockedFlag": {
+              "type": "string"
+            },
+            "sweepExempt": {
+              "type": "string"
+            },
+            "interestPayoutIndicator": {
+              "type": "string"
+            },
+            "principal": {
+              "type": "string"
+            },
+            "productGroup": {
+              "type": "string"
+            },
+            "nickName": {
+              "type": "string"
+            },
+            "accountTitle1": {
+              "type": "string"
+            },
+            "accountTitle2": {
+              "type": "null"
+            },
+            "companyCode": {
+              "type": "string"
+            },
+            "lastRenewalDate": {
+              "type": "null"
+            },
+            "depAccountId": {
+              "type": "string"
+            },
+            "depProduct": {
+              "type": "string"
+            },
+            "depCurrency": {
+              "type": "string"
+            },
+            "depAmount": {
+              "type": "null"
+            },
+            "depInterestType": {
+              "type": "string"
+            },
+            "depInterestRate": {
+              "type": "null"
+            },
+            "depStartDate": {
+              "type": "string"
+            },
+            "depEndDate": {
+              "type": "null"
+            },
+            "depBalance": {
+              "type": "string"
+            },
+            "depNextPayDate": {
+              "type": "null"
+            },
+            "depProductDescription": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "customers",
+            "interests",
+            "postingRestrictDisplayNames",
+            "arrangementId",
+            "numericCurrencyCode",
+            "settlementCurrency",
+            "originalContractDate",
+            "renewalDate",
+            "firstInterestDate",
+            "nextInterestDate",
+            "maturityIndicator",
+            "portfolio",
+            "planType",
+            "renewalRate",
+            "rolloverType",
+            "term",
+            "payoutAccountId",
+            "transferIndicator",
+            "lockedFlag",
+            "sweepExempt",
+            "interestPayoutIndicator",
+            "principal",
+            "productGroup",
+            "nickName",
+            "accountTitle1",
+            "accountTitle2",
+            "companyCode",
+            "lastRenewalDate",
+            "depAccountId",
+            "depProduct",
+            "depCurrency",
+            "depAmount",
+            "depInterestType",
+            "depInterestRate",
+            "depStartDate",
+            "depEndDate",
+            "depBalance",
+            "depNextPayDate",
+            "depProductDescription"
+          ]
+        }
+      ]
+    }
+  },
+  "required": [
+    "termProductOutput"
+  ]
+}
