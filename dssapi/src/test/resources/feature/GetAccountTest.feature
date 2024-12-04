@@ -40,3 +40,13 @@ Feature: GetAccountTest
     Examples: 
       | cardNbr          | opId_servic |
       | 5446147292141611 | SERVIC 		 |
+      
+  
+  @regression
+  Scenario Outline: testing flow
+    Given testing flow
+    Then validate "200"
+    
+    Examples: 
+      | cardNbr          | opId_servic |
+      | 5446147292141611 | SERVIC 		 |
