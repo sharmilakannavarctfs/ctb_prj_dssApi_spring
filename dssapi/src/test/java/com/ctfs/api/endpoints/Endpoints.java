@@ -26,5 +26,7 @@ public interface Endpoints {
  static String getDemandPeriodicLineFeatures="getDemandPeriodicLineFeatures";
  static String getTermPeriodicLineFeature="getTermPeriodicLineFeature";
  static String getAccount_ts2="/v2/getAccount";
+ static String ts2_estatementdeenrollment="/v2/eStatementDeenrollment";
+ static String ts2_enrollestatement="/v1/enrollEstatement";
  
 }
