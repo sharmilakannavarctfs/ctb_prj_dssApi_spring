@@ -1,6 +1,9 @@
 package com.ctfs.api.step;
 
 
+import static org.assertj.core.api.Assertions.setRemoveAssertJRelatedElementsFromStackTrace;
+
+import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -62,11 +65,16 @@ public class EnrollEStatementStep extends AbstractStep {
 			String electronicVendorOptionId, 
 			String emailId, 
 			String operator_id){
-		tS2RequestPojo.setCardNbr(cardNbr);
-		tS2RequestPojo.setEmailAddr(emailId);
-		tS2RequestPojo.setCustId(custId);
-		tS2RequestPojo.setOperatorId(operator_id);
-		tS2RequestPojo.setElectronicVendorOptionId(electronicVendorOptionId);
+		if(cardNbr.equals("")) tS2RequestPojo.setCardNbr(null);
+		else tS2RequestPojo.setCardNbr(cardNbr);
+		if(emailId.equals("")) tS2RequestPojo.setEmailAddr(null);
+		else tS2RequestPojo.setEmailAddr(emailId);
+		if(custId.equals("")) tS2RequestPojo.setCustId(null);
+		else tS2RequestPojo.setCustId(custId);
+		if(operator_id.equals("")) tS2RequestPojo.setOperatorId(null);
+		else tS2RequestPojo.setOperatorId(operator_id);
+		if(electronicVendorOptionId.equals("")) tS2RequestPojo.setElectronicVendorOptionId(null);
+		else tS2RequestPojo.setElectronicVendorOptionId(electronicVendorOptionId);
 		return tS2RequestPojo; 
 	}
 	
@@ -83,10 +91,7 @@ public class EnrollEStatementStep extends AbstractStep {
 
 				if (res_obj.getStatus().equals("000")) {
 					Assert.assertEquals(res_obj.getStatusMsg(), "passed");
-					
-//					if(getTsysValidationFlag()) {
-////						TSYS Validation
-//					}
+					Assert.assertTrue(res_obj.getFaults().length==0);
 				}
 				if (res_obj.getStatus().equals("999")) {
 					Assert.assertEquals(res_obj.getStatusMsg(), "failed");
