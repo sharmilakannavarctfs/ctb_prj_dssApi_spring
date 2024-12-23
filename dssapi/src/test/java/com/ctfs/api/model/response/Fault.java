@@ -8,6 +8,7 @@ public class Fault {
 	
 	private String code;
 	private String desc;
+	private String description;
 	private String id;
 	private String reason;
 	
@@ -19,3 +20,5 @@ public class Fault {
 	}
 
 }
+
+

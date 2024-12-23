@@ -87,6 +87,12 @@ public class Address {
 	private String addrDefault; 
 	@JsonProperty("cbrAddr")	 
 	private String cbrAddr; 
+	@JsonProperty("addLine1")
+	private String addLine1;
+	@JsonProperty("addLine2")
+	private String addLine2;
+	@JsonProperty("addLine3")
+	private String addLine3;
 	
 }
 

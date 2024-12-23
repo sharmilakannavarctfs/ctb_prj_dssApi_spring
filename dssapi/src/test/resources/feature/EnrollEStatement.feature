@@ -107,5 +107,14 @@ Feature: EnrollEStatement
     Examples: 
     | cardNbr          | custId	  | electronicVendorOptionId      | operatorId | emailId |
     | 5446122591479038 | |  			TP04										|  	SERVIC		|TEST.AUTOMATION@CTFS.COM |
+	@tag2
+  Scenario Outline: testing with testing with valid cardNUmber and no emailId
+    Given Post operation to hit enrollEStatement from TS2-service using valid "<cardNbr>" "<custId>" "<electronicVendorOptionId>" "<operatorId>" and "<emailId>"
+   
+    Then Validate enrollEstatement DSS api response status code as "200" and fault description as "No_error_msg"
+    
+    Examples: 
+    | cardNbr          | custId	  | electronicVendorOptionId      | operatorId | emailId |
+    | 5446122591479038 | |  			TP04										|  	SERVIC		| |
   
 

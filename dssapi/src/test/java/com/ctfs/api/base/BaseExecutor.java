@@ -7,8 +7,11 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import com.ctfs.api.utils.AtomicServicePortNbrUtil;
+import com.ctfs.api.utils.AtomicServices;
 import com.ctfs.common.service.RestService;
 import com.ctfs.common.utils.ApplicationProperties;
+import com.springbootjdbc.com.spring.jdbc.Application;
 
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
@@ -28,10 +31,25 @@ public class BaseExecutor {
 		log.info("Inside Base Executor");
 		RequestSpecification rSpecification = restService.getRequestSpecification();
 		requestSpecificationObject.set(rSpecification);
-		getRequestSpecification().baseUri(applicationProperties.getDssApiUrl());
-		log.info("Base URL" + getRequestSpecification().baseUri(applicationProperties.getDssApiUrl()));
+		String baseUri = applicationProperties.getDssApiUrl();
+//		String baseUri = applicationProperties.getDssApiUrl()+AtomicServicePortNbrUtil.getPort(service);
+		System.out.println("baseUri"+baseUri);
+		getRequestSpecification().baseUri(baseUri);
+		log.info("Base URL" + getRequestSpecification().baseUri(baseUri));
 
 	}
+//	protected BaseExecutor(RestService restService, AtomicServices atomicService) {
+//		log.info("Inside Base Executor");
+//		RequestSpecification rSpecification = restService.getRequestSpecification();
+//		requestSpecificationObject.set(rSpecification);
+//		ApplicationProperties applicationProperties = new ApplicationProperties();
+//		System.out.println(atomicService.TS2SERVICE.GetApplicationName);
+//		String baseUri = applicationProperties.getDssApiUrl()+"40732";
+//		System.out.println("baseUri"+baseUri);
+//		getRequestSpecification().baseUri(baseUri);
+//		log.info("Base URL" + getRequestSpecification().baseUri(baseUri));
+//		
+//	}
 
 	public RequestSpecification getRequestSpecification() {
 		return requestSpecificationObject.get();

@@ -19,9 +19,14 @@ import lombok.Setter;
 
 public class TS2RequestPojo {
 	
-	private String operatorId;
 	private String accountId;
-	private String custId;
 	private String cardNbr;
+	private String custId;
+	private String electronicVendorOptionId;
+	private int monthlyIncome;
+	private String emailAddr;
+	private String restartToken;
+	private String statusCode;
+	private String operatorId;
 
 }

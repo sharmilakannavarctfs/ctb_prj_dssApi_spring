@@ -9,7 +9,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.testng.Assert;
 
-import com.ctfs.api.model.response.EnrollEStatementResponsePojo;
+import com.ctfs.api.model.response.Ts2ResponsePojo;
 import com.ctfs.api.pojos.request.EnrollEStatement;
 import com.ctfs.api.pojos.request.TS2RequestPojo;
 import com.ctfs.api.pojos.response.GetAccount;
@@ -82,11 +82,11 @@ public class EnrollEStatementStep extends AbstractStep {
 	public void validate_get_Account_TestResponse(String statusCode,String desc) throws Throwable {
 		try {
 			Response response = (Response)stepDefinitionDataManager.getStoredObjectMap().get("enrollEstatementresponse");
-			EnrollEStatementResponsePojo res_obj = null;
+			Ts2ResponsePojo res_obj = null;
 			Assert.assertTrue(statusCode.equals(String.valueOf(response.getStatusCode())));
 			int code=response.getStatusCode();
 			if(response.getStatusCode()==200){
-				res_obj = response.getBody().as(EnrollEStatementResponsePojo.class);
+				res_obj = response.getBody().as(Ts2ResponsePojo.class);
 //				Assert.assertEquals(response.getStatus(), status);
 
 				if (res_obj.getStatus().equals("000")) {

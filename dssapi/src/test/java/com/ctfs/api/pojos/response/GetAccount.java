@@ -21,67 +21,36 @@ public class GetAccount {
 		private Integer amtPaymentsCTD;
 		
 		private Integer apr;
-		@JsonProperty("arqCounter")
 		private Integer arqCounter;
-		@JsonProperty("associationProductCode")
 		private String associationProductCode;
-		@JsonProperty("associationRewardProgramCode")
 		private String associationRewardProgramCode;
-		@JsonProperty("authorizationReason")
 		private String authorizationReason;
-		@JsonProperty("authorizationStatus")
 		private String authorizationStatus;
-		@JsonProperty("autoDialFlag")
 		private String autoDialFlag;
-		@JsonProperty("availableCash")
 		private Integer availableCash;
-		@JsonProperty("availableCashPad")
 		private Integer availableCashPad;
-		@JsonProperty("availableCredit")
 		private Integer availableCredit;
-		@JsonProperty("availableCreditPad")
 		private Integer availableCreditPad;
-		@JsonProperty("availableCreditSign")
 		private String availableCreditSign;
-		@JsonProperty("billingCycle")
 		private Integer billingCycle;
-		@JsonProperty("cardEnvironment")
 		private String cardEnvironment;
-		@JsonProperty("cardExpiryDate")
 		private Integer cardExpiryDate;
-		@JsonProperty("cashAdvanceCTDAmount")
 		private Integer cashAdvanceCTDAmount;
-		@JsonProperty("cashLimit")
 		private Integer cashLimit;
-		@JsonProperty("cdf")
 		private String cdf;
-		@JsonProperty("cdf10")
 		private String cdf10;
-		@JsonProperty("chipCardIndicator")
 		private String chipCardIndicator;
-		@JsonProperty("chipCardOptionSet")
 		private String chipCardOptionSet;
-		@JsonProperty("clientProductCode")
 		private String clientProductCode;
-		@JsonProperty("consecutiveDaysPastDue")
 		private Integer consecutiveDaysPastDue;
-		@JsonProperty("creditCTDAmount")
 		private Integer creditCTDAmount;
-		@JsonProperty("creditLimit")
 		private Integer creditLimit;
-		@JsonProperty("creditLimitDate")
 		private String creditLimitDate;
-		@JsonProperty("creditLimitPrevious")
 		private Integer creditLimitPrevious;
-		@JsonProperty("creditLimitTempEndDate")
 		private String creditLimitTempEndDate;
-		@JsonProperty("creditLimitTempStartDate")
 		private String creditLimitTempStartDate;
-		@JsonProperty("currentBalance")
 		private Integer currentBalance;
-		@JsonProperty("currentBalanceSign")
 		private String currentBalanceSign;
-		@JsonProperty("custSegId")
 		private String custSegId;
 		@JsonProperty("custSegValue")
 		private String custSegValue;

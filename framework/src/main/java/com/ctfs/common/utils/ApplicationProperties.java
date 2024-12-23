@@ -10,7 +10,12 @@ public class ApplicationProperties {
     private String apiAppUrl;
     @Value("${dss.api.url}")
     private String dssApiUrl;
-    @Value("${web.url.value}")
+    @Value("${dss.api.url.dev}")
+    private String dssApiUrlDev;
+	@Value("${dss.api.url.qa}")
+    private String dssApiUrlQa;
+    
+	@Value("${web.url.value}")
     private String webAppUrl;
     @Value("${web.pega.url}")
     private String webPegaUrl;
@@ -87,12 +92,36 @@ public class ApplicationProperties {
 	}
 
     
-    public String getDssApiUrl() {
-		return dssApiUrl;
+//    public String getDssApiUrl() {
+//		return dssApiUrl;
+//	}
+	
+	public String getDssApiUrl() {
+		if(getEnvironment().equals("DEV"))
+		return dssApiUrlDev;
+		else if(getEnvironment().equals("QA"))
+			return dssApiUrlQa;
+		return null;
 	}
 
 	public void setDssApiUrl(String dssApiUrl) {
 		this.dssApiUrl = dssApiUrl;
+	}
+	
+	public String getDssApiUrlDev() {
+		return dssApiUrlDev;
+	}
+
+	public void setDssApiUrlDev(String dssApiUrlDev) {
+		this.dssApiUrlDev = dssApiUrlDev;
+	}
+
+	public String getDssApiUrlQa() {
+		return dssApiUrlQa;
+	}
+
+	public void setDssApiUrlQa(String dssApiUrlQa) {
+		this.dssApiUrlQa = dssApiUrlQa;
 	}
 
 	public String getAppPackage(){return appPackage;}
