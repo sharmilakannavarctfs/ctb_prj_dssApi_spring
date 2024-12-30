@@ -35,4 +35,6 @@ public interface Endpoints {
  static String ts2_evaluateCreditLimit="/v1/evaluateCreditLimit";
  static String ts2_getAccountInfo="/v1/getAccountInfo";
  static String ts2_getCustomer = "/v1/getCustomer"; 
+ static String ts2_getCustomerIncomeInfo = "/v1/getCustomerIncomeInfo"; 
+ static String ts2_getCustomerEmployerInfo = "/v1/getCustomerEmployerInfo"; 
 }
