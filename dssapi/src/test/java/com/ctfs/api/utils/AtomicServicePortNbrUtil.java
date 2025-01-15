@@ -7,19 +7,22 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import org.junit.Test;
+import org.springframework.stereotype.Component;
 
 import com.ctfs.common.utils.ApplicationProperties;
 
+@Component
 public class AtomicServicePortNbrUtil {
 
 	public static ApplicationProperties propertyLoader = new ApplicationProperties();
 
-	@Test
-	public void test_eureka() {
-		System.out.println(getPort("TS2SERVICE_V1"));
-	}
+//	@Test
+//	public void test_eureka() {
+//		System.out.println(getPort("TS2SERVICE_V1"));
+//	}
 
-	public static String getPort(String microService) {
+	
+	public String getPort(String microService) {
 
 		String environment = "DEV";
 //		String environment = propertyLoader.getEnvironment();
@@ -92,7 +95,7 @@ public class AtomicServicePortNbrUtil {
 		return portNumber;
 	}
 
-	public static String getEurekaHTML(String eureka_html) {
+	public  String getEurekaHTML(String eureka_html) {
 		eureka_html = "http://"+eureka_html+":8761";
 		String[] command = { "curl", eureka_html };
 		String result = "";

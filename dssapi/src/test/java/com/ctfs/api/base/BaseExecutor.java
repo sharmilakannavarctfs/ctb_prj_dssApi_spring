@@ -1,5 +1,7 @@
 package com.ctfs.api.base;
 
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.Map;
 
 import org.slf4j.Logger;
@@ -19,37 +21,54 @@ import io.restassured.specification.RequestSpecification;
 @Component
 public class BaseExecutor {
 
+	public BaseExecutor() {
+		super();
+	}
+
 	private final Logger log = LoggerFactory.getLogger(BaseExecutor.class);
 	@Autowired
 	protected RestService restService;
+	
+	AtomicServicePortNbrUtil portUtility = new AtomicServicePortNbrUtil();
 
 	private static final ThreadLocal<Response> jwtToken = new ThreadLocal<>();
 	private static final ThreadLocal<Response> sessionID = new ThreadLocal<>();
 	protected static final ThreadLocal<RequestSpecification> requestSpecificationObject = new ThreadLocal<>();
 
-	protected BaseExecutor(RestService restService, ApplicationProperties applicationProperties) {
+	protected BaseExecutor(RestService restService, ApplicationProperties applicationProperties, String service) {
 		log.info("Inside Base Executor");
 		RequestSpecification rSpecification = restService.getRequestSpecification();
 		requestSpecificationObject.set(rSpecification);
-		String baseUri = applicationProperties.getDssApiUrl();
-//		String baseUri = applicationProperties.getDssApiUrl()+AtomicServicePortNbrUtil.getPort(service);
-		System.out.println("baseUri"+baseUri);
+		
+//		String baseUri = applicationProperties.getDssApiUrl();
+		String baseUri = applicationProperties.getDssApiUrl()+portUtility.getPort(service);
+		System.out.println("baseuri + endpoint : "+baseUri);
 		getRequestSpecification().baseUri(baseUri);
 		log.info("Base URL" + getRequestSpecification().baseUri(baseUri));
 
 	}
-//	protected BaseExecutor(RestService restService, AtomicServices atomicService) {
-//		log.info("Inside Base Executor");
-//		RequestSpecification rSpecification = restService.getRequestSpecification();
-//		requestSpecificationObject.set(rSpecification);
-//		ApplicationProperties applicationProperties = new ApplicationProperties();
-//		System.out.println(atomicService.TS2SERVICE.GetApplicationName);
-//		String baseUri = applicationProperties.getDssApiUrl()+"40732";
-//		System.out.println("baseUri"+baseUri);
-//		getRequestSpecification().baseUri(baseUri);
-//		log.info("Base URL" + getRequestSpecification().baseUri(baseUri));
-//		
-//	}
+	
+	public Response post(String url) throws URISyntaxException {	
+		System.out.println("Endpoint-"+url);
+		Response response = requestSpecificationObject.get().post(new URI(url));
+		return response;
+    }
+	
+	public Response get(String url) throws URISyntaxException {		
+		return requestSpecificationObject.get().get(new URI(url));
+    }
+	
+	public Response put(String url) throws URISyntaxException {		
+		return requestSpecificationObject.get().put(new URI(url));
+    }
+	
+	public Response delete(String url) throws URISyntaxException {		
+		return requestSpecificationObject.get().delete(new URI(url));
+    }
+	
+	public Response patch(String url) throws URISyntaxException {		
+		return requestSpecificationObject.get().patch(new URI(url));
+    }
 
 	public RequestSpecification getRequestSpecification() {
 		return requestSpecificationObject.get();

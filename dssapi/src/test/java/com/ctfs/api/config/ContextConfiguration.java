@@ -17,6 +17,7 @@ import org.springframework.retry.annotation.EnableRetry;
 @ComponentScan({
         "com.ctfs.api",
         "com.ctfs.common.utils",
+        "com.ctfs.api.utils",
         "com.ctfs.common.service",
         "com.springbootjdbc.com.spring.jdbc.*"
 })

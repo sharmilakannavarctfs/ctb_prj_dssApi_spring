@@ -17,24 +17,24 @@ import com.ctfs.common.utils.ApplicationProperties;
 import io.restassured.response.Response;
 
 @RetailBankService
-public class EvaluateCreditLimitService extends BaseExecutor{
-	
-	protected EvaluateCreditLimitService(RestService restService, ApplicationProperties applicationProperties) {
-		super(restService, applicationProperties,"TS2SERVICE_V1");
+public class GetCustomerForCustomCodeService extends BaseExecutor{
+
+	protected GetCustomerForCustomCodeService(RestService restService, ApplicationProperties applicationProperties) {
+		super(restService, applicationProperties);
 		// TODO Auto-generated constructor stub
 	}
 
-	private final Logger log = LoggerFactory.getLogger(EvaluateCreditLimitService.class);
+	private final Logger log = LoggerFactory.getLogger(GetCustomerForCustomCodeService.class);
 
 	@Autowired
 	private StepDefinitionDataManager stepDefinitionDataManager;
 	
-	public void evaluateCreditLimit(Object requestbody) throws URISyntaxException {
+	public void getCustomCode(Object requestbody) throws URISyntaxException {
 		try {
 			log.info("request body: "+ requestbody,true);
 			setBody(requestbody);
-			Response response = post(Endpoints.ts2_evaluateCreditLimit);
-			stepDefinitionDataManager.addToStoredObjectMap("evaluateCreditLimitResponse", response);
+			Response response = APIService.post(Endpoints.ts2_getCustomerForCustomCode);
+			stepDefinitionDataManager.addToStoredObjectMap("getCustomerForCustomCode", response);
 			log.info("response getStatusLine: " + response.getStatusLine());
 			log.info("response getBody: " + response.getBody().asPrettyString());
 

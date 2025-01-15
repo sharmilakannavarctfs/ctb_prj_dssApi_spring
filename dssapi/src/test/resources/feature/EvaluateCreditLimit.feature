@@ -111,6 +111,16 @@ Feature: Evaluate Credit Limit Test
     Examples: 
     | cardNbr          | monthlyIncome	  |  operatorId | 
     | 5446147989948708 |      3000				|  	SERVIC		|
+    
+	@tag2
+  Scenario Outline: testing with valid Account with CL014 decline status
+   Given Post operation to hit evaluateCreditLimit from TS2-service using valid "<cardNbr>" "<monthlyIncome>" and "<operatorId>"
+   
+   Then Validate evaluateCreditLimit DSS api response status code as "200" and fault description as ""
+   And Decline code and description as "CL015" and "C86 Card Review" 
+    Examples: 
+    | cardNbr          | monthlyIncome	  |  operatorId | 
+    | 5446147989948708 |      3000				|  	SERVIC		|
 	
 	
   

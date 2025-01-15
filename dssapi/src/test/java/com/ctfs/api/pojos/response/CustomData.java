@@ -13,8 +13,8 @@ public class CustomData {
 	private String custId;
 	@JsonProperty("codes")
 	private List<Codes >codes;
-	@JsonProperty("code")
-	private String code;
+//	@JsonProperty("code")
+//	private String code;
 	
 	@JsonProperty("value")
 	private String value;

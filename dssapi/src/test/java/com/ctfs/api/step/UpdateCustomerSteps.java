@@ -25,7 +25,7 @@ import com.ctfs.api.pojos.request.GarnishmentReferences;
 import com.ctfs.api.pojos.request.LegalDetails;
 import com.ctfs.api.pojos.request.OfficePhoneNumbers;
 import com.ctfs.api.pojos.request.Streets;
-import com.ctfs.api.pojos.request.UpdateCustomerRequestPojo;
+import com.ctfs.api.pojos.request.offerServices.UpdateCustomerRequestPojo;
 import com.ctfs.api.service.UpdateCustomerService;
 import com.ctfs.api.session.SessionContext;
 import com.ctfs.common.service.StepDefinitionDataManager;

@@ -94,6 +94,7 @@ public class GetCustomerEmployerInfoSteps extends AbstractStep {
 					Assert.assertEquals(res_obj.getStatusMsg(), "passed");
 					Assert.assertTrue(res_obj.getFaults().size()==0);
 					Assert.assertTrue(res_obj.getDateEmploymentMnt()!=null);
+					Assert.assertTrue(res_obj.getEmployerAddr()!=null);
 				}
 				if (res_obj.getStatus().equals("999")) {
 					Assert.assertEquals(res_obj.getStatusMsg(), "failed");
