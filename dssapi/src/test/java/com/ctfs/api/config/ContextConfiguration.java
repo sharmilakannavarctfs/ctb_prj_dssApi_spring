@@ -19,6 +19,7 @@ import org.springframework.retry.annotation.EnableRetry;
         "com.ctfs.common.utils",
         "com.ctfs.api.utils",
         "com.ctfs.common.service",
+        "com.ctfs.api.step.offerServices",
         "com.springbootjdbc.com.spring.jdbc.*"
 })
 @PropertySource("classpath:/application.properties")

@@ -39,4 +39,7 @@ public interface Endpoints {
  static String ts2_getCustomerForCustomCode= "/v1/getCustomerforCustomCode"; 
  static String ts2_getCustomerEmployerInfo = "/v1/getCustomerEmployerInfo"; 
  static String off_addorupdtnboMtx = "/v1/addOrUpdateNBORepricingMatrix"; 
+ static String off_addorupdtdisclGrp = "/v1/addOrUpdateDisclosureGroup"; 
+ static String off_deletenboMtx = "/v1/deleteNBORepricingMatrix"; 
+ static String off_deletedisclGrp = "/v1/deleteDisclosureGroup"; 
 }

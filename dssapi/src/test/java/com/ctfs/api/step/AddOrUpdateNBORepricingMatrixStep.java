@@ -88,10 +88,6 @@ public class AddOrUpdateNBORepricingMatrixStep extends AbstractStep {
 		}
 	}
     
-    AddOrUpdateNboRepricingMatrixRequest getPayload(){
-    	requestObj.setAlternateDesc(null);
-    	return null;
-    }
     
 
 	
