@@ -16,6 +16,7 @@ import com.ctfs.api.pojos.response.GetAccountInfo_res_pojo;
 import com.ctfs.api.service.EStatementDeenrollmentService;
 import com.ctfs.api.service.EvaluateCreditLimitService;
 import com.ctfs.api.service.GetAccountInfoService;
+import com.ctfs.api.service.offer.AddOrUpdateCTFSDisclosureGroupoffService;
 import com.ctfs.api.service.offer.AddOrUpdateDisclosureGroupService;
 import com.ctfs.api.service.offer.AddOrUpdateNBORepricingMatrixService;
 import com.ctfs.api.step.AbstractStep;
@@ -28,8 +29,8 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.restassured.response.Response;
 
-public class AddOrUpdateDisclosureGroupStep extends AbstractStep {
-	private final Logger log = LoggerFactory.getLogger(AddOrUpdateDisclosureGroupStep.class);
+public class AddOrUpdateCTFSDisclosureGroupOffStep extends AbstractStep {
+	private final Logger log = LoggerFactory.getLogger(AddOrUpdateCTFSDisclosureGroupOffStep.class);
 	
 	@Autowired
 	private AddOrUpdateDisclosureGroupRequestPojo requestObj;
@@ -41,21 +42,19 @@ public class AddOrUpdateDisclosureGroupStep extends AbstractStep {
     
 	
     @Autowired
-    private AddOrUpdateDisclosureGroupService service;
+    private AddOrUpdateCTFSDisclosureGroupoffService service;
     
     @Autowired
 	private StepDefinitionDataManager stepDefinitionDataManager;
     
-    @Given("post operation to addorUpdateDisclosureGroup request {string} {string} {string}")
-	public void post_operation(String disclosureGroupCode,
-			String disclosureGroupDesc,
-			String welcomeKitFlag) throws Throwable {
-    	if(!disclosureGroupCode.equals("")) requestObj.setDisclosureGroupCode(disclosureGroupCode);
-    	if(!disclosureGroupDesc.equals("")) requestObj.setDisclosureGroupDesc(disclosureGroupCode);
-    	if(!welcomeKitFlag.equals("")) requestObj.setWelcomeKitFlag(welcomeKitFlag);
+    @Given("post operation to addorUpdatectfsDisclosureGroupOffers request {string} {string}")
+	public void post_operation(String id,
+			String offerCode) throws Throwable {
+    	if(!id.equals("")) requestObj.setId(id);
+    	if(!offerCode.equals("")) requestObj.setOfferCode(offerCode);
 		try {
 //			dpm.initializeTestProfile("group=ApiGeneric");
-			service.addOrUpdatedisclosureGp(requestObj);
+			service.addOrUpdatectfsdisclosureGp(requestObj);
 			
 		} catch (Exception e) {			
 			e.printStackTrace();
@@ -63,20 +62,28 @@ public class AddOrUpdateDisclosureGroupStep extends AbstractStep {
 	}
     
     
-
+    public String getRecord(String id, String column)
+    {
+    	return AtomicServicesDBUtils.getRecord(Database.db_pduser, "CTFSDISCLOSUREGROUPOFFERS", "id", id, column);
+    }
 	
-	
-	@Then("validate the addorUpdateDisclosureGroup api status code as {string}")
+	@Then("validate the addorUpdatectfsDisclosureGroupOffers api status code as {string}")
 	public void validate_addUpdateNbo(String statusCode) throws Throwable {
 		try {
-			Response response = (Response)stepDefinitionDataManager.getStoredObjectMap().get("addupdatedisclosure");
+			Response response = (Response)stepDefinitionDataManager.getStoredObjectMap().get("addupdatectfsdisclosure");
 			Assert.assertTrue(statusCode.equals(String.valueOf(response.getStatusCode())));
 			if(response.getStatusCode() ==200) {
 				res_obj = response.getBody().as(AddOrUpdateDisclosureGroupRequestPojo.class);
-				if(res_obj.getDisclosureGroupCode()!=null) {
-						Assert.assertEquals(res_obj.getDisclosureGroupCode(),requestObj.getDisclosureGroupCode());	
-						Assert.assertEquals(res_obj.getDisclosureGroupDesc(),requestObj.getDisclosureGroupDesc());	
-						Assert.assertEquals(res_obj.getWelcomeKitFlag(),requestObj.getWelcomeKitFlag());	
+				if(res_obj.getId()!=null) {
+
+						Assert.assertEquals(res_obj.getId(),requestObj.getId());	
+						Assert.assertEquals(res_obj.getOfferCode(),requestObj.getOfferCode());	
+						if(res_obj.getId()!=null)
+						{
+							System.out.println(getRecord(res_obj.getId(), "id")+res_obj.getId());
+							Assert.assertEquals(getRecord(res_obj.getId(), "id"), res_obj.getId());
+							Assert.assertEquals(getRecord(res_obj.getId(), "OFFER_CODE"), res_obj.getOfferCode());
+						}
 					}
 			}
 			

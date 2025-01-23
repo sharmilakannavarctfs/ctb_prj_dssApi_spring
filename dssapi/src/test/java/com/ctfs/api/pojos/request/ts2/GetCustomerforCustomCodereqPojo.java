@@ -1,4 +1,4 @@
-package com.ctfs.api.pojos.request;
+package com.ctfs.api.pojos.request.ts2;
 
 
 import java.util.ArrayList;

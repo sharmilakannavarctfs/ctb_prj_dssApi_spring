@@ -1,5 +1,7 @@
 package com.ctfs.api.pojos.request.offerServices;
 
+import java.util.List;
+
 import org.springframework.stereotype.Component;
 
 import com.ctfs.api.pojos.request.AddOrUpdateNboRepricingMatrixRequest;
@@ -11,11 +13,7 @@ import lombok.Data;
 @Component
 //@JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonInclude(JsonInclude.Include.NON_EMPTY)
-public class AddOrUpdateDisclosureGroupRequestPojo {
-	private String disclosureGroupCode;
-	private String id;
-	private String disclosureGroup;
-	private String disclosureGroupDesc;
-	private String welcomeKitFlag;
-	private String offerCode;
+public class RetrieveDisclosureGroupResponsePojo {
+	private List<AddOrUpdateDisclosureGroupRequestPojo> retrieveDisclosureGroupsOutputList;
+	private List<AddOrUpdateDisclosureGroupRequestPojo> cftsDisclosureGroupOffersData;
 }

@@ -2,7 +2,7 @@
 ## (Comments)
 #this api deleted the record frpm pduser. Before that we run addOrupdateNBORepricingMatrix adds if not present or updates the record on CTFSNBOREPRICINGMATRIX table on pduser
 @tag
-Feature: this api adds if not present or updates the record on CTFSNBOREPRICINGMATRIX table on pduser
+Feature: this api deletes the record on CTFSNBOREPRICINGMATRIX table on pduser
 
   @tag2
   Scenario Outline: Adding the updating the records in CTFSNBOREPRICINGMATRIX table of pduser then deleting

@@ -13,4 +13,5 @@ import lombok.NonNull;
 @JsonInclude(JsonInclude.Include.NON_EMPTY)
 public class DeleteDisclosureGroupRequest {
 	private String disclosureGroupCode;
+	private String id;
 }

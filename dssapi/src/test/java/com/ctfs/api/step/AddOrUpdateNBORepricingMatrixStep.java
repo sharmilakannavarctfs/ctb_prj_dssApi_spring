@@ -15,7 +15,7 @@ import com.ctfs.api.pojos.response.GetAccountInfo_res_pojo;
 import com.ctfs.api.service.EStatementDeenrollmentService;
 import com.ctfs.api.service.EvaluateCreditLimitService;
 import com.ctfs.api.service.GetAccountInfoService;
-import com.ctfs.api.service.offerservices.AddOrUpdateNBORepricingMatrixService;
+import com.ctfs.api.service.offer.AddOrUpdateNBORepricingMatrixService;
 import com.ctfs.api.utils.DashProfileManagerUtils;
 import com.ctfs.api.utils.Database;
 import com.ctfs.common.service.StepDefinitionDataManager;

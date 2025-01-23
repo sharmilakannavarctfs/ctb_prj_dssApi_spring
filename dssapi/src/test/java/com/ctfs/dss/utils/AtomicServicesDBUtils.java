@@ -11,6 +11,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.testng.Reporter;
 
 import com.ctfs.common.utils.ApplicationProperties;
@@ -28,7 +29,8 @@ public class AtomicServicesDBUtils  {
 	static String QA_userProfile_service = "jdbc:mysql://Q9DSDB-VIP.ctal.ctc:3306/dss?verifyServerCertificate=false&useSSL=false&requireSSL=false&autoReconnect=true&serverTimezone=EST5EDT dss_user R$sx$kp[";
 
 
-	public static ApplicationProperties propertyLoader = new ApplicationProperties();
+	@Autowired
+	public static ApplicationProperties propertyLoader;// = new ApplicationProperties();
 	
 
 
@@ -38,12 +40,13 @@ public class AtomicServicesDBUtils  {
 		//		for (String string : db_env) {
 		//			System.out.println("Connections Strings "+string);
 		//		}
-		if(propertyLoader.getEnvironment().equals("d9cbwpdssa01"))//  d9cbwpdssa01
+//		if(propertyLoader.getEnvironment().equals("d9cbwpdssa01"))//  d9cbwpdssa01
+		if("d9cbwpdssa01".equals("d9cbwpdssa01"))//  d9cbwpdssa01
 		{
 			Reporter.log("Connecting to dev " + db_env[0],true);
 			db_Creds = db_env[0].split(",");
 			try {
-				Class.forName("com.mysql.jdbc.Driver");
+				Class.forName("com.mysql.cj.jdbc.Driver");
 			} catch (ClassNotFoundException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -55,7 +58,7 @@ public class AtomicServicesDBUtils  {
 
 			db_Creds = db_env[1].split(",");
 			try {
-				Class.forName("com.mysql.jdbc.Driver");
+				Class.forName("com.mysql.cj.jdbc.Driver");
 			} catch (ClassNotFoundException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

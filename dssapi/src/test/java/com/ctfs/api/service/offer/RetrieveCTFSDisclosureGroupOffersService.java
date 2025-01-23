@@ -1,4 +1,4 @@
-package com.ctfs.api.service;
+package com.ctfs.api.service.offer;
 
 import java.net.URISyntaxException;
 
@@ -17,24 +17,24 @@ import com.ctfs.common.utils.ApplicationProperties;
 import io.restassured.response.Response;
 
 @RetailBankService
-public class GetCustomerForCustomCodeService extends BaseExecutor{
+public class RetrieveCTFSDisclosureGroupOffersService extends BaseExecutor{
 
-	protected GetCustomerForCustomCodeService(RestService restService, ApplicationProperties applicationProperties) {
-		super(restService, applicationProperties);
+	protected RetrieveCTFSDisclosureGroupOffersService(RestService restService, ApplicationProperties applicationProperties) {
+		super(restService, applicationProperties,"OFFERSERVICE_V1");
 		// TODO Auto-generated constructor stub
 	}
 
-	private final Logger log = LoggerFactory.getLogger(GetCustomerForCustomCodeService.class);
+	private final Logger log = LoggerFactory.getLogger(RetrieveCTFSDisclosureGroupOffersService.class);
 
 	@Autowired
 	private StepDefinitionDataManager stepDefinitionDataManager;
 	
-	public void getCustomCode(Object requestbody) throws URISyntaxException {
+	public void retrieveCTFSDisclosureGroup(Object requestbody) throws URISyntaxException {
 		try {
 			log.info("request body: "+ requestbody,true);
 			setBody(requestbody);
-			Response response = APIService.post(Endpoints.ts2_getCustomerForCustomCode);
-			stepDefinitionDataManager.addToStoredObjectMap("getCustomerForCustomCode", response);
+			Response response = post(Endpoints.off_retrCTFSdisclGrpOffs);
+			stepDefinitionDataManager.addToStoredObjectMap("retrievCTFSdisclosureOff", response);
 			log.info("response getStatusLine: " + response.getStatusLine());
 			log.info("response getBody: " + response.getBody().asPrettyString());
 
@@ -42,6 +42,5 @@ public class GetCustomerForCustomCodeService extends BaseExecutor{
 			log.info(e.getMessage(),"Error while hitting API with body alone");
 		}
 	}
-	
 	
 }

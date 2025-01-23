@@ -1,4 +1,4 @@
-package com.ctfs.api.service;
+package com.ctfs.api.service.offer;
 
 import java.net.URISyntaxException;
 
@@ -17,24 +17,24 @@ import com.ctfs.common.utils.ApplicationProperties;
 import io.restassured.response.Response;
 
 @RetailBankService
-public class GetCustomerIncomeInfoService extends BaseExecutor{
+public class AddOrUpdateDisclosureGroupService extends BaseExecutor{
 
-	protected GetCustomerIncomeInfoService(RestService restService, ApplicationProperties applicationProperties) {
-		super(restService, applicationProperties,"TS2SERVICE_V1");
+	protected AddOrUpdateDisclosureGroupService(RestService restService, ApplicationProperties applicationProperties) {
+		super(restService, applicationProperties,"OFFERSERVICE_V1");
 		// TODO Auto-generated constructor stub
 	}
 
-	private final Logger log = LoggerFactory.getLogger(GetCustomerIncomeInfoService.class);
+	private final Logger log = LoggerFactory.getLogger(AddOrUpdateDisclosureGroupService.class);
 
 	@Autowired
 	private StepDefinitionDataManager stepDefinitionDataManager;
 	
-	public void getCustomerIncomeInfo(Object requestbody) throws URISyntaxException {
+	public void addOrUpdatedisclosureGp(Object requestbody) throws URISyntaxException {
 		try {
 			log.info("request body: "+ requestbody,true);
 			setBody(requestbody);
-			Response response = APIService.post(Endpoints.ts2_getCustomerIncomeInfo);
-			stepDefinitionDataManager.addToStoredObjectMap("getCustomerIncomeInfoRes", response);
+			Response response = post(Endpoints.off_addorupdtdisclGrp);
+			stepDefinitionDataManager.addToStoredObjectMap("addupdatedisclosure", response);
 			log.info("response getStatusLine: " + response.getStatusLine());
 			log.info("response getBody: " + response.getBody().asPrettyString());
 
@@ -42,6 +42,5 @@ public class GetCustomerIncomeInfoService extends BaseExecutor{
 			log.info(e.getMessage(),"Error while hitting API with body alone");
 		}
 	}
-	
 	
 }

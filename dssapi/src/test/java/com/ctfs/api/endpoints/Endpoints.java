@@ -29,7 +29,7 @@ public interface Endpoints {
  static String getCustomer ="getCustomer";
  static String getDemandPeriodicLineFeatures="getDemandPeriodicLineFeatures";
  static String getTermPeriodicLineFeature="getTermPeriodicLineFeature";
- static String getAccount_ts2="/v2/getAccount";
+ static String ts2_getAccount="/v2/getAccount";
  static String ts2_estatementdeenrollment="/v2/eStatementDeenrollment";
  static String ts2_enrollestatement="/v1/enrollEstatement";
  static String ts2_evaluateCreditLimit="/v1/evaluateCreditLimit";
@@ -40,6 +40,10 @@ public interface Endpoints {
  static String ts2_getCustomerEmployerInfo = "/v1/getCustomerEmployerInfo"; 
  static String off_addorupdtnboMtx = "/v1/addOrUpdateNBORepricingMatrix"; 
  static String off_addorupdtdisclGrp = "/v1/addOrUpdateDisclosureGroup"; 
+ static String off_addorupdtctfsdisclGrp = "/v1/addOrUpdateCTFSDisclosureGroupOffer"; 
+ static String off_retrdisclGrp = "/v1/retrieveDisclosureGroups"; 
+ static String off_retrCTFSdisclGrpOffs = "/v1/retrieveCTFSDisclosureGroupOffers"; 
  static String off_deletenboMtx = "/v1/deleteNBORepricingMatrix"; 
  static String off_deletedisclGrp = "/v1/deleteDisclosureGroup"; 
+ static String off_deletectfsdisclGrpoffer = "/v1/deleteCTFSDisclosureGroupOffer"; 
 }

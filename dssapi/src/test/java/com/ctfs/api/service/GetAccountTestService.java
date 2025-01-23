@@ -33,7 +33,7 @@ public class GetAccountTestService extends BaseExecutor{
 		try {
 			log.info("request body: "+ requestbody);
 			setBody(requestbody);
-			Response response = APIService.post(Endpoints.getAccount_ts2);
+			Response response = APIService.post(Endpoints.ts2_getAccount);
 			stepDefinitionDataManager.addToStoredObjectMap("getAccountResponse", response);
 			log.info("response getStatusLine: " + response.getStatusLine());
 			log.info("response getBody: " + response.getBody().asPrettyString());

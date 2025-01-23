@@ -1,4 +1,4 @@
-package com.ctfs.api.service.offerservices;
+package com.ctfs.api.service.offer;
 
 import java.net.URISyntaxException;
 
@@ -17,24 +17,24 @@ import com.ctfs.common.utils.ApplicationProperties;
 import io.restassured.response.Response;
 
 @RetailBankService
-public class DeleteDisclosreGroupService extends BaseExecutor{
+public class RetrieveDisclosureGroupService extends BaseExecutor{
 
-	protected DeleteDisclosreGroupService(RestService restService, ApplicationProperties applicationProperties) {
+	protected RetrieveDisclosureGroupService(RestService restService, ApplicationProperties applicationProperties) {
 		super(restService, applicationProperties,"OFFERSERVICE_V1");
 		// TODO Auto-generated constructor stub
 	}
 
-	private final Logger log = LoggerFactory.getLogger(DeleteDisclosreGroupService.class);
+	private final Logger log = LoggerFactory.getLogger(RetrieveDisclosureGroupService.class);
 
 	@Autowired
 	private StepDefinitionDataManager stepDefinitionDataManager;
 	
-	public void deleteDisclGrp(Object requestbody) throws URISyntaxException {
+	public void retrieveDisclosureGroup(Object requestbody) throws URISyntaxException {
 		try {
 			log.info("request body: "+ requestbody,true);
 			setBody(requestbody);
-			Response response = post(Endpoints.off_deletedisclGrp);
-			stepDefinitionDataManager.addToStoredObjectMap("deletedisclosureGroup", response);
+			Response response = post(Endpoints.off_retrdisclGrp);
+			stepDefinitionDataManager.addToStoredObjectMap("retrievdisclosure", response);
 			log.info("response getStatusLine: " + response.getStatusLine());
 			log.info("response getBody: " + response.getBody().asPrettyString());
 
