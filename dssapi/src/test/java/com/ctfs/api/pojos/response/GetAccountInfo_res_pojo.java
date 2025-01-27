@@ -3,6 +3,7 @@ package com.ctfs.api.pojos.response;
 
 import java.util.List;
 
+import com.ctfs.api.pojos.response.ts2response.Fault;
 
 import lombok.Data;
 

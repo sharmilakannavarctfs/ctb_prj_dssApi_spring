@@ -3,6 +3,7 @@ package com.ctfs.api.model.response;
 import org.springframework.stereotype.Component;
 
 import com.ctfs.api.pojos.response.Account;
+import com.ctfs.api.pojos.response.ts2response.DeclineReason;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
 import lombok.Data;

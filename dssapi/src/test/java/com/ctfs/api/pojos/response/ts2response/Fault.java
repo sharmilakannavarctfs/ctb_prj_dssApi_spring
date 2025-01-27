@@ -1,4 +1,4 @@
-package com.ctfs.api.pojos.response;
+package com.ctfs.api.pojos.response.ts2response;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;

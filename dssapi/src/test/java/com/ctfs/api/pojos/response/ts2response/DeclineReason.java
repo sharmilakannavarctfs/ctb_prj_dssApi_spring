@@ -1,4 +1,4 @@
-package com.ctfs.api.model.response;
+package com.ctfs.api.pojos.response.ts2response;
 
 
 import lombok.Data;
