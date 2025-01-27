@@ -1,15 +1,15 @@
 #Author: shkan
-#Keywords This feature is to test getCustomerempoyerinfo api of TS2 service
-#This api fetches the Customer info "/v1/getCustomer"
+#Keywords This feature is to test getCustomerIncomeInfo api of TS2 service
+#This api fetches the Customer info "/v1/getCustomerIncomeInfo"
 #Feature: List of scenarios.
 @ts2
-Feature: This feature is to test getCustomer api of TS2 service
-   this api fetches the Customer info "/v1/getCustomer"
+Feature: This feature is to test getCustomerIncomeInfo api of TS2 service
+   this api fetches the Customer Income info "/v1/getCustomerIncomeInfo"
 
   @tag1
-  Scenario Outline: Testing the getCustomer api with valid account details
-    Given post operation to request getCustomer api to get the customer information on "<cardNbr>" "<accountId>" "<custId>" and "<operatorId>"
-    Then validate the status code as "<statusCode>" and customer info is fetched with status "<statusCode>" and desc "<desc>"
+  Scenario Outline: Testing the /v1/getCustomerIncomeInfo api with valid account details
+    Given post operation to request getCustomerIncome api to get the customerIncome information on "<cardNbr>" "<accountId>" "<custId>" and "<operatorId>"
+    Then validate the status code as "<statusCode>" and customer income info is fetched with status "<statusCode>" and desc "<desc>"
 
     Examples: 
       | cardNbr          | accountId   | custId    | operatorId | statusCode | status | desc |
@@ -20,8 +20,8 @@ Feature: This feature is to test getCustomer api of TS2 service
 
   @tag2
   Scenario Outline: Testing getAccountInfo api with invalid carndNbr
-    Given post operation to request getCustomer api to get the customer information on "<cardNbr>" "<accountId>" "<custId>" and "<operatorId>"
-    Then validate the status code as "<statusCode>" and customer is fetched with status "<statusCode>" and desc "<desc>"
+    Given post operation to request getCustomerIncome api to get the customerIncome information on "<cardNbr>" "<accountId>" "<custId>" and "<operatorId>"
+    Then validate the status code as "<statusCode>" and customer income info is fetched with status "<statusCode>" and desc "<desc>"
 
     Examples: 
       | cardNbr          | accountId   | custId    | operatorId | statusCode | status | desc                     |

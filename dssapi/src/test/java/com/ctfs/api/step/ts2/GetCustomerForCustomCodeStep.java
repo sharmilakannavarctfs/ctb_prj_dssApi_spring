@@ -19,10 +19,8 @@ import com.ctfs.api.service.ts2.GetCustomerForCustomCodeService;
 import com.ctfs.api.step.AbstractStep;
 import com.ctfs.common.service.StepDefinitionDataManager;
 
-import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
 import io.restassured.response.Response;
 
 public class GetCustomerForCustomCodeStep extends AbstractStep {

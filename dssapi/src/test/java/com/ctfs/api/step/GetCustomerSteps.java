@@ -79,7 +79,7 @@ public class GetCustomerSteps extends AbstractStep {
 		return requestObj; 
 	}
 	
-	@Then("validate the status code as {string} and customer info is fetched with status {string} and desc {string}")
+	@Then("validate the status code as {string} and customer is fetched with status {string} and desc {string}")
 	public void validate_getCustomer(String statusCode,String status, String desc) throws Throwable {
 		try {
 			Response response = (Response)stepDefinitionDataManager.getStoredObjectMap().get("getCustomerRes");
