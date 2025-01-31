@@ -1,6 +1,8 @@
 package com.ctfs.api.pojos.request;
 
 
+import java.util.List;
+
 import org.springframework.stereotype.Component;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -24,6 +26,8 @@ public class TS2RequestPojo {
 	private String custId;
 	private String electronicVendorOptionId;
 	private int monthlyIncome;
+	private String workflowId;
+	private String[] ids;
 	private String emailAddr;
 	private String restartToken;
 	private String statusCode;

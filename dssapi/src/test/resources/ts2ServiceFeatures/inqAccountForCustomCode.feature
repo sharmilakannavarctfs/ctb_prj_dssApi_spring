@@ -13,10 +13,10 @@ Feature: This feature is to test inqAccountForCustomCode api of TS2 service
 
     Examples: 
       | cardNbr          | accountId   | custId    | operatorId | statusCode | status | desc |
-      #| 5446122020477629 | 00000839126 | 000209233 | SERVIC     |        200 |    000 |      |
-      #| 5446122020477629 |             | 000209233 | SERVIC     |        200 |    000 |      |
-      #| 5446122020477629 | 00000839126 |           | SERVIC     |        200 |    000 |      |
-      #| 5446122020477629 |             |           | SERVIC     |        200 |    000 |      |
+      | 5446122020477629 | 00000839126 | 000209233 | SERVIC     |        200 |    000 |      |
+      | 5446122020477629 |             | 000209233 | SERVIC     |        200 |    000 |      |
+      | 5446122020477629 | 00000839126 |           | SERVIC     |        200 |    000 |      |
+      | 5446122020477629 |             |           | SERVIC     |        200 |    000 |      |
 
   @tag2
   Scenario Outline: Testing inqAccountForCustomCode api with invalid carndNbr

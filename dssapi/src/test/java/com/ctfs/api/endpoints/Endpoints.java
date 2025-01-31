@@ -38,6 +38,8 @@ public interface Endpoints {
  static String ts2_getCustomerIncomeInfo = "/v1/getCustomerIncomeInfo"; 
  static String ts2_getCustomerInfo = "/v1/getCustomerInfo"; 
  static String ts2_InqAccountforCustomCode = "/v1/inqAccountforCustomCode"; 
+ static String ts2_inqAccountQueue = "/v1/inqAccountQueue"; 
+ static String ts2_inqAccountScores = "/v1/inqAccountScores"; 
  static String ts2_getCustomerForCustomCode= "/v1/getCustomerforCustomCode"; 
  static String ts2_getCustomerEmployerInfo = "/v1/getCustomerEmployerInfo"; 
  static String off_addorupdtnboMtx = "/v1/addOrUpdateNBORepricingMatrix"; 
