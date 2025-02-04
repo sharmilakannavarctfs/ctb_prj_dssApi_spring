@@ -1,6 +1,5 @@
 package com.ctfs.api.step;
 
-import java.util.HashMap;
 import java.util.Map;
 
 import org.slf4j.Logger;
@@ -8,7 +7,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.testng.Assert;
 
-import com.ctfs.api.pojos.request.TS2RequestPojo;
+import com.ctfs.api.pojos.request.ts2.TS2RequestPojo;
 import com.ctfs.api.pojos.response.GetAccount;
 import com.ctfs.api.service.GetAccountTestService;
 import com.ctfs.api.utils.DashProfileManagerUtils;
@@ -25,8 +24,8 @@ public class GetAccountTestSteps extends AbstractStep {
 	private TS2RequestPojo tS2RequestPojo;
 	
 
-    @Autowired
-    private DashProfileManagerUtils dpm ; 
+//    @Autowired
+//    private DashProfileManagerUtils dpm ; 
     
     @Autowired
     private GetAccountTestService service;
@@ -37,9 +36,9 @@ public class GetAccountTestSteps extends AbstractStep {
 	@Given("Perform post operation to hit getAccount from TS2-service using invalid {string} and {string}")
 	public void perform_post_operation_to_hit_get_Account_Test(String cardNo, String operID) throws Throwable {
 		try {
-			dpm.initializeTestProfile("group=ApiGeneric");
-//			service.getAccount(getPayload(cardNo,dpm.getAccountID(),dpm.getCustomerId(),operID));
-			service.getAccount(getPayload(dpm.getCardNbr(),dpm.getAccountID(),dpm.getCustomerId(),operID));
+//			dpm.initializeTestProfile("group=ApiGeneric");
+////			service.getAccount(getPayload(cardNo,dpm.getAccountID(),dpm.getCustomerId(),operID));
+//			service.getAccount(getPayload(dpm.getCardNbr(),dpm.getAccountID(),dpm.getCustomerId(),operID));
 			
 		} catch (Exception e) {			
 			e.printStackTrace();

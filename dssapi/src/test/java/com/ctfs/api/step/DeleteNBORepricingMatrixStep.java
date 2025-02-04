@@ -8,7 +8,7 @@ import org.testng.Assert;
 
 import com.ctfs.api.model.response.Ts2ResponsePojo;
 import com.ctfs.api.pojos.request.EnrollEStatement;
-import com.ctfs.api.pojos.request.TS2RequestPojo;
+import com.ctfs.api.pojos.request.ts2.TS2RequestPojo;
 import com.ctfs.api.pojos.request.AddOrUpdateNboRepricingMatrixRequest;
 import com.ctfs.api.pojos.request.DeleteNboRepricingMatrixRequest;
 import com.ctfs.api.pojos.response.GetAccount;

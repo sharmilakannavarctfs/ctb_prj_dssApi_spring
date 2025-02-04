@@ -6,7 +6,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.testng.Assert;
 
-import com.ctfs.api.pojos.request.TS2RequestPojo;
+import com.ctfs.api.pojos.request.ts2.TS2RequestPojo;
 import com.ctfs.api.pojos.response.GetAccount;
 import com.ctfs.api.service.EStatementDeenrollmentService;
 import com.ctfs.api.utils.DashProfileManagerUtils;
@@ -23,8 +23,8 @@ public class EStatementDeenrollment extends AbstractStep {
 	private TS2RequestPojo tS2RequestPojo;
 	
 
-    @Autowired
-    private DashProfileManagerUtils dpm ; 
+//    @Autowired
+//    private DashProfileManagerUtils dpm ; 
     
     @Autowired
     private EStatementDeenrollmentService service;

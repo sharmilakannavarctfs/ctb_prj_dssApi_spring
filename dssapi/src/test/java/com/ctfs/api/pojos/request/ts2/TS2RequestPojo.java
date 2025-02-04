@@ -1,4 +1,4 @@
-package com.ctfs.api.pojos.request;
+package com.ctfs.api.pojos.request.ts2;
 
 
 import java.util.List;
@@ -27,10 +27,12 @@ public class TS2RequestPojo {
 	private String electronicVendorOptionId;
 	private int monthlyIncome;
 	private String workflowId;
+	private String decisionArea;
+	private Boolean onlyCurr;
 	private String[] ids;
 	private String emailAddr;
 	private String restartToken;
 	private String statusCode;
 	private String operatorId;
-
+	
 }

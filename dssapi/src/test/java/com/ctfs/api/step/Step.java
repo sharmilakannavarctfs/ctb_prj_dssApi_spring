@@ -3,7 +3,7 @@ package com.ctfs.api.step;
 import com.ctfs.api.config.AbstractTestDefinition;
 import com.ctfs.api.model.response.LocationWeatherRootResponse;
 import com.ctfs.api.service.WeatherService;
-import com.ctfs.api.utils.DashProfileManagerUtils;
+//import com.ctfs.api.utils.DashProfileManagerUtils;
 import com.ctfs.common.service.StepDefinitionDataManager;
 import com.google.gson.Gson;
 import com.springbootjdbc.com.spring.jdbc.creditProfile.ProfileManager;
@@ -24,8 +24,8 @@ public class Step extends AbstractTestDefinition {
     @Autowired
     private StepDefinitionDataManager stepDefinitionDataManager;
 
-    @Autowired
-    private DashProfileManagerUtils dpm ; 
+//    @Autowired
+//    private DashProfileManagerUtils dpm ; 
     @Then("^The weather for (.*) should be returned$")
     public void theWeatherForDublinShouldBeReturned(String location) {
         final SoftAssertions softAssertions = new SoftAssertions();
@@ -38,8 +38,8 @@ public class Step extends AbstractTestDefinition {
     @Given("^The user has requested the weather for (.*)$")
     public void theUserHasRequestedTheWeatherForDublin(String location) throws Throwable {
         log.info("The user makes an request for the weather in : " + location);
-        dpm.initializeTestProfile("group=ApiGeneric");
-        System.out.println(dpm.getAccountID());
+//        dpm.initializeTestProfile("group=ApiGeneric");
+//        System.out.println(dpm.getAccountID());
         weatherService.getWeatherForLocation(location);
     }
 }

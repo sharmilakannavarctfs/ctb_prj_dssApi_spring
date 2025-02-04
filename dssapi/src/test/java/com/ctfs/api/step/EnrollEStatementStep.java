@@ -11,11 +11,11 @@ import org.testng.Assert;
 
 import com.ctfs.api.model.response.Ts2ResponsePojo;
 import com.ctfs.api.pojos.request.EnrollEStatement;
-import com.ctfs.api.pojos.request.TS2RequestPojo;
+import com.ctfs.api.pojos.request.ts2.TS2RequestPojo;
 import com.ctfs.api.pojos.response.GetAccount;
 import com.ctfs.api.service.EStatementDeenrollmentService;
 import com.ctfs.api.service.EnrollEStatementService;
-import com.ctfs.api.utils.DashProfileManagerUtils;
+//import com.ctfs.api.utils.DashProfileManagerUtils;
 import com.ctfs.common.service.StepDefinitionDataManager;
 
 import io.cucumber.java.en.Given;
@@ -29,8 +29,8 @@ public class EnrollEStatementStep extends AbstractStep {
 	private EnrollEStatement tS2RequestPojo;
 	
 
-    @Autowired
-    private DashProfileManagerUtils dpm ; 
+//    @Autowired
+//    private DashProfileManagerUtils dpm ; 
     
     @Autowired
     private EnrollEStatementService service;
