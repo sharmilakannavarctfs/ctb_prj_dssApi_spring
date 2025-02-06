@@ -1,18 +1,13 @@
 package com.ctfs.api.step.ts2;
 
-
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.testng.Assert;
 
 import com.ctfs.api.pojos.request.ts2.TS2RequestPojo;
-import com.ctfs.api.pojos.response.ts2response.AccountAlignedScores;
-import com.ctfs.api.pojos.response.ts2response.InqAccountforCustomCodeResponse;
 import com.ctfs.api.pojos.response.ts2response.GetCustomerPOJO;
-import com.ctfs.api.service.ts2.InqTriad8Service;
-import com.ctfs.api.service.ts2.inqAccountScoresService;
+import com.ctfs.api.service.ts2.InquireDisputeService;
 import com.ctfs.api.step.AbstractStep;
 import com.ctfs.common.service.StepDefinitionDataManager;
 
@@ -20,8 +15,8 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.restassured.response.Response;
 
-public class InqTriad8Step extends AbstractStep {
-	private final Logger log = LoggerFactory.getLogger(InqTriad8Step.class);
+public class InquireDisputeStep extends AbstractStep {
+	private final Logger log = LoggerFactory.getLogger(InquireDisputeStep.class);
 
 	@Autowired
 	private TS2RequestPojo requestObj;
@@ -29,12 +24,12 @@ public class InqTriad8Step extends AbstractStep {
 	static GetCustomerPOJO res_obj = null;
 
 	@Autowired
-	private InqTriad8Service service;
+	private InquireDisputeService service;
 
 	@Autowired
 	private StepDefinitionDataManager stepDefinitionDataManager;
 
-	@Given("post operation to request inqTriad8 api to get the triadInfoList with cardNbr {string} accountId {string} custId {string} decisionArea {string} onlyCurr {string} and operatorId {string}")
+	@Given("post operation to request inquireDispute api to get the inquireDisputeOutput with cardNbr {string} accountId {string} custId {string} decisionArea {string} onlyCurr {string} and operatorId {string}")
 	public void post_operation(String cardNbr, 
 			String accountId,
 			String custId,
@@ -57,10 +52,10 @@ public class InqTriad8Step extends AbstractStep {
 	}
 
 
-	@Then("validate the status code as {int} and triadInfoList is fetched with status {string} and desc {string}")
+	@Then("validate the status code as {int} and inquireDisputeOutput is fetched with status {string} and desc {string}")
 	public void validate_getCustomer(int statusCode,String status, String desc) throws Throwable {
 		try {
-			Response response = (Response)stepDefinitionDataManager.getStoredObjectMap().get("inqTriad8Response");
+			Response response = (Response)stepDefinitionDataManager.getStoredObjectMap().get("inquireDisputeResponse");
 			Assert.assertEquals(response.getStatusCode(),statusCode);
 			//			int code=response.getStatusCode();
 			if(response.getStatusCode()==200){
@@ -72,7 +67,7 @@ public class InqTriad8Step extends AbstractStep {
 					if(res_obj.getFaults().size()!=0) {
 						Assert.assertEquals(res_obj.getFaults().get(0).getDesc(), desc);
 					}
-					else Assert.assertNotNull(res_obj.getTriadInfoList());
+					else Assert.assertNotNull(res_obj.getInquireDisputeOutput());
 					
 					
 				}

@@ -5,12 +5,13 @@ import com.ctfs.api.pojos.request.ts2.TriadInfoList;
 import lombok.Data;
 
 @Data
-public class InqTriad8_POJO {
+public class GetCustomerPOJO {
 
 	private String status;
 	private String statusMsg;
 	private List<Fault> faults;
 	private String restartToken;
-	private TriadInfoList[] triadInfoList;
+	private List<TriadInfoList> triadInfoList;
+	private List<InquireDisputeOutput> inquireDisputeOutput;
 
 }
