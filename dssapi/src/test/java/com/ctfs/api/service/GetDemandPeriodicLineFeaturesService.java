@@ -19,7 +19,7 @@ import io.restassured.response.Response;
 @RetailBankService
 public class GetDemandPeriodicLineFeaturesService extends BaseExecutor {
 	protected GetDemandPeriodicLineFeaturesService(RestService restService, ApplicationProperties applicationProperties) {
-		super(restService, applicationProperties);
+		super(restService, applicationProperties,"TELUSWBSERVICE_V1");
 		// TODO Auto-generated constructor stub
 	}
 	
@@ -31,7 +31,7 @@ public class GetDemandPeriodicLineFeaturesService extends BaseExecutor {
 	public void getDemandPeriodicLineFeatures(Object requestbody) throws URISyntaxException { 
 		try {
 			setBody(requestbody);
-	        Response response = APIService.post(Endpoints.getDemandPeriodicLineFeatures); 
+	        Response response = post(Endpoints.getDemandPeriodicLineFeatures); 
 	        stepDefinitionDataManager.addToStoredObjectMap("DemandPeriodicLineFeaturesService", response);
 	        log.info("response getStatusLine: "+response.getStatusLine());
 	        log.info("response getBody: "+response.getBody().asPrettyString());
@@ -45,7 +45,7 @@ public class GetDemandPeriodicLineFeaturesService extends BaseExecutor {
 		try {
 			setBody(requestbody);
 			setHeader(token);
-			Response response = APIService.post(Endpoints.getDemandPeriodicLineFeatures);
+			Response response = post(Endpoints.getDemandPeriodicLineFeatures);
 			stepDefinitionDataManager.addToStoredObjectMap("DemandPeriodicLineFeaturesService", response);
 			log.info("request body: " + requestbody);
 			log.info("response getStatusLine: " + response.getStatusLine());
@@ -59,7 +59,7 @@ public class GetDemandPeriodicLineFeaturesService extends BaseExecutor {
 		try {
 			setBody(requestbody);
 			setHeader(pagination);
-			Response response = APIService.post(Endpoints.getDemandPeriodicLineFeatures);
+			Response response = post(Endpoints.getDemandPeriodicLineFeatures);
 			stepDefinitionDataManager.addToStoredObjectMap("DemandPeriodicLineFeaturesService", response);
 			log.info("request body: " + requestbody);
 			log.info("response getStatusLine: " + response.getStatusLine());

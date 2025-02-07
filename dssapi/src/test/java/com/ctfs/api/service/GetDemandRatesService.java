@@ -20,7 +20,7 @@ import io.restassured.response.Response;
 public class GetDemandRatesService extends BaseExecutor {
 	
 	protected GetDemandRatesService(RestService restService, ApplicationProperties applicationProperties) {
-		super(restService, applicationProperties);
+		super(restService, applicationProperties,"TELUSWBSERVICE_V1");
 		// TODO Auto-generated constructor stub
 	}
 	
@@ -32,7 +32,7 @@ public class GetDemandRatesService extends BaseExecutor {
 	public void getDemandRates(Object requestbody) throws URISyntaxException { 
 		try {
 			setBody(requestbody);
-	        Response response = APIService.post(Endpoints.getDemandRates); 
+	        Response response = post(Endpoints.getDemandRates); 
 	        stepDefinitionDataManager.addToStoredObjectMap("DemandRatesService", response);
 	        log.info("response getStatusLine: "+response.getStatusLine());
 	        log.info("response getBody: "+response.getBody().asPrettyString());

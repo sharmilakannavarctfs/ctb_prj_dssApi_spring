@@ -20,7 +20,8 @@ import io.restassured.response.Response;
 public class GetCustomerService extends BaseExecutor{
 
 	protected GetCustomerService(RestService restService, ApplicationProperties applicationProperties) {
-		super(restService, applicationProperties);
+
+		super(restService, applicationProperties,"TELUSWBSERVICE_V1");
 		// TODO Auto-generated constructor stub
 	}
 
@@ -33,7 +34,7 @@ public class GetCustomerService extends BaseExecutor{
 		try {
 			log.info("request body: "+ requestbody,true);
 			setBody(requestbody);
-			Response response = APIService.post(Endpoints.ts2_getCustomer);
+			Response response = post(Endpoints.ts2_getCustomer);
 			stepDefinitionDataManager.addToStoredObjectMap("getCustomerRes", response);
 			log.info("response getStatusLine: " + response.getStatusLine());
 			log.info("response getBody: " + response.getBody().asPrettyString());

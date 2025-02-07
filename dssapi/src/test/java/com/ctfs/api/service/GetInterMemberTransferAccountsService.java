@@ -20,7 +20,7 @@ import io.restassured.response.Response;
 public class GetInterMemberTransferAccountsService extends BaseExecutor {
 	
 	protected GetInterMemberTransferAccountsService(RestService restService, ApplicationProperties applicationProperties) {
-		super(restService, applicationProperties);
+		super(restService, applicationProperties,"TELUSWBSERVICE_V1");
 		// TODO Auto-generated constructor stub
 	}
 	
@@ -32,7 +32,7 @@ public class GetInterMemberTransferAccountsService extends BaseExecutor {
 	public void getInterMemberTransferAccounts(Object requestbody) throws URISyntaxException { 
 		try {
 			setBody(requestbody);
-	        Response response = APIService.post(Endpoints.getInterMemberTransferAccounts); 
+	        Response response = post(Endpoints.getInterMemberTransferAccounts); 
 	        stepDefinitionDataManager.addToStoredObjectMap("InterMemberTransferAccountsService", response);
 	        log.info("response getStatusLine: "+response.getStatusLine());
 	        log.info("response getBody: "+response.getBody().asPrettyString());

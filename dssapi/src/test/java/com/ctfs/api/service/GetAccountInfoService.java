@@ -21,7 +21,8 @@ import io.restassured.response.Response;
 public class GetAccountInfoService extends BaseExecutor{
 
 	protected GetAccountInfoService(RestService restService, ApplicationProperties applicationProperties) {
-		super(restService, applicationProperties);
+		super(restService, applicationProperties,"TS2SERVICE_V1");
+
 		// TODO Auto-generated constructor stub
 	}
 //	protected GetAccountInfoService(RestService restService, AtomicServices atomicService) {
@@ -39,7 +40,7 @@ public class GetAccountInfoService extends BaseExecutor{
 		try {
 			log.info("request body: "+ requestbody,true);
 			setBody(requestbody);
-			Response response = APIService.post(Endpoints.ts2_getAccountInfo);
+			Response response = post(Endpoints.ts2_getAccountInfo);
 			stepDefinitionDataManager.addToStoredObjectMap("getAccountInfoRes", response);
 			log.info("response getStatusLine: " + response.getStatusLine());
 			log.info("response getBody: " + response.getBody().asPrettyString());

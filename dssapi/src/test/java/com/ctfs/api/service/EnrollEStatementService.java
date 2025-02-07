@@ -20,7 +20,8 @@ import io.restassured.response.Response;
 public class EnrollEStatementService extends BaseExecutor{
 
 	protected EnrollEStatementService(RestService restService, ApplicationProperties applicationProperties) {
-		super(restService, applicationProperties);
+		super(restService, applicationProperties,"TS2SERVICE_V1");
+
 		// TODO Auto-generated constructor stub
 	}
 
@@ -33,7 +34,7 @@ public class EnrollEStatementService extends BaseExecutor{
 		try {
 			log.info("request body: "+ requestbody,true);
 			setBody(requestbody);
-			Response response = APIService.post(Endpoints.ts2_enrollestatement);
+			Response response = post(Endpoints.ts2_enrollestatement);
 			stepDefinitionDataManager.addToStoredObjectMap("enrollEstatementresponse", response);
 			log.info("response getStatusLine: " + response.getStatusLine());
 			log.info("response getBody: " + response.getBody().asPrettyString());

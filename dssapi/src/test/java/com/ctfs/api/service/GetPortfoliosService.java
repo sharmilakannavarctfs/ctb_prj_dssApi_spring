@@ -20,7 +20,7 @@ import io.restassured.response.Response;
 public class GetPortfoliosService extends BaseExecutor{
 
 	protected GetPortfoliosService(RestService restService, ApplicationProperties applicationProperties) {
-		super(restService, applicationProperties);
+		super(restService, applicationProperties,"TELUSWBSERVICE_V1");
 	}
 
 	private final Logger log = LoggerFactory.getLogger(GetPortfoliosService.class);
@@ -31,7 +31,7 @@ public class GetPortfoliosService extends BaseExecutor{
 	public void getPortfolios(Object requestbody) throws URISyntaxException {
 		try {
 			setBody(requestbody);
-			Response response = APIService.post(Endpoints.getPortfolios);
+			Response response = post(Endpoints.getPortfolios);
 			stepDefinitionDataManager.addToStoredObjectMap("PortfoliosService", response);
 			log.info("request body: " + requestbody);
 			log.info("response getStatusLine: " + response.getStatusLine());
@@ -46,7 +46,7 @@ public class GetPortfoliosService extends BaseExecutor{
 		try {
 			setBody(requestbody);
 			setHeader(token);
-			Response response = APIService.post(Endpoints.getPortfolios);
+			Response response = post(Endpoints.getPortfolios);
 			stepDefinitionDataManager.addToStoredObjectMap("PortfoliosService", response);
 			log.info("request body: " + requestbody);
 			log.info("response getStatusLine: " + response.getStatusLine());
@@ -60,7 +60,7 @@ public class GetPortfoliosService extends BaseExecutor{
 		try {
 			setBody(requestbody);
 			setHeader(pagination);
-			Response response = APIService.post(Endpoints.getPortfolios);
+			Response response = post(Endpoints.getPortfolios);
 			stepDefinitionDataManager.addToStoredObjectMap("PortfoliosService", response);
 			log.info("request body: " + requestbody);
 			log.info("response getStatusLine: " + response.getStatusLine());

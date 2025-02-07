@@ -20,7 +20,7 @@ import io.restassured.response.Response;
 public class UpdateCustomerService extends BaseExecutor{
 
 	protected UpdateCustomerService(RestService restService, ApplicationProperties applicationProperties) {
-		super(restService, applicationProperties);
+		super(restService, applicationProperties,"TELUSWBSERVICE_V1");
 	}
 	
 	private final Logger log = LoggerFactory.getLogger(UpdateCustomerService.class);
@@ -32,7 +32,7 @@ public class UpdateCustomerService extends BaseExecutor{
 		try {
 			log.info("request body: "+ requestbody);
 			setBody(requestbody);
-			Response response = APIService.post(Endpoints.updateCustomer);
+			Response response = post(Endpoints.updateCustomer);
 			stepDefinitionDataManager.addToStoredObjectMap("UpdateCustomerService", response);
 			log.info("response getStatusLine: " + response.getStatusLine());
 			log.info("response getBody: " + response.getBody().asPrettyString());
