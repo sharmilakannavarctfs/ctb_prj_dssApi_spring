@@ -20,7 +20,7 @@ import io.restassured.response.Response;
 public class GetAccountTestService extends BaseExecutor{
 
 	protected GetAccountTestService(RestService restService, ApplicationProperties applicationProperties) {
-		super(restService, applicationProperties);
+		super(restService, applicationProperties,"TS2SERVICE_V1");
 		// TODO Auto-generated constructor stub
 	}
 
@@ -33,7 +33,7 @@ public class GetAccountTestService extends BaseExecutor{
 		try {
 			log.info("request body: "+ requestbody);
 			setBody(requestbody);
-			Response response = APIService.post(Endpoints.ts2_getAccount);
+			Response response = post(Endpoints.ts2_getAccount);
 			stepDefinitionDataManager.addToStoredObjectMap("getAccountResponse", response);
 			log.info("response getStatusLine: " + response.getStatusLine());
 			log.info("response getBody: " + response.getBody().asPrettyString());

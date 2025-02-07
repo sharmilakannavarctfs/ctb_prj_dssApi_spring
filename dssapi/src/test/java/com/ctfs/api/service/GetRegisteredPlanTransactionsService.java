@@ -21,7 +21,7 @@ public class GetRegisteredPlanTransactionsService extends BaseExecutor{
 
 	protected GetRegisteredPlanTransactionsService(RestService restService,
 			ApplicationProperties applicationProperties) {
-		super(restService, applicationProperties);
+		super(restService, applicationProperties,"TELUSWBSERVICE_V1");
 	}
 
 	private final Logger log = LoggerFactory.getLogger(GetRegisteredPlanTransactionsService.class);
@@ -33,7 +33,7 @@ public class GetRegisteredPlanTransactionsService extends BaseExecutor{
 		try {
 			log.info("request payload: " + requestbody);
 			setBody(requestbody);
-			Response response = APIService.post(Endpoints.getRegisteredPlanTransactions);
+			Response response = post(Endpoints.getRegisteredPlanTransactions);
 			stepDefinitionDataManager.addToStoredObjectMap("RegisteredPlanTransactionsService", response);
 			log.info("response getStatusLine: " + response.getStatusLine());
 			log.info("response getBody: " + response.getBody().asPrettyString());
@@ -48,7 +48,7 @@ public class GetRegisteredPlanTransactionsService extends BaseExecutor{
 			log.info("request payload: " + requestbody);
 			setHeader(token);
 			setBody(requestbody);
-			Response response = APIService.post(Endpoints.getRegisteredPlanTransactions);
+			Response response = post(Endpoints.getRegisteredPlanTransactions);
 			stepDefinitionDataManager.addToStoredObjectMap("RegisteredPlanTransactionsService", response);
 			log.info("response getStatusLine: " + response.getStatusLine());
 			log.info("response getBody: " + response.getBody().asPrettyString());
@@ -63,7 +63,7 @@ public class GetRegisteredPlanTransactionsService extends BaseExecutor{
 			log.info("request payload: " + requestbody);
 			setHeader(pagination);
 			setBody(requestbody);
-			Response response = APIService.post(Endpoints.getRegisteredPlanTransactions);
+			Response response = post(Endpoints.getRegisteredPlanTransactions);
 			stepDefinitionDataManager.addToStoredObjectMap("RegisteredPlanTransactionsService", response);
 			log.info("response getStatusLine: " + response.getStatusLine());
 			log.info("response getBody: " + response.getBody().asPrettyString());

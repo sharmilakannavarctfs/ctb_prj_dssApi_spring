@@ -20,7 +20,7 @@ import io.restassured.response.Response;
 public class GetProductTransactionService extends BaseExecutor{
 	
 protected GetProductTransactionService(RestService restService, ApplicationProperties applicationProperties) {
-		super(restService, applicationProperties);
+	super(restService, applicationProperties,"TELUSWBSERVICE_V1");
 		// TODO Auto-generated constructor stub
 	}
 
@@ -34,7 +34,7 @@ private final Logger log = LoggerFactory.getLogger(GetProductTransactionService.
 	public void getProductTransaction(Object requestbody) throws URISyntaxException { 
 		try {
 			setBody(requestbody);
-	        Response response = APIService.post(Endpoints.postEcho); 
+	        Response response = post(Endpoints.postEcho); 
 	        stepDefinitionDataManager.addToStoredObjectMap("ProductTransactionService", response);
 	        log.info("response getStatusLine: "+response.getStatusLine());
 	        log.info("response getBody: "+response.getBody().asPrettyString());
@@ -49,7 +49,7 @@ private final Logger log = LoggerFactory.getLogger(GetProductTransactionService.
 		try {
 			setBody(requestbody);
 			setHeader(token);
-			Response response = APIService.post(Endpoints.postEcho);
+			Response response = post(Endpoints.postEcho);
 			stepDefinitionDataManager.addToStoredObjectMap("ProductTransactionService", response);
 			log.info("request body: " + requestbody);
 			log.info("response getStatusLine: " + response.getStatusLine());
@@ -63,7 +63,7 @@ private final Logger log = LoggerFactory.getLogger(GetProductTransactionService.
 		try {
 			setBody(requestbody);
 			setHeader(pagination);
-			Response response = APIService.post(Endpoints.postEcho);
+			Response response = post(Endpoints.postEcho);
 			stepDefinitionDataManager.addToStoredObjectMap("ProductTransactionService", response);
 			log.info("request body: " + requestbody);
 			log.info("response getStatusLine: " + response.getStatusLine());

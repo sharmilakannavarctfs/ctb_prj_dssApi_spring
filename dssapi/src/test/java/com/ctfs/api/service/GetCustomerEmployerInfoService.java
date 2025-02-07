@@ -20,7 +20,8 @@ import io.restassured.response.Response;
 public class GetCustomerEmployerInfoService extends BaseExecutor{
 
 	protected GetCustomerEmployerInfoService(RestService restService, ApplicationProperties applicationProperties) {
-		super(restService, applicationProperties);
+		super(restService, applicationProperties,"TS2SERVICE_V1");
+
 		// TODO Auto-generated constructor stub
 	}
 
@@ -33,7 +34,7 @@ public class GetCustomerEmployerInfoService extends BaseExecutor{
 		try {
 			log.info("request body: "+ requestbody,true);
 			setBody(requestbody);
-			Response response = APIService.post(Endpoints.ts2_getCustomerEmployerInfo);
+			Response response = post(Endpoints.ts2_getCustomerEmployerInfo);
 			stepDefinitionDataManager.addToStoredObjectMap("getCustomerEmployerInfoRes", response);
 			log.info("response getStatusLine: " + response.getStatusLine());
 			log.info("response getBody: " + response.getBody().asPrettyString());

@@ -19,7 +19,7 @@ import io.restassured.response.Response;
 @RetailBankService
 public class GetDemandInterestRateService extends BaseExecutor{
 	protected GetDemandInterestRateService(RestService restService, ApplicationProperties applicationProperties) {
-		super(restService, applicationProperties);
+		super(restService, applicationProperties,"TELUSWBSERVICE_V1");
 		// TODO Auto-generated constructor stub
 	}
 	
@@ -31,7 +31,7 @@ public class GetDemandInterestRateService extends BaseExecutor{
 	public void getDemandInterestRates(Object requestbody) throws URISyntaxException { 
 		try {
 			setBody(requestbody);
-	        Response response = APIService.post(Endpoints.getDemandInterestRate); 
+	        Response response = post(Endpoints.getDemandInterestRate); 
 	        stepDefinitionDataManager.addToStoredObjectMap("DemandInterestRateService", response);
 	        log.info("response getStatusLine: "+response.getStatusLine());
 	        log.info("response getBody: "+response.getBody().asPrettyString());
@@ -45,7 +45,7 @@ public class GetDemandInterestRateService extends BaseExecutor{
 		try {
 			setBody(requestbody);
 			setHeader(token);
-			Response response = APIService.post(Endpoints.getDemandInterestRate);
+			Response response = post(Endpoints.getDemandInterestRate);
 			stepDefinitionDataManager.addToStoredObjectMap("DemandInterestRateService", response);
 			log.info("request body: " + requestbody);
 			log.info("response getStatusLine: " + response.getStatusLine());
@@ -59,7 +59,7 @@ public class GetDemandInterestRateService extends BaseExecutor{
 		try {
 			setBody(requestbody);
 			setHeader(pagination);
-			Response response = APIService.post(Endpoints.getDemandInterestRate);
+			Response response = post(Endpoints.getDemandInterestRate);
 			stepDefinitionDataManager.addToStoredObjectMap("DemandInterestRateService", response);
 			log.info("request body: " + requestbody);
 			log.info("response getStatusLine: " + response.getStatusLine());

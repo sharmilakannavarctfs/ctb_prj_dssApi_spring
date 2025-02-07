@@ -20,7 +20,8 @@ import io.restassured.response.Response;
 public class GetCustomerProductsService extends BaseExecutor {
 	
 	protected GetCustomerProductsService(RestService restService, ApplicationProperties applicationProperties) {
-		super(restService, applicationProperties);
+		super(restService, applicationProperties,"TELUSWBSERVICE_V1");
+
 		// TODO Auto-generated constructor stub
 	}
 	
@@ -32,7 +33,7 @@ public class GetCustomerProductsService extends BaseExecutor {
 	public void getCustomerProducts(Object requestbody) throws URISyntaxException { 
 		try {
 			setBody(requestbody);
-	        Response response = APIService.post(Endpoints.getCustomerProducts); 
+	        Response response = post(Endpoints.getCustomerProducts); 
 	        stepDefinitionDataManager.addToStoredObjectMap("CustomerProductsService", response);
 	        log.info("response getStatusLine: "+response.getStatusLine());
 	        log.info("response getBody: "+response.getBody().asPrettyString());
@@ -46,7 +47,7 @@ public class GetCustomerProductsService extends BaseExecutor {
 		try {
 			setBody(requestbody);
 			setHeader(token);
-			Response response = APIService.post(Endpoints.getCustomerProducts);
+			Response response = post(Endpoints.getCustomerProducts);
 			stepDefinitionDataManager.addToStoredObjectMap("CustomerProductsService", response);
 			log.info("request body: " + requestbody);
 			log.info("response getStatusLine: " + response.getStatusLine());
@@ -60,7 +61,7 @@ public class GetCustomerProductsService extends BaseExecutor {
 		try {
 			setBody(requestbody);
 			setHeader(pagination);
-			Response response = APIService.post(Endpoints.getCustomerProducts);
+			Response response = post(Endpoints.getCustomerProducts);
 			stepDefinitionDataManager.addToStoredObjectMap("CustomerProductsService", response);
 			log.info("request body: " + requestbody);
 			log.info("response getStatusLine: " + response.getStatusLine());

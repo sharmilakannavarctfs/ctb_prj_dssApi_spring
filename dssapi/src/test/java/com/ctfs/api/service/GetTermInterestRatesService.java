@@ -20,7 +20,7 @@ import io.restassured.response.Response;
 public class GetTermInterestRatesService extends BaseExecutor {
 
 	protected GetTermInterestRatesService(RestService restService, ApplicationProperties applicationProperties) {
-		super(restService, applicationProperties);
+		super(restService, applicationProperties,"TELUSWBSERVICE_V1");
 	}
 
 	private final Logger log = LoggerFactory.getLogger(GetTermInterestRatesService.class);
@@ -32,7 +32,7 @@ public class GetTermInterestRatesService extends BaseExecutor {
 		try {
 			log.info("request payload: " + requestBody);
 			setBody(requestBody);
-			Response response = APIService.post(Endpoints.getTermInterestRates);
+			Response response = post(Endpoints.getTermInterestRates);
 			stepDefinitionDataManager.addToStoredObjectMap("TermInterestRatesService", response);
 			log.info("response getStatusLine: " + response.getStatusLine());
 			log.info("response getBody: " + response.getBody().asPrettyString());
@@ -47,7 +47,7 @@ public class GetTermInterestRatesService extends BaseExecutor {
 			log.info("request payload: " + requestBody);
 			setHeader(token);
 			setBody(requestBody);
-			Response response = APIService.post(Endpoints.getTermInterestRates);
+			Response response = post(Endpoints.getTermInterestRates);
 			stepDefinitionDataManager.addToStoredObjectMap("TermInterestRatesService", response);
 			log.info("response getStatusLine: " + response.getStatusLine());
 			log.info("response getBody: " + response.getBody().asPrettyString());
@@ -62,7 +62,7 @@ public class GetTermInterestRatesService extends BaseExecutor {
 			log.info("request payload: " + requestBody);
 			setHeader(pagination);
 			setBody(requestBody);
-			Response response = APIService.post(Endpoints.getTermInterestRates);
+			Response response = post(Endpoints.getTermInterestRates);
 			stepDefinitionDataManager.addToStoredObjectMap("TermInterestRatesService", response);
 			log.info("response getStatusLine: " + response.getStatusLine());
 			log.info("response getBody: " + response.getBody().asPrettyString());

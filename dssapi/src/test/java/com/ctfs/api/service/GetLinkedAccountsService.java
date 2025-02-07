@@ -20,7 +20,7 @@ import io.restassured.response.Response;
 public class GetLinkedAccountsService extends BaseExecutor{
 	
 	protected GetLinkedAccountsService(RestService restService, ApplicationProperties applicationProperties) {
-		super(restService, applicationProperties);
+		super(restService, applicationProperties,"TELUSWBSERVICE_V1");
 		// TODO Auto-generated constructor stub
 	}
 	
@@ -33,7 +33,7 @@ public class GetLinkedAccountsService extends BaseExecutor{
 	public void getLinkedAccounts(Object requestbody) throws URISyntaxException { 
 		try {
 			setBody(requestbody);
-	        Response response = APIService.post(Endpoints.getLinkedAccounts); 
+	        Response response = post(Endpoints.getLinkedAccounts); 
 	        stepDefinitionDataManager.addToStoredObjectMap("LinkedAccountsService", response);
 	        log.info("response getStatusLine: "+response.getStatusLine());
 	        log.info("response getBody: "+response.getBody().asPrettyString());
@@ -47,7 +47,7 @@ public class GetLinkedAccountsService extends BaseExecutor{
 		try {
 			setBody(requestbody);
 			setHeader(token);
-			Response response = APIService.post(Endpoints.getLinkedAccounts);
+			Response response = post(Endpoints.getLinkedAccounts);
 			stepDefinitionDataManager.addToStoredObjectMap("LinkedAccountsService", response);
 			log.info("request body: " + requestbody);
 			log.info("response getStatusLine: " + response.getStatusLine());
@@ -61,7 +61,7 @@ public class GetLinkedAccountsService extends BaseExecutor{
 		try {
 			setBody(requestbody);
 			setHeader(pagination);
-			Response response = APIService.post(Endpoints.getLinkedAccounts);
+			Response response = post(Endpoints.getLinkedAccounts);
 			stepDefinitionDataManager.addToStoredObjectMap("LinkedAccountsService", response);
 			log.info("request body: " + requestbody);
 			log.info("response getStatusLine: " + response.getStatusLine());

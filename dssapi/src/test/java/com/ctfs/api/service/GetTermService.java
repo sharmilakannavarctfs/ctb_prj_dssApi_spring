@@ -20,7 +20,7 @@ import io.restassured.response.Response;
 public class GetTermService extends BaseExecutor {
 
 	protected GetTermService(RestService restService, ApplicationProperties applicationProperties) {
-		super(restService, applicationProperties);
+		super(restService, applicationProperties,"TELUSWBSERVICE_V1");
 	}
 
 	private final Logger log = LoggerFactory.getLogger(GetTermService.class);
@@ -32,7 +32,7 @@ public class GetTermService extends BaseExecutor {
 		try {
 			log.info("request body: "+ requestbody);
 			setBody(requestbody);
-			Response response = APIService.post(Endpoints.getTerm);
+			Response response = post(Endpoints.getTerm);
 			stepDefinitionDataManager.addToStoredObjectMap("TermService", response);
 			log.info("response getStatusLine: " + response.getStatusLine());
 			log.info("response getBody: " + response.getBody().asPrettyString());
@@ -47,7 +47,7 @@ public class GetTermService extends BaseExecutor {
 			log.info("request body: "+ requestbody);
 			setHeader(token);
 			setBody(requestbody);
-			Response response = APIService.post(Endpoints.getTerm);
+			Response response = post(Endpoints.getTerm);
 			stepDefinitionDataManager.addToStoredObjectMap("TermService", response);
 			log.info("response getStatusLine: " + response.getStatusLine());
 			log.info("response getBody: " + response.getBody().asPrettyString());
@@ -62,7 +62,7 @@ public class GetTermService extends BaseExecutor {
 			log.info("request body: "+ requestbody);
 			setHeader(pagination);
 			setBody(requestbody);
-			Response response = APIService.post(Endpoints.getTerm);
+			Response response = post(Endpoints.getTerm);
 			stepDefinitionDataManager.addToStoredObjectMap("TermService", response);
 			log.info("response getStatusLine: " + response.getStatusLine());
 			log.info("response getBody: " + response.getBody().asPrettyString());
