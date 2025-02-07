@@ -16,7 +16,7 @@ import com.ctfs.api.pojos.request.GetPortfoliosRequestPojo;
 import com.ctfs.api.pojos.request.TermPeriodicLineFeatureRequestPojo;
 import com.ctfs.api.pojos.response.GetPortfoliosResponsePojo;
 import com.ctfs.api.pojos.response.TermPeriodicLineFeatureResponsePojo;
-import com.ctfs.api.service.GetTermPeriodicLineFeatureService;
+import com.ctfs.api.service.telus.GetTermPeriodicLineFeatureService;
 import com.ctfs.api.session.SessionContext;
 import com.ctfs.common.service.StepDefinitionDataManager;
 import com.ctfs.temenos.api.util.TransactUtil;

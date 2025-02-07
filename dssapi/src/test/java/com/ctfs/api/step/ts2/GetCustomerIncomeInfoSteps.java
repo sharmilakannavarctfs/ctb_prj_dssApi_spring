@@ -1,4 +1,4 @@
-package com.ctfs.api.step;
+package com.ctfs.api.step.ts2;
 
 
 import org.slf4j.Logger;
@@ -16,6 +16,8 @@ import com.ctfs.api.service.telus.GetCustomerService;
 import com.ctfs.api.service.ts2.EStatementDeenrollmentService;
 import com.ctfs.api.service.ts2.EvaluateCreditLimitService;
 import com.ctfs.api.service.ts2.GetAccountInfoService;
+import com.ctfs.api.service.ts2.GetCustomerIncomeInfoService;
+import com.ctfs.api.step.AbstractStep;
 import com.ctfs.api.utils.DashProfileManagerUtils;
 import com.ctfs.common.service.StepDefinitionDataManager;
 
@@ -23,24 +25,21 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.restassured.response.Response;
 
-public class GetCustomerSteps extends AbstractStep {
-	private final Logger log = LoggerFactory.getLogger(GetCustomerSteps.class);
+public class GetCustomerIncomeInfoSteps extends AbstractStep {
+	private final Logger log = LoggerFactory.getLogger(GetCustomerIncomeInfoSteps.class);
 	
 	@Autowired
 	private TS2RequestPojo requestObj;
 	
 	static GetCustomerPOJO res_obj = null;
-
-//    @Autowired
-//    private DashProfileManagerUtils dpm ; 
     
     @Autowired
-    private GetCustomerService service;
+    private GetCustomerIncomeInfoService service;
     
     @Autowired
 	private StepDefinitionDataManager stepDefinitionDataManager;
     
-    @Given("post operation to request getCustomer api to get the customer information on {string} {string} {string} and {string}")
+    @Given("post operation to request getCustomerIncome api to get the customerIncome information on {string} {string} {string} and {string}")
 	public void post_operation(String cardNbr, 
 			String accountId,
 			String custId,
@@ -48,7 +47,7 @@ public class GetCustomerSteps extends AbstractStep {
 			) throws Throwable {
 		try {
 //			dpm.initializeTestProfile("group=ApiGeneric");
-			service.getCustomer(getPayload(cardNbr,
+			service.getCustomerIncomeInfo(getPayload(cardNbr,
 				 	accountId,
 				 	custId,
 					op_id));
@@ -79,10 +78,10 @@ public class GetCustomerSteps extends AbstractStep {
 		return requestObj; 
 	}
 	
-	@Then("validate the status code as {string} and customer is fetched with status {string} and desc {string}")
+	@Then("validate the status code as {string} and customer income info is fetched with status {string} and desc {string}")
 	public void validate_getCustomer(String statusCode,String status, String desc) throws Throwable {
 		try {
-			Response response = (Response)stepDefinitionDataManager.getStoredObjectMap().get("getCustomerRes");
+			Response response = (Response)stepDefinitionDataManager.getStoredObjectMap().get("getCustomerIncomeInfoRes");
 			
 			Assert.assertTrue(statusCode.equals(String.valueOf(response.getStatusCode())));
 //			int code=response.getStatusCode();
@@ -93,7 +92,7 @@ public class GetCustomerSteps extends AbstractStep {
 				if (res_obj.getStatus().equals("000")) {
 					Assert.assertEquals(res_obj.getStatusMsg(), "passed");
 					Assert.assertTrue(res_obj.getFaults().length==0);
-					Assert.assertTrue(res_obj.getCustomer()!=null);
+					Assert.assertTrue(res_obj.getDateLastMonthlyIncome()!=null);
 				}
 				if (res_obj.getStatus().equals("999")) {
 					Assert.assertEquals(res_obj.getStatusMsg(), "failed");

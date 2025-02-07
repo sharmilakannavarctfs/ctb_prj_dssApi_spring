@@ -1,4 +1,4 @@
-package com.ctfs.api.step;
+package com.ctfs.api.step.ts2;
 
 
 import org.slf4j.Logger;
@@ -10,12 +10,9 @@ import com.ctfs.api.model.response.Ts2ResponsePojo;
 import com.ctfs.api.pojos.request.EnrollEStatement;
 import com.ctfs.api.pojos.request.ts2.TS2RequestPojo;
 import com.ctfs.api.pojos.response.GetAccount;
-import com.ctfs.api.pojos.response.GetAccountInfo_res_pojo;
-import com.ctfs.api.pojos.response.GetCustomerPOJO;
-import com.ctfs.api.service.telus.GetCustomerService;
 import com.ctfs.api.service.ts2.EStatementDeenrollmentService;
 import com.ctfs.api.service.ts2.EvaluateCreditLimitService;
-import com.ctfs.api.service.ts2.GetAccountInfoService;
+import com.ctfs.api.step.AbstractStep;
 import com.ctfs.api.utils.DashProfileManagerUtils;
 import com.ctfs.common.service.StepDefinitionDataManager;
 
@@ -23,34 +20,32 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.restassured.response.Response;
 
-public class GetCustomerSteps extends AbstractStep {
-	private final Logger log = LoggerFactory.getLogger(GetCustomerSteps.class);
+public class EvaluateCreditLimitStep extends AbstractStep {
+	private final Logger log = LoggerFactory.getLogger(EvaluateCreditLimitStep.class);
 	
 	@Autowired
-	private TS2RequestPojo requestObj;
+	private TS2RequestPojo tS2RequestPojo;
 	
-	static GetCustomerPOJO res_obj = null;
+	static Ts2ResponsePojo res_obj ;
 
 //    @Autowired
 //    private DashProfileManagerUtils dpm ; 
     
     @Autowired
-    private GetCustomerService service;
+    private EvaluateCreditLimitService service;
     
     @Autowired
 	private StepDefinitionDataManager stepDefinitionDataManager;
     
-    @Given("post operation to request getCustomer api to get the customer information on {string} {string} {string} and {string}")
+    @Given("Post operation to hit evaluateCreditLimit from TS2-service using valid {string} {string} and {string}")
 	public void post_operation(String cardNbr, 
-			String accountId,
-			String custId,
+			String monthlyIncome,
 			String op_id
 			) throws Throwable {
 		try {
 //			dpm.initializeTestProfile("group=ApiGeneric");
-			service.getCustomer(getPayload(cardNbr,
-				 	accountId,
-				 	custId,
+			service.evaluateCreditLimit(getPayload(cardNbr,
+				 	monthlyIncome,
 					op_id));
 			
 		} catch (Exception e) {			
@@ -61,39 +56,32 @@ public class GetCustomerSteps extends AbstractStep {
 
 	
 	public TS2RequestPojo getPayload(String cardNbr, 
-			String accountId, 
-			String custId, 
+			String monthlyIncome, 
 			String operator_id){
-		if(cardNbr.equals("")) requestObj.setCardNbr(null);
-		else requestObj.setCardNbr(cardNbr);
-		
-		if(operator_id.equals("")) requestObj.setOperatorId(null);
-		else requestObj.setOperatorId(operator_id);
-		
-		if(accountId.equals("")) requestObj.setAccountId(null);
-		else requestObj.setAccountId(accountId);
-		
-		if(custId.equals("")) requestObj.setCustId(null);
-		else requestObj.setCustId(custId);
-		
-		return requestObj; 
+		if(cardNbr.equals("")) tS2RequestPojo.setCardNbr(null);
+		else tS2RequestPojo.setCardNbr(cardNbr);
+		if(operator_id.equals("")) tS2RequestPojo.setOperatorId(null);
+		else tS2RequestPojo.setOperatorId(operator_id);
+		if(monthlyIncome.equals("")) tS2RequestPojo.setElectronicVendorOptionId(null);
+		else tS2RequestPojo.setMonthlyIncome(Integer.parseInt(monthlyIncome));
+		return tS2RequestPojo; 
 	}
 	
-	@Then("validate the status code as {string} and customer is fetched with status {string} and desc {string}")
-	public void validate_getCustomer(String statusCode,String status, String desc) throws Throwable {
+	@Then("Validate evaluateCreditLimit DSS api response status code as {string} and fault description as {string}")
+	public void validate_evaluate_creditlimit_TestResponse(String statusCode,String desc) throws Throwable {
 		try {
-			Response response = (Response)stepDefinitionDataManager.getStoredObjectMap().get("getCustomerRes");
+			Response response = (Response)stepDefinitionDataManager.getStoredObjectMap().get("evaluateCreditLimitResponse");
 			
 			Assert.assertTrue(statusCode.equals(String.valueOf(response.getStatusCode())));
 //			int code=response.getStatusCode();
 			if(response.getStatusCode()==200){
-				res_obj = response.getBody().as(GetCustomerPOJO.class);
+				res_obj = response.getBody().as(Ts2ResponsePojo.class);
 //				Assert.assertEquals(response.getStatus(), status);
 
 				if (res_obj.getStatus().equals("000")) {
 					Assert.assertEquals(res_obj.getStatusMsg(), "passed");
 					Assert.assertTrue(res_obj.getFaults().length==0);
-					Assert.assertTrue(res_obj.getCustomer()!=null);
+					
 				}
 				if (res_obj.getStatus().equals("999")) {
 					Assert.assertEquals(res_obj.getStatusMsg(), "failed");
@@ -110,6 +98,14 @@ public class GetCustomerSteps extends AbstractStep {
 			
 		} catch (Exception e) {			
 			e.printStackTrace();
+		}
+	}
+	
+	@Then("Decline code and description as {string} and {string}")
+	public void validate_decline_reason(String code, String description) {
+		if(res_obj.getDeclineReasons().length!=0) {
+			Assert.assertEquals(res_obj.getDeclineReasons()[0].getCode(), code);
+			Assert.assertEquals(res_obj.getDeclineReasons()[0].getDescription(), "Scores do not meet criteria");
 		}
 	}
 }
