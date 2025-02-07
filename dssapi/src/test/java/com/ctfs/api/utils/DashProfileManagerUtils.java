@@ -35,33 +35,33 @@ public class DashProfileManagerUtils{
 	
 	
 	
-	public void initializeProfileByPan(String pan) {
-		
-		try 
-		{ 
-			dashProfileDTO = pm .getProfileByPan(pan);
-			System.out.println(dashProfileDTO.getDashUid());
-		} 
-		catch (Throwable e) 
-		{ 
-			e.printStackTrace(); 
-		} 
-		
-	}
+//	public void initializeProfileByPan(String pan) {
+//		
+//		try 
+//		{ 
+//			dashProfileDTO = pm .getProfileByPan(pan);
+//			System.out.println(dashProfileDTO.getDashUid());
+//		} 
+//		catch (Throwable e) 
+//		{ 
+//			e.printStackTrace(); 
+//		} 
+//		
+//	}
 	
-	public void initializeProfileByDashUid(String dash_uid) {
-
-		try 
-		{ 
-			dashProfileDTO = pm.getProfileByDashUid(dash_uid);
-			System.out.println(dashProfileDTO.getDashUid());
-		} 
-		catch (Throwable e) 
-		{ 
-			e.printStackTrace(); 
-		} 
-
-	}
+//	public void initializeProfileByDashUid(String dash_uid) {
+//
+//		try 
+//		{ 
+//			dashProfileDTO = pm.getProfileByDashUid(dash_uid);
+//			System.out.println(dashProfileDTO.getDashUid());
+//		} 
+//		catch (Throwable e) 
+//		{ 
+//			e.printStackTrace(); 
+//		} 
+//
+//	}
 	
 	
 	public String getCardNbr() {
@@ -105,28 +105,28 @@ public class DashProfileManagerUtils{
 	
 	
 
-	public void lockCleanUp() { 
-
-		ProfileManager pm = null; 
-
-		if (dashProfileDTO  != null) 
-		{ 
-			if (pm == null) 
-			{ 
-				try { pm = new
-						ProfileManager(); 
-				} 
-				catch (Throwable e) 
-				{ 
-					e.printStackTrace(); 
-				}
-			}
-			pm.removeLock(dashProfileDTO.getDashUid());
-			System.out.println("Getting Credit User Id after Clean Up "+dashProfileDTO.getDashUid());
-			//dashProfileDTO = null;
-		}
-
-	}
+//	public void lockCleanUp() { 
+//
+//		ProfileManager pm = null; 
+//
+//		if (dashProfileDTO  != null) 
+//		{ 
+//			if (pm == null) 
+//			{ 
+//				try { pm = new
+//						ProfileManager(); 
+//				} 
+//				catch (Throwable e) 
+//				{ 
+//					e.printStackTrace(); 
+//				}
+//			}
+//			pm.removeLock(dashProfileDTO.getDashUid());
+//			System.out.println("Getting Credit User Id after Clean Up "+dashProfileDTO.getDashUid());
+//			//dashProfileDTO = null;
+//		}
+//
+//	}
 
 
 
