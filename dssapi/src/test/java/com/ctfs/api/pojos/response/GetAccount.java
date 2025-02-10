@@ -5,7 +5,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Component;
 
-import com.ctfs.api.pojos.request.TS2RequestPojo;
+import com.ctfs.api.pojos.request.ts2.TS2RequestPojo;
 import com.ctfs.api.pojos.response.ts2response.Fault;
 import com.fasterxml.jackson.annotation.JsonProperty;
 

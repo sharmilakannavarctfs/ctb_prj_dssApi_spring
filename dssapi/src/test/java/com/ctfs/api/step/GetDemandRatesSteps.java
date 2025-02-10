@@ -8,7 +8,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.testng.Assert;
 
-import com.ctfs.api.service.GetDemandRatesService;
+import com.ctfs.api.service.telus.GetDemandRatesService;
 import com.ctfs.common.service.StepDefinitionDataManager;
 
 import io.cucumber.java.en.*;

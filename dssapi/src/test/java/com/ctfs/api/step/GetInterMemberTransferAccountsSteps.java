@@ -8,8 +8,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.testng.Assert;
 
-import com.ctfs.api.service.GetInterMemberTransferAccountsService;
-import com.ctfs.api.service.GetLinkedAccountsService;
+import com.ctfs.api.service.telus.GetInterMemberTransferAccountsService;
+import com.ctfs.api.service.telus.GetLinkedAccountsService;
 import com.ctfs.common.service.StepDefinitionDataManager;
 
 import io.cucumber.java.en.*;

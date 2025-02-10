@@ -8,8 +8,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.testng.Assert;
 
-import com.ctfs.api.service.GetRegisteredPlanTransactionsService;
-import com.ctfs.api.service.GetTermRatesService;
+import com.ctfs.api.service.telus.GetRegisteredPlanTransactionsService;
+import com.ctfs.api.service.telus.GetTermRatesService;
 import com.ctfs.common.service.StepDefinitionDataManager;
 
 import io.cucumber.java.en.Given;

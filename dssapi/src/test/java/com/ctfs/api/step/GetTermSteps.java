@@ -13,7 +13,7 @@ import org.testng.Assert;
 
 import com.ctfs.api.pojos.request.GetTermRequestPojo;
 import com.ctfs.api.pojos.response.GetTermResponsePojo;
-import com.ctfs.api.service.GetTermService;
+import com.ctfs.api.service.telus.GetTermService;
 import com.ctfs.api.session.SessionContext;
 import com.ctfs.common.service.StepDefinitionDataManager;
 import com.ctfs.temenos.api.util.TransactUtil;

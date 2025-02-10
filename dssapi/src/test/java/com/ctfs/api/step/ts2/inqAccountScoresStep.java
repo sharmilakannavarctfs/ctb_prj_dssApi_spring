@@ -9,7 +9,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.testng.Assert;
 
-import com.ctfs.api.pojos.request.TS2RequestPojo;
+import com.ctfs.api.pojos.request.ts2.TS2RequestPojo;
 import com.ctfs.api.pojos.response.ts2response.AccountAlignedScores;
 import com.ctfs.api.pojos.response.ts2response.InqAccountforCustomCodeResponse;
 import com.ctfs.api.service.ts2.inqAccountScoresService;
