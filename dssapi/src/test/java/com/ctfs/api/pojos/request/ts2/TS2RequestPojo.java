@@ -29,6 +29,7 @@ public class TS2RequestPojo {
 	private String workflowId;
 	private String decisionArea;
 	private Boolean onlyCurr;
+	private String dateExpiry;
 	private String[] ids;
 	private String emailAddr;
 	private String restartToken;
