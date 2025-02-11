@@ -51,5 +51,6 @@ public interface Endpoints {
  static String off_retrCTFSdisclGrpOffs = "/v1/retrieveCTFSDisclosureGroupOffers"; 
  static String off_deletenboMtx = "/v1/deleteNBORepricingMatrix"; 
  static String off_deletedisclGrp = "/v1/deleteDisclosureGroup"; 
- static String off_deletectfsdisclGrpoffer = "/v1/deleteCTFSDisclosureGroupOffer"; 
+ static String off_deletectfsdisclGrpoffer = "/v1/deleteCTFSDisclosureGroupOffer";
+ static String msg_deleteMessage="/v1/deleteMessage";
 }
