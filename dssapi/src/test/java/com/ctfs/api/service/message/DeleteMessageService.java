@@ -18,7 +18,6 @@ import io.restassured.response.Response;
 public class DeleteMessageService extends BaseExecutor{
 	protected DeleteMessageService(RestService restService, ApplicationProperties applicationProperties) {
 		super(restService, applicationProperties,"MESSAGESERVICE_V1");
-		// TODO Auto-generated constructor stub
 	}
 
 	private final Logger log = LoggerFactory.getLogger(DeleteMessageService.class);
@@ -28,12 +27,12 @@ public class DeleteMessageService extends BaseExecutor{
 	
 	public void post(Object requestbody) throws URISyntaxException {
 		try {
-			log.info("request body: "+ requestbody,true);
+            log.info("request body: {}", requestbody, true);
 			setBody(requestbody);
 			Response response = post(Endpoints.msg_deleteMessage);
 			stepDefinitionDataManager.addToStoredObjectMap("deleteMessage", response);
-			log.info("response getStatusLine: " + response.getStatusLine());
-			log.info("response getBody: " + response.getBody().asPrettyString());
+            log.info("response getStatusLine: {}", response.getStatusLine());
+            log.info("response getBody: {}", response.getBody().asPrettyString());
 
 		} catch (Exception e) {
 			log.info(e.getMessage(),"Error while hitting API with body alone");
