@@ -18,25 +18,27 @@
 #Sample Feature Definition Template
 @tag
 Feature: Delete message functionality
-  To check where the Delete message functionality is working as expected or not
+  To check whether the Delete message functionality is working as expected or not
 
-  @tag2
+  @tag1
   Scenario Outline: Perform a successful Delete message operation
+    Given The user makes a post call to retrieveMessage API by passing "<targetIdentifier>"
+    Then The user stores the retrieveMessage count before Creating dynamic message
 #    Given The user creates a Dynamic Message by passing "<targetIdentifier>", "<msgTextEng>", "<msgTextFch>" and "<msgExpiryDate>"
     When The user makes post call to deleteMessage API and gets the response by passing messageId and "<targetIdentifier>"
-    And The user validates whether the created record is being deleted successfully by providing the messageId and targetIdentifier
+    And The user validates whether the created record with "<targetIdentifier>" is being deleted successfully by verifying the <status code> and the count of the number of messages
     Examples:
-      | targetIdentifier                     | msgTextEng  | msgTextFch | msgExpiryDate | msgId |
-      | 7c1736ec-665b-4f9f-aac6-99302c3d7ed4 | 00000839126 | 000209233  | SERVIC        |       |
+      | targetIdentifier                     | status code |
+      | 7c1736ec-665b-4f9f-aac6-99302c3d7ed4 | 200         |
 
-
-  @tag3
-  Scenario Outline: Validating the negetive test cases with missing data
-    Given I want to write a step with <name>
-    When I check for the <value> in step
-    Then I verify the <status> in step
-
-    Examples:
-      | name  | value | status  |
-      | name1 | 5     | success |
-      | name2 | 7     | Fail    |
+#
+#  @tag2
+#  Scenario Outline: Validating the negetive test cases with missing data
+#    Given I want to write a step with <name>
+#    When I check for the <value> in step
+#    Then I verify the <status> in step
+#
+#    Examples:
+#      | name  | value | status  |
+#      | name1 | 5     | success |
+#      | name2 | 7     | Fail    |
