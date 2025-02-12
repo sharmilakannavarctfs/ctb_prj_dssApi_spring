@@ -15,6 +15,7 @@ public class CreateDynamicMessageRequestPojo {
     private String messageText_en;
     private String messageText_fr;
     private String expiryDate;
+
     @Override
     public String toString() {
         try {

@@ -68,7 +68,6 @@ public class DeleteMessageStep {
             postCallToRetrieveMessageAPI(targetIdentifier);
             storeMessageCountBeforeCreatingMessage();
             int finalCount = msgCnt;
-            System.out.println(initialCount + "    " + finalCount);
             Assert.assertEquals(initialCount - 1, finalCount);
         }
     }
@@ -112,7 +111,6 @@ public class DeleteMessageStep {
             if (!msgExpDate.isEmpty()) createDynamicMessageRequestPojo.setExpiryDate(msgExpDate);
             createDynamicMessageRequestPojo.setState("READ");
             createDynamicMessageRequestPojo.setPriority("NORMAL");
-            System.out.println(createDynamicMessageRequestPojo);
             createDynamicMessageService.post(createDynamicMessageRequestPojo);
         } catch (Exception e) {
             e.printStackTrace();
@@ -128,7 +126,6 @@ public class DeleteMessageStep {
             postCallToRetrieveMessageAPI(targetIdentifier);
             storeMessageCountBeforeCreatingMessage();
             int finalCount = msgCnt;
-            System.out.println(initialCount + "    " + finalCount);
             Assert.assertEquals(initialCount + 1, finalCount);
         }
     }

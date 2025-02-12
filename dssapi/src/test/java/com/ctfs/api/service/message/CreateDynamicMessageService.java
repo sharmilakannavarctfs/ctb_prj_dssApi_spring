@@ -16,7 +16,7 @@ import java.net.URISyntaxException;
 @RetailBankService
 public class CreateDynamicMessageService extends BaseExecutor {
     protected CreateDynamicMessageService(RestService restService, ApplicationProperties applicationProperties) {
-        super(restService, applicationProperties,"MESSAGESERVICE_V1");
+        super(restService, applicationProperties, "MESSAGESERVICE_V1");
     }
 
     private final Logger log = LoggerFactory.getLogger(CreateDynamicMessageService.class);
@@ -34,7 +34,7 @@ public class CreateDynamicMessageService extends BaseExecutor {
             log.info("response getBody: {}", response.getBody().asPrettyString());
 
         } catch (Exception e) {
-            log.info(e.getMessage(),"Error while hitting API with body alone");
+            log.info(e.getMessage(), "Error while hitting API with body alone");
         }
     }
 }
