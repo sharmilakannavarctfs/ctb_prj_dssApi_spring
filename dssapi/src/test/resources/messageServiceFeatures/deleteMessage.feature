@@ -16,11 +16,11 @@
 #""
 ## (Comments)
 #Sample Feature Definition Template
-@tag
+@DeleteMessage
 Feature: Delete message functionality
   To check whether the Delete message functionality is working as expected or not
 
-  @tag1
+  @Positive
   Scenario Outline: Perform a successful Delete message operation
     Given The user makes a post call to retrieveMessage API by passing "<targetIdentifier>"
     Then The user stores the retrieveMessage count before Creating dynamic message
@@ -32,17 +32,18 @@ Feature: Delete message functionality
       | targetIdentifier                     | status code | msgTextEng      | msgTextFch     |
       | 7c1736ec-665b-4f9f-aac6-99302c3d7ed4 | 200         | Text in English | Text in French |
 
-  @tag2
-  Scenario: Passing no payload and validating deleteMessage negative scenario
+  @Negative
+  Scenario Outline: Passing no payload and validating deleteMessage negative scenario
     Given The user tries to make a post call to the deleteMessage API without passing any payload
+    And The user verifies the error response, <status_code> and "<description>"
+    Examples:
+      | status_code | description          |
+      | 404         | MessageId not found. |
 
-#  @tag2
-#  Scenario Outline: Validating the negative test cases with missing data
-#    Given I want to write a step with <name>
-#    When I check for the <value> in step
-#    Then I verify the <status> in step
-#
-#    Examples:
-#      | name  | value | status  |
-#      | name1 | 5     | success |
-#      | name2 | 7     | Fail    |
+  @Negative
+  Scenario Outline: Passing invalid targetIdentifier and messageId
+    Given The user makes post call to deleteMessage with invalid targetIdentifier and messageId
+    And The user verifies the error response, <status_code> and "<description>"
+    Examples:
+      | status_code | description          |
+      | 404         | MessageId not found. |
