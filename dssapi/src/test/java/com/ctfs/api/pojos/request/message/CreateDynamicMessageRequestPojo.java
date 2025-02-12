@@ -19,10 +19,8 @@ public class CreateDynamicMessageRequestPojo {
     @Override
     public String toString() {
         try {
-            // Convert the object to JSON using Jackson's ObjectMapper
             return new ObjectMapper().writerWithDefaultPrettyPrinter().writeValueAsString(this);
         } catch (Exception e) {
-            // Return a fallback if JSON serialization fails
             return "Error converting to JSON: " + e.getMessage();
         }
     }
