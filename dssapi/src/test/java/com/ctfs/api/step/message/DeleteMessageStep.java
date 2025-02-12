@@ -147,11 +147,9 @@ public class DeleteMessageStep {
 
     @Given("The user makes post call to deleteMessage with invalid targetIdentifier and messageId")
     public void postCallToDeleteMessageAPIWithInvalidValues() {
-        String targetIdentifier= UUID.randomUUID().toString();
-        String msgId=UUID.randomUUID().toString();
         try {
-            if (!msgId.isEmpty()) deleteMessageRequestPojo.setMessageId(msgId);
-            if (!targetIdentifier.isEmpty()) deleteMessageRequestPojo.setTargetIdentifier(targetIdentifier);
+            deleteMessageRequestPojo.setMessageId(UUID.randomUUID().toString());
+            deleteMessageRequestPojo.setTargetIdentifier(UUID.randomUUID().toString());
             deleteMessageService.post(deleteMessageRequestPojo);
         } catch (Exception e) {
             e.printStackTrace();
