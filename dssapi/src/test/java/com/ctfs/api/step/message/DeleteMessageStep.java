@@ -138,7 +138,6 @@ public class DeleteMessageStep {
     @And("The user verifies the error response, {int} and {string}")
     public void verifyErrorResponseForDeleteMessage(int statusCode, String desc) {
         Response response = (Response) stepDefinitionDataManager.getStoredObjectMap().get("deleteMessage");
-        System.out.println(response.getStatusCode());
         Assert.assertEquals(response.getStatusCode(), statusCode);
         if (response.getStatusCode() == statusCode) {
             DeleteMessageErrorResponsePojo deleteMessageErrorResponsePojo = response.getBody().as(DeleteMessageErrorResponsePojo.class);
@@ -150,8 +149,6 @@ public class DeleteMessageStep {
     public void postCallToDeleteMessageAPIWithInvalidValues() {
         String targetIdentifier= UUID.randomUUID().toString();
         String msgId=UUID.randomUUID().toString();
-        System.out.println("TargetIdentifier: "+targetIdentifier);
-        System.out.println("MessageId: "+msgId);
         try {
             if (!msgId.isEmpty()) deleteMessageRequestPojo.setMessageId(msgId);
             if (!targetIdentifier.isEmpty()) deleteMessageRequestPojo.setTargetIdentifier(targetIdentifier);
