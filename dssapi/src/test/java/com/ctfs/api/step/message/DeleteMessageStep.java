@@ -129,4 +129,13 @@ public class DeleteMessageStep {
             Assert.assertEquals(initialCount + 1, finalCount);
         }
     }
+
+    @Given("The user tries to make a post call to the deleteMessage API without passing any payload")
+    public void deleteMessageAPIPostCallWithoutPayload() {
+        try {
+            deleteMessageService.post(deleteMessageRequestPojo);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }

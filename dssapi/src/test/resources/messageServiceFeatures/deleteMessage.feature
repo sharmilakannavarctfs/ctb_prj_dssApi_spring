@@ -32,7 +32,10 @@ Feature: Delete message functionality
       | targetIdentifier                     | status code | msgTextEng      | msgTextFch     |
       | 7c1736ec-665b-4f9f-aac6-99302c3d7ed4 | 200         | Text in English | Text in French |
 
-#
+  @tag2
+  Scenario: Passing no payload and validating deleteMessage negative scenario
+    Given The user tries to make a post call to the deleteMessage API without passing any payload
+
 #  @tag2
 #  Scenario Outline: Validating the negative test cases with missing data
 #    Given I want to write a step with <name>
