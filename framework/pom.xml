@@ -4,17 +4,17 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<properties>
 		<ojdbc6-systemPath>
-			C:\Yuganta\Working_repo\ctb_prj_dssApi_spring\framework\src\main\resources\Libs\ojdbc6-11.2.0.3.jar</ojdbc6-systemPath>
+			C:\Springboot_automation\ctb_prj_dssApi_spring\framework\src\main\resources\Libs\ojdbc6-11.2.0.3.jar</ojdbc6-systemPath>
 		<tsysinterface2-systemPath>
-			C:\Yuganta\Working_repo\ctb_prj_dssApi_spring\framework\src\main\resources\Libs\tsys-2.0.2.jar</tsysinterface2-systemPath>
+			C:\Springboot_automation\ctb_prj_dssApi_spring\framework\src\main\resources\Libs\tsys-2.0.2.jar</tsysinterface2-systemPath>
 		<MiscFunctions-systemPath>
-			C:\Yuganta\Working_repo\ctb_prj_dssApi_spring\framework\src\main\resources\Libs\MiscFunctions-1.02.jar</MiscFunctions-systemPath>
+			C:\Springboot_automation\ctb_prj_dssApi_spring\framework\src\main\resources\Libs\MiscFunctions-1.02.jar</MiscFunctions-systemPath>
 		<pega-systemPath>
-			C:\Yuganta\Working_repo\ctb_prj_dssApi_spring\framework\src\main\resources\Libs\PegaBDDFramework-0.0.1.jar</pega-systemPath>
+			C:\Springboot_automation\ctb_prj_dssApi_spring\framework\src\main\resources\Libs\PegaBDDFramework-0.0.1.jar</pega-systemPath>
 		<TelusApis-systemPath>
-			C:\Yuganta\Working_repo\ctb_prj_dssApi_spring\framework\src\main\resources\Libs\TelusApis-1.1.jar</TelusApis-systemPath>
+			C:\Springboot_automation\ctb_prj_dssApi_spring\framework\src\main\resources\Libs\TelusApis-1.1.jar</TelusApis-systemPath>
 		<TransactUtilAPIs-systemPath>
-			C:\Yuganta\Working_repo\ctb_prj_dssApi_spring\framework\src\main\resources\Libs\TransactUtilAPIs-1.0.jar</TransactUtilAPIs-systemPath>
+			C:\Springboot_automation\ctb_prj_dssApi_spring\framework\src\main\resources\Libs\TransactUtilAPIs-1.0.jar</TransactUtilAPIs-systemPath>
 	</properties>
 
 	<parent>
@@ -89,7 +89,7 @@
 			<version>0.0.1-SNAPSHOT</version>
 			<scope>system</scope>
 			<systemPath>
-				C:\Yuganta\Working_repo\ctb_prj_dssApi_spring\framework\src\main\resources\Libs\com.spring.jdbc-0.0.1-SNAPSHOT.jar</systemPath>
+				C:\Springboot_automation\ctb_prj_dssApi_spring\framework\src\main\resources\Libs\com.spring.jdbc-0.0.1-SNAPSHOT.jar</systemPath>
 		</dependency>
 		<dependency>
 			<groupId>com.ctfs.pega</groupId>
