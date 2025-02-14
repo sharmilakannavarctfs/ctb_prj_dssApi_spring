@@ -55,5 +55,6 @@ public interface Endpoints {
     static String off_deletectfsdisclGrpoffer = "/v1/deleteCTFSDisclosureGroupOffer";
     static String msg_deleteMessage = "/v1/deleteMessage";
     static String msg_retrieveMessages = "/v1/retrieveMessages";
+    static String msg_retrieveMessagesCnt="/v1/retrieveMessageCnt";
     static String msg_createDynamicMessage = "/v1/createDynamicMessage";
 }

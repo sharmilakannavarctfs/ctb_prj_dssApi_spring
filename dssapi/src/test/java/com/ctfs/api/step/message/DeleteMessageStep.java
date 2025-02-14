@@ -3,6 +3,7 @@ package com.ctfs.api.step.message;
 import com.ctfs.api.pojos.request.message.CreateDynamicMessageRequestPojo;
 import com.ctfs.api.pojos.request.message.DeleteMessageRequestPojo;
 import com.ctfs.api.pojos.request.message.RetrieveMessageRequestPojo;
+import com.ctfs.api.pojos.response.message.DeleteMessageErrorResponsePojo;
 import com.ctfs.api.pojos.response.message.MessagesPojo;
 import com.ctfs.api.pojos.response.message.RetrieveMessageResponsePojo;
 import com.ctfs.api.service.message.CreateDynamicMessageService;
@@ -22,29 +23,24 @@ import org.testng.Assert;
 import java.time.*;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.UUID;
 
 public class DeleteMessageStep {
     private final Logger log = LoggerFactory.getLogger(DeleteMessageStep.class);
-
     @Autowired
     private DeleteMessageRequestPojo deleteMessageRequestPojo;
-
     @Autowired
     private RetrieveMessageRequestPojo retrieveMessageRequestPojo;
-
     @Autowired
     private CreateDynamicMessageRequestPojo createDynamicMessageRequestPojo;
     @Autowired
     private CreateDynamicMessageService createDynamicMessageService;
     @Autowired
     private DeleteMessageService deleteMessageService;
-
     @Autowired
     private RetrieveMessageService retrieveMessageService;
-
     @Autowired
     private StepDefinitionDataManager stepDefinitionDataManager;
-
     public String msgId;
     public int msgCnt;
 
@@ -133,6 +129,27 @@ public class DeleteMessageStep {
     @Given("The user tries to make a post call to the deleteMessage API without passing any payload")
     public void deleteMessageAPIPostCallWithoutPayload() {
         try {
+            deleteMessageService.post(deleteMessageRequestPojo);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @And("The user verifies the error response, {int} and {string}")
+    public void verifyErrorResponseForDeleteMessage(int statusCode, String desc) {
+        Response response = (Response) stepDefinitionDataManager.getStoredObjectMap().get("deleteMessage");
+        Assert.assertEquals(response.getStatusCode(), statusCode);
+        if (response.getStatusCode() == statusCode) {
+            DeleteMessageErrorResponsePojo deleteMessageErrorResponsePojo = response.getBody().as(DeleteMessageErrorResponsePojo.class);
+            Assert.assertEquals(deleteMessageErrorResponsePojo.getDescription(), desc);
+        }
+    }
+
+    @Given("The user makes post call to deleteMessage with invalid targetIdentifier and messageId")
+    public void postCallToDeleteMessageAPIWithInvalidValues() {
+        try {
+            deleteMessageRequestPojo.setMessageId(UUID.randomUUID().toString());
+            deleteMessageRequestPojo.setTargetIdentifier(UUID.randomUUID().toString());
             deleteMessageService.post(deleteMessageRequestPojo);
         } catch (Exception e) {
             e.printStackTrace();
