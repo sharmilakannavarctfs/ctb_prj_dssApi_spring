@@ -135,7 +135,7 @@ public class DeleteMessageStep {
         }
     }
 
-    @And("The user verifies the error response, {int} and {string}")
+    @And("The user verifies the error response by validating {int} and {string} for deleteMessage API")
     public void verifyErrorResponseForDeleteMessage(int statusCode, String desc) {
         Response response = (Response) stepDefinitionDataManager.getStoredObjectMap().get("deleteMessage");
         Assert.assertEquals(response.getStatusCode(), statusCode);

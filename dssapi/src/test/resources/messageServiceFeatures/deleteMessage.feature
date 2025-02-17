@@ -35,7 +35,7 @@ Feature: Delete message functionality
   @Negative
   Scenario Outline: Passing no payload and validating deleteMessage negative scenario
     Given The user tries to make a post call to the deleteMessage API without passing any payload
-    And The user verifies the error response, <status_code> and "<description>"
+    And The user verifies the error response by validating <status_code> and "<description>" for deleteMessage API
     Examples:
       | status_code | description          |
       | 404         | MessageId not found. |
@@ -43,7 +43,7 @@ Feature: Delete message functionality
   @Negative
   Scenario Outline: Passing invalid targetIdentifier and messageId
     Given The user makes post call to deleteMessage with invalid targetIdentifier and messageId
-    And The user verifies the error response, <status_code> and "<description>"
+    And The user verifies the error response by validating <status_code> and "<description>" for deleteMessage API
     Examples:
       | status_code | description          |
       | 404         | MessageId not found. |
