@@ -12,13 +12,14 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.net.URISyntaxException;
+
 @RetailBankService
-public class RetrieveDefinedMessageService extends BaseExecutor {
-    protected RetrieveDefinedMessageService(RestService restService, ApplicationProperties applicationProperties) {
-        super(restService, applicationProperties,"MESSAGESERVICE_V1");
+public class CreateDefinedMessageService extends BaseExecutor {
+    protected CreateDefinedMessageService(RestService restService, ApplicationProperties applicationProperties) {
+        super(restService, applicationProperties, "MESSAGESERVICE_V1");
     }
 
-    private final Logger log = LoggerFactory.getLogger(RetrieveDefinedMessageService.class);
+    private final Logger log = LoggerFactory.getLogger(CreateDefinedMessageService.class);
 
     @Autowired
     private StepDefinitionDataManager stepDefinitionDataManager;
@@ -27,13 +28,13 @@ public class RetrieveDefinedMessageService extends BaseExecutor {
         try {
             log.info("request body: {}", requestbody, true);
             setBody(requestbody);
-            Response response = post(Endpoints.msg_retrieveDefinedMessage);
-            stepDefinitionDataManager.addToStoredObjectMap("retrieveDefinedMessage", response);
+            Response response = post(Endpoints.msg_createDefinedMessage);
+            stepDefinitionDataManager.addToStoredObjectMap("createDefinedMessage", response);
             log.info("response getStatusLine: {}", response.getStatusLine());
             log.info("response getBody: {}", response.getBody().asPrettyString());
 
         } catch (Exception e) {
-            log.info(e.getMessage(),"Error while hitting API with body alone");
+            log.info(e.getMessage(), "Error while hitting API with body alone");
         }
     }
 }

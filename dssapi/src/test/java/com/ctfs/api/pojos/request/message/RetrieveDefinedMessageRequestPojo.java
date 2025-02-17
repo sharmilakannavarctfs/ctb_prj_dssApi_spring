@@ -9,8 +9,7 @@ import org.springframework.stereotype.Component;
 @Data
 @Component
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class RetrieveDynamicMessageRequestPojo {
-    private String targetIdentifier;
+public class RetrieveDefinedMessageRequestPojo {
     private String messageId;
     @Override
     public String toString() {

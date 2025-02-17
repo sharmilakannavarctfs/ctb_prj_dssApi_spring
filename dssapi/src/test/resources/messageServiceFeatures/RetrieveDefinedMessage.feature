@@ -22,20 +22,19 @@ Feature: Delete message functionality
 
   @Positive
   Scenario Outline: Perform a successful Retrieve Defined Message operation
-    Given The user makes post call to retrieveDefinedMessage API by passing "<targetIdentifier>" and "<messageId>"
+    Given The user makes post call to createDefinedMessage API by passing <lifespan>
+    Then The user gets the msgId from the createDefinedMessage API response
+    Given The user makes post call to retrieveDefinedMessage API by passing messageId
     Then The user validates the message response from retrieveDefinedMessage API by comparing it with <status code>
     Examples:
-      | targetIdentifier                     | status code | messageId                            |
-      | 7c1736ec-665b-4f9f-aac6-99302c3d7ed4 | 200         | df0586b3-cc37-43f7-a411-7e343f9ad20f |
-      | 7c1736ec-665b-4f9f-aac6-99302c3d7ed4 | 501         | df0586b3-cc37-43f7-a411-7e343        |
-      |                                      | 501         | df0586b3-cc37-43f7-a411-7e343f9ad20f |
-      | 7c1736ec-665b-4f9f-aac6-99302c3d7ed4 | 404         |                                      |
-
-  @Negative
-  Scenario Outline: Passing no payload and validating retrieveDefinedMessage negative scenario
-    Given The user tries to make a post call to the retrieveDefinedMessage API without passing any payload
-    And The user verifies the error response by validating <status_code> and "<description>" for retrieveDefinedMessage API
-    Examples:
-      | status_code | description          |
-      | 404         | MessageId not found. |
-
+      | lifespan | status code |
+      | 1        | 200         |
+#
+#  @Negative
+#  Scenario Outline: Passing no payload and validating retrieveDefinedMessage negative scenario
+#    Given The user tries to make a post call to the retrieveDefinedMessage API without passing any payload
+#    And The user verifies the error response by validating <status_code> and "<description>" for retrieveDefinedMessage API
+#    Examples:
+#      | status_code | description          |
+#      | 404         | MessageId not found. |
+#

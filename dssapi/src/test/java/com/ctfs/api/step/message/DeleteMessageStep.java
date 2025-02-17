@@ -3,7 +3,7 @@ package com.ctfs.api.step.message;
 import com.ctfs.api.pojos.request.message.CreateDynamicMessageRequestPojo;
 import com.ctfs.api.pojos.request.message.DeleteMessageRequestPojo;
 import com.ctfs.api.pojos.request.message.RetrieveMessageRequestPojo;
-import com.ctfs.api.pojos.response.message.DeleteMessageErrorResponsePojo;
+import com.ctfs.api.pojos.response.message.MessageServiceErrorResponsePojo;
 import com.ctfs.api.pojos.response.message.MessagesPojo;
 import com.ctfs.api.pojos.response.message.RetrieveMessageResponsePojo;
 import com.ctfs.api.service.message.CreateDynamicMessageService;
@@ -140,8 +140,8 @@ public class DeleteMessageStep {
         Response response = (Response) stepDefinitionDataManager.getStoredObjectMap().get("deleteMessage");
         Assert.assertEquals(response.getStatusCode(), statusCode);
         if (response.getStatusCode() == statusCode) {
-            DeleteMessageErrorResponsePojo deleteMessageErrorResponsePojo = response.getBody().as(DeleteMessageErrorResponsePojo.class);
-            Assert.assertEquals(deleteMessageErrorResponsePojo.getDescription(), desc);
+            MessageServiceErrorResponsePojo messageServiceErrorResponsePojo = response.getBody().as(MessageServiceErrorResponsePojo.class);
+            Assert.assertEquals(messageServiceErrorResponsePojo.getDescription(), desc);
         }
     }
 

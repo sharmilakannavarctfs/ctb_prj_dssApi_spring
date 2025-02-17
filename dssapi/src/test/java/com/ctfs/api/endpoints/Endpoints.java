@@ -56,5 +56,6 @@ public interface Endpoints {
     static String msg_retrieveMessages = "/v1/retrieveMessages";
     static String msg_retrieveMessagesCnt="/v1/retrieveMessageCnt";
     static String msg_createDynamicMessage = "/v1/createDynamicMessage";
-    static String msg_retrieveDefinedMessages = "/v1/retrieveDefinedMessages";
+    static String msg_retrieveDefinedMessage = "/v1/retrieveDefinedMessage";
+    static String msg_createDefinedMessage = "/v1/maint/createDefinedMessage";
 }
