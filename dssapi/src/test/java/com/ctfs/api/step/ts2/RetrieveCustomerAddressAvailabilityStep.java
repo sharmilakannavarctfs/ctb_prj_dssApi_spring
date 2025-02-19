@@ -2,10 +2,7 @@ package com.ctfs.api.step.ts2;
 
 import com.ctfs.api.pojos.request.ts2.CustomerDetailsForAddressAvailabilityPojo;
 import com.ctfs.api.pojos.request.ts2.RetrieveCustomerAddressAvailabilityRequestPojo;
-import com.ctfs.api.pojos.request.ts2.TS2RequestPojo;
 import com.ctfs.api.pojos.response.GetCustomerPOJO;
-import com.ctfs.api.pojos.response.message.MessagesPojo;
-import com.ctfs.api.pojos.response.message.RetrieveMessageResponsePojo;
 import com.ctfs.api.pojos.response.ts2response.retrieveCustomerAddressAvailabilityResponse.RetrieveCustomerAddressAvailabilityErrorPojo;
 import com.ctfs.api.pojos.response.ts2response.retrieveCustomerAddressAvailabilityResponse.RetrieveCustomerAddressAvailabilityResponsePojo;
 import com.ctfs.api.service.ts2.RetrieveCustomerAddressAvailabilityService;
