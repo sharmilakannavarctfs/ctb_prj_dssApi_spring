@@ -29,12 +29,11 @@ Feature: Delete message functionality
     Examples:
       | lifespan | status code |
       | 1        | 200         |
-#
-#  @Negative
-#  Scenario Outline: Passing no payload and validating retrieveDefinedMessage negative scenario
-#    Given The user tries to make a post call to the retrieveDefinedMessage API without passing any payload
-#    And The user verifies the error response by validating <status_code> and "<description>" for retrieveDefinedMessage API
-#    Examples:
-#      | status_code | description          |
-#      | 404         | MessageId not found. |
-#
+
+  @Negative
+  Scenario Outline: Passing no payload and validating retrieveDefinedMessage negative scenario
+    Given The user tries to make a post call to the retrieveDefinedMessage API without passing any payload
+    And The user verifies the error response by validating <status_code> and "<description>" for retrieveDefinedMessage API
+    Examples:
+      | status_code | description          |
+      | 404         | MessageId not found. |

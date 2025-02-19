@@ -36,7 +36,8 @@ public interface Endpoints {
     static String ts2_getAccountInfo = "/v1/getAccountInfo";
     static String ts2_getCustomer = "/v1/getCustomer";
     static String ts2_getCustomerIncomeInfo = "/v1/getCustomerIncomeInfo";
-    static String ts2_getCustomerInfo = "/v1/getCustomerInfo";
+    static String ts2_getCustomerInfo = "/v1/post";
+    static String ts2_retrieveCustomerAddressAvailability = "/v1/retrieveCustomerAddressAvailabity";
     static String ts2_InqAccountforCustomCode = "/v1/inqAccountforCustomCode";
     static String ts2_inqAccountQueue = "/v1/inqAccountQueue";
     static String ts2_inqAccountScores = "/v1/inqAccountScores";
