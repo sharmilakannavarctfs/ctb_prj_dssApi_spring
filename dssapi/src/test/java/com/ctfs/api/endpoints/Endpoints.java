@@ -60,4 +60,7 @@ public interface Endpoints {
     static String msg_createDynamicMessage = "/v1/createDynamicMessage";
     static String msg_retrieveDefinedMessage = "/v1/retrieveDefinedMessage";
     static String msg_createDefinedMessage = "/v1/maint/createDefinedMessage";
+    static String ts2_retrieveCardStatuses = "/v1/retrieveCardStatuses";
+    static String ts2_retrieveChipCardDetails = "/v1/retrieveChipCardDetails";
+
 }
