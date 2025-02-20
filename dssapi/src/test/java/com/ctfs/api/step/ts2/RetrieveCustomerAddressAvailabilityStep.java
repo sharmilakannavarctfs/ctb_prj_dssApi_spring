@@ -70,4 +70,13 @@ public class RetrieveCustomerAddressAvailabilityStep extends AbstractStep {
             Assert.assertEquals(customerAddressErrorPojo.getStatusMsg(), statusMsg);
         }
     }
+
+    @Given("The user makes a post call to retrieveCustomerAddressAvailability API without any payload")
+    public void postCallWithNoPayload() {
+        try {
+            retrieveCustomerAddressAvailabilityService.postCall("{}");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }

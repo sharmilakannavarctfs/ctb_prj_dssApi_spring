@@ -38,3 +38,11 @@ Feature: Delete message functionality
       |                  | 00000839126 | 000209233 | 999    | failed              | 200        | 8980        | 7070         |
       |                  |             |           | 000    | passed              |            |             |              |
       #| 5446122020477629 | 00000839126 | 000209233 | 50301  | TS2 Service Failure |            | 8980        | 7070         |
+
+  @Negative
+  Scenario Outline: Validate No payload JSON Scenario
+    Given The user makes a post call to retrieveCustomerAddressAvailability API without any payload
+    Then The user validates "<statusCode>", "<statusMsg>" and "<status>" from the error response message of retrieveCustomerAddressAvailability API
+    Examples:
+      | status | statusMsg                | statusCode |
+      | 50301  | TS2 Service Failure | 503        |
