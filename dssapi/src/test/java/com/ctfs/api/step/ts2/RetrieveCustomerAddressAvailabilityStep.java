@@ -1,10 +1,9 @@
 package com.ctfs.api.step.ts2;
 
 import com.ctfs.api.pojos.request.ts2.CustomerDetailsForAddressAvailabilityPojo;
-import com.ctfs.api.pojos.request.ts2.RetrieveCustomerAddressAvailabilityRequestPojo;
 import com.ctfs.api.pojos.response.GetCustomerPOJO;
-import com.ctfs.api.pojos.response.ts2response.retrieveCustomerAddressAvailabilityResponse.RetrieveCustomerAddressAvailabilityErrorPojo;
-import com.ctfs.api.pojos.response.ts2response.retrieveCustomerAddressAvailabilityResponse.RetrieveCustomerAddressAvailabilityResponsePojo;
+import com.ctfs.api.pojos.response.ts2response.CustomerAddressErrorPojo;
+import com.ctfs.api.pojos.response.ts2response.RetrieveCustomerAddressAvailabilityResponsePojo;
 import com.ctfs.api.service.ts2.RetrieveCustomerAddressAvailabilityService;
 import com.ctfs.api.step.AbstractStep;
 import com.ctfs.common.service.StepDefinitionDataManager;
@@ -19,9 +18,6 @@ import java.util.Arrays;
 import java.util.List;
 
 public class RetrieveCustomerAddressAvailabilityStep extends AbstractStep {
-    @Autowired
-    private RetrieveCustomerAddressAvailabilityRequestPojo retrieveCustomerAddressAvailabilityRequestPojo;
-
     @Autowired
     private CustomerDetailsForAddressAvailabilityPojo customerDetailsForAddressAvailabilityPojo;
     static GetCustomerPOJO res_obj = null;
@@ -46,8 +42,7 @@ public class RetrieveCustomerAddressAvailabilityStep extends AbstractStep {
                 customerDetailsForAddressAvailabilityPojo.setStatusCode(statusCode);
                 customerDetailsForAddressAvailabilityPojos.add(customerDetailsForAddressAvailabilityPojo);
             }
-            retrieveCustomerAddressAvailabilityRequestPojo.setCustomerDetails(customerDetailsForAddressAvailabilityPojos);
-            retrieveCustomerAddressAvailabilityService.postCall(retrieveCustomerAddressAvailabilityRequestPojo.getCustomerDetails());
+            retrieveCustomerAddressAvailabilityService.postCall(customerDetailsForAddressAvailabilityPojos);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -70,9 +65,9 @@ public class RetrieveCustomerAddressAvailabilityStep extends AbstractStep {
         if (!statusCode.isEmpty())
             Assert.assertEquals(response.getStatusCode(), Integer.parseInt(statusCode));
         if (response.getStatusCode() == 200) {
-            RetrieveCustomerAddressAvailabilityErrorPojo retrieveCustomerAddressAvailabilityErrorPojo = response.getBody().as(RetrieveCustomerAddressAvailabilityErrorPojo.class);
-            Assert.assertEquals(retrieveCustomerAddressAvailabilityErrorPojo.getStatus(), status);
-            Assert.assertEquals(retrieveCustomerAddressAvailabilityErrorPojo.getStatusMsg(), statusMsg);
+            CustomerAddressErrorPojo customerAddressErrorPojo = response.getBody().as(CustomerAddressErrorPojo.class);
+            Assert.assertEquals(customerAddressErrorPojo.getStatus(), status);
+            Assert.assertEquals(customerAddressErrorPojo.getStatusMsg(), statusMsg);
         }
     }
 }
