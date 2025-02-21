@@ -4,6 +4,7 @@ package com.ctfs.api.step.ts2;
 import static org.assertj.core.api.Assertions.setRemoveAssertJRelatedElementsFromStackTrace;
 
 import org.jetbrains.annotations.NotNull;
+import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +17,7 @@ import com.ctfs.api.pojos.response.GetAccount;
 import com.ctfs.api.service.ts2.EStatementDeenrollmentService;
 import com.ctfs.api.service.ts2.EnrollEStatementService;
 import com.ctfs.api.step.AbstractStep;
+import com.ctfs.api.utils.DashProfileManagerUtils;
 //import com.ctfs.api.utils.DashProfileManagerUtils;
 import com.ctfs.common.service.StepDefinitionDataManager;
 
@@ -29,9 +31,13 @@ public class EnrollEStatementStep extends AbstractStep {
 	@Autowired
 	private EnrollEStatement tS2RequestPojo;
 	
+//	@Test
+//	public void testperform() throws Throwable {
+//		perform_post_enrollment("", "", "", "", "");
+//	}
 
-//    @Autowired
-//    private DashProfileManagerUtils dpm ; 
+    @Autowired
+    private DashProfileManagerUtils dpm ; 
     
     @Autowired
     private EnrollEStatementService service;
@@ -46,13 +52,15 @@ public class EnrollEStatementStep extends AbstractStep {
 			String op_id,
 			String emailId) throws Throwable {
 		try {
-//			dpm.initializeTestProfile("group=ApiGeneric");
+			dpm.initializeTestProfile("group=GenericDash");
 //			service.getAccount(getPayload(cardNo,dpm.getAccountID(),dpm.getCustomerId(),operID));
 			service.enrollEStatement(getPayload(cardNbr,
 					custId,
 					electronicVendorOptionId,
 					emailId,
 					op_id));
+			System.out.println(dpm.getAccountID());
+			dpm.lockCleanUp();
 			
 		} catch (Exception e) {			
 			e.printStackTrace();

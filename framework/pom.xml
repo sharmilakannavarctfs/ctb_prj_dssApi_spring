@@ -25,11 +25,11 @@
 	</parent>
 	<modelVersion>4.0.0</modelVersion>
 	<dependencies>
-		<!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
-		<dependency>
+<!--		 https://mvnrepository.com/artifact/org.projectlombok/lombok 
+-->		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
-			<version>1.18.24</version>
+			<version>1.18.30</version>
 		</dependency>
 		<dependency>
 			<groupId>com.googlecode.json-simple</groupId>
@@ -43,6 +43,13 @@
 			<scope>system</scope>
 			<systemPath>${ojdbc6-systemPath}</systemPath>
 		</dependency>
+		
+		<dependency>
+          <groupId>mysql</groupId>
+          <artifactId>mysql-connector-java</artifactId>
+          <version>8.0.26</version>
+        </dependency>
+        
 		<dependency>
 			<groupId>com.sun.mail</groupId>
 			<artifactId>javax.mail</artifactId>

@@ -31,9 +31,9 @@ public class ContextConfiguration {
 	public DataSource dataSource() {         
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();         
 		//dataSource.setDriverClassName("your.driver.ClassName");         
-		dataSource.setUrl("jdbc:oracle:thin:@ctat7dbse1.ctal.ctc:3001:TEST01D");         
+		dataSource.setUrl("jdbc:oracle:thin:@d9cbajdevdb11.idm.internal.ctfst.com:4155/TEST01D_SVC");         
 		dataSource.setUsername("TEST_OWNER");         
-		dataSource.setPassword("TEST01D_xyz_0215");         
+		dataSource.setPassword("TEST01D_xyz_0215");
 		return dataSource;     
 		}
 }

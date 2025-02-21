@@ -9,6 +9,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import com.ctfs.api.endpoints.controller_endpoints;
 import com.ctfs.api.utils.AtomicServicePortNbrUtil;
 import com.ctfs.api.utils.AtomicServices;
 import com.ctfs.common.service.RestService;
@@ -36,7 +37,6 @@ public class BaseExecutor {
 	protected static final ThreadLocal<RequestSpecification> requestSpecificationObject = new ThreadLocal<>();
 
 	protected BaseExecutor(RestService restService, ApplicationProperties applicationProperties, String service) {
-		log.info("Inside Base Executor");
 		RequestSpecification rSpecification = restService.getRequestSpecification();
 		requestSpecificationObject.set(rSpecification);
 		
@@ -46,6 +46,16 @@ public class BaseExecutor {
 		getRequestSpecification().baseUri(baseUri);
 		log.info("Base URL" + getRequestSpecification().baseUri(baseUri));
 
+	}
+	protected BaseExecutor(RestService restService, ApplicationProperties applicationProperties,Map<String,String> headers) {
+		log.info("Inside controller Base Executor");
+		RequestSpecification rSpecification = restService.getRequestSpecification_controller(null);
+		requestSpecificationObject.set(rSpecification);
+		String baseUri = applicationProperties.getDssApiUrl_controller();
+		System.out.println("baseuri + endpoint : "+baseUri);
+		getRequestSpecification().baseUri(baseUri);
+		log.info("Base URL" + getRequestSpecification().baseUri(baseUri));
+		
 	}
 	
 	public Response post(String url) throws URISyntaxException {	

@@ -8,8 +8,10 @@ import org.testng.annotations.DataProvider;
         features = {
 //                "src\\test\\resources\\feature\\GetAccountTest.feature",
 //                "src\\test\\resources\\feature\\EStatementDeenrollmentTest.feature",
-                "src\\test\\resources\\feature\\EvaluateCreditLimit.feature"
-        },
+//                "src\\test\\resources\\feature\\EvaluateCreditLimit.feature",
+                "src\\test\\resources\\feature\\EnrollEStatement.feature"
+                
+		}, dryRun = false/* ,tags = "tag2" */,
         		plugin = { "summary", "json:target/cucumber-json.json",
         "tech.grasshopper.AllureCucumberMappingPlugin:target/cucumber-allure.json" })
 public class RunnerTest extends AbstractTestNGCucumberTests {

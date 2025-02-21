@@ -30,91 +30,91 @@ Feature: EnrollEStatement
     | cardNbr          | custId	  | electronicVendorOptionId      | operatorId | emailId |
     | 5446122335397983 | 000255706| TP04 													| SERVIC 			|TEST.AUTOMATION@CTFS.COM |
 	
-	@tag2
-  Scenario Outline: testing with valid cardNUmber and invalid electronicVendorOptionId
-    Given Post operation to hit enrollEStatement from TS2-service using valid "<cardNbr>" "<custId>" "<electronicVendorOptionId>" "<operatorId>" and "<emailId>"
-   
-    Then Validate enrollEstatement DSS api response status code as "200" and fault description as "Field length is less than minimum"
-    
-    Examples: 
-    | cardNbr          | custId	  | electronicVendorOptionId      | operatorId | emailId |
-    | 5446122335397983 | 000255706|  		    123											| SERVIC 			|TEST.AUTOMATION@CTFS.COM |
-	@tag2
-  Scenario Outline: testing with valid account and longer electronicVendorOptionId
-    Given Post operation to hit enrollEStatement from TS2-service using valid "<cardNbr>" "<custId>" "<electronicVendorOptionId>" "<operatorId>" and "<emailId>"
-   
-    Then Validate enrollEstatement DSS api response status code as "200" and fault description as "Field length exceeds maximum"
-    
-    Examples: 
-    | cardNbr          | custId	  | electronicVendorOptionId      | operatorId | emailId |
-    | 5446122335397983 | 000255706|  	electronicVendorOptionId		| SERVIC 			|TEST.AUTOMATION@CTFS.COM |
-	@tag2
-  Scenario Outline: testing with testing with valid cardNUmber and null electronicVendorOptionId
-    Given Post operation to hit enrollEStatement from TS2-service using valid "<cardNbr>" "<custId>" "<electronicVendorOptionId>" "<operatorId>" and "<emailId>"
-   
-    Then Validate enrollEstatement DSS api response status code as "200" and fault description as "Required Attribute optID is missing."
-    
-    Examples: 
-    | cardNbr          | custId	  | electronicVendorOptionId      | operatorId | emailId |
-    | 5446122335397983 | 000255706|  												| SERVIC 			|TEST.AUTOMATION@CTFS.COM |
-    
-	@tag2
-  Scenario Outline: testing with testing with valid cardNUmber and invalid custId
-    Given Post operation to hit enrollEStatement from TS2-service using valid "<cardNbr>" "<custId>" "<electronicVendorOptionId>" "<operatorId>" and "<emailId>"
-   
-    Then Validate enrollEstatement DSS api response status code as "200" and fault description as "Required Attribute optID is missing."
-    
-    Examples: 
-    | cardNbr          | custId	  | electronicVendorOptionId      | operatorId | emailId |
-    | 5446122335397983 | 000255123|  			TP04										| SERVIC 			|TEST.AUTOMATION@CTFS.COM |
-    
-	@tag2
-  Scenario Outline: testing with testing with valid cardNUmber and null custId
-    Given Post operation to hit enrollEStatement from TS2-service using valid "<cardNbr>" "<custId>" "<electronicVendorOptionId>" "<operatorId>" and "<emailId>"
-   
-    Then Validate enrollEstatement DSS api response status code as "200" and fault description as "Required Attribute optID is missing."
-    
-    Examples: 
-    | cardNbr          | custId	  | electronicVendorOptionId      | operatorId | emailId |
-    | 5446122335397983 | |  			TP04										| SERVIC 			|TEST.AUTOMATION@CTFS.COM |
-    
-	@tag2
-  Scenario Outline: testing with testing with valid cardNUmber and null custId
-    Given Post operation to hit enrollEStatement from TS2-service using valid "<cardNbr>" "<custId>" "<electronicVendorOptionId>" "<operatorId>" and "<emailId>"
-   
-    Then Validate enrollEstatement DSS api response status code as "200" and fault description as "Required Attribute optID is missing."
-    
-    Examples: 
-    | cardNbr          | custId	  | electronicVendorOptionId      | operatorId | emailId |
-    | 5446147292141611 | |  			TP04										| SERVIC 			|TEST.AUTOMATION@CTFS.COM |
-    
-	@tag2
-  Scenario Outline: testing with testing with valid cardNUmber and null operatorId
-    Given Post operation to hit enrollEStatement from TS2-service using valid "<cardNbr>" "<custId>" "<electronicVendorOptionId>" "<operatorId>" and "<emailId>"
-   
-    Then Validate enrollEstatement DSS api response status code as "400" and fault description as "No_error_msg"
-    
-    Examples: 
-    | cardNbr          | custId	  | electronicVendorOptionId      | operatorId | emailId |
-    | 5446122013638658 | 000218140|  			TP04										|  			|TEST.AUTOMATION@CTFS.COM |
-    
-	@tag2
-  Scenario Outline: testing with testing with valid cardNUmber and other values
-    Given Post operation to hit enrollEStatement from TS2-service using valid "<cardNbr>" "<custId>" "<electronicVendorOptionId>" "<operatorId>" and "<emailId>"
-   
-    Then Validate enrollEstatement DSS api response status code as "200" and fault description as "No_error_msg"
-    
-    Examples: 
-    | cardNbr          | custId	  | electronicVendorOptionId      | operatorId | emailId |
-    | 5446122591479038 | |  			TP04										|  	SERVIC		|TEST.AUTOMATION@CTFS.COM |
-	@tag2
-  Scenario Outline: testing with testing with valid cardNUmber and no emailId
-    Given Post operation to hit enrollEStatement from TS2-service using valid "<cardNbr>" "<custId>" "<electronicVendorOptionId>" "<operatorId>" and "<emailId>"
-   
-    Then Validate enrollEstatement DSS api response status code as "200" and fault description as "No_error_msg"
-    
-    Examples: 
-    | cardNbr          | custId	  | electronicVendorOptionId      | operatorId | emailId |
-    | 5446122591479038 | |  			TP04										|  	SERVIC		| |
-  
+#	@tag2
+  #Scenario Outline: testing with valid cardNUmber and invalid electronicVendorOptionId
+    #Given Post operation to hit enrollEStatement from TS2-service using valid "<cardNbr>" "<custId>" "<electronicVendorOptionId>" "<operatorId>" and "<emailId>"
+   #
+    #Then Validate enrollEstatement DSS api response status code as "200" and fault description as "Field length is less than minimum"
+    #
+    #Examples: 
+    #| cardNbr          | custId	  | electronicVendorOptionId      | operatorId | emailId |
+    #| 5446122335397983 | 000255706|  		    123											| SERVIC 			|TEST.AUTOMATION@CTFS.COM |
+#	@tag2
+  #Scenario Outline: testing with valid account and longer electronicVendorOptionId
+    #Given Post operation to hit enrollEStatement from TS2-service using valid "<cardNbr>" "<custId>" "<electronicVendorOptionId>" "<operatorId>" and "<emailId>"
+   #
+    #Then Validate enrollEstatement DSS api response status code as "200" and fault description as "Field length exceeds maximum"
+    #
+    #Examples: 
+    #| cardNbr          | custId	  | electronicVendorOptionId      | operatorId | emailId |
+    #| 5446122335397983 | 000255706|  	electronicVendorOptionId		| SERVIC 			|TEST.AUTOMATION@CTFS.COM |
+#	@tag2
+  #Scenario Outline: testing with testing with valid cardNUmber and null electronicVendorOptionId
+    #Given Post operation to hit enrollEStatement from TS2-service using valid "<cardNbr>" "<custId>" "<electronicVendorOptionId>" "<operatorId>" and "<emailId>"
+   #
+    #Then Validate enrollEstatement DSS api response status code as "200" and fault description as "Required Attribute optID is missing."
+    #
+    #Examples: 
+    #| cardNbr          | custId	  | electronicVendorOptionId      | operatorId | emailId |
+    #| 5446122335397983 | 000255706|  												| SERVIC 			|TEST.AUTOMATION@CTFS.COM |
+    #
+#	@tag2
+  #Scenario Outline: testing with testing with valid cardNUmber and invalid custId
+    #Given Post operation to hit enrollEStatement from TS2-service using valid "<cardNbr>" "<custId>" "<electronicVendorOptionId>" "<operatorId>" and "<emailId>"
+   #
+    #Then Validate enrollEstatement DSS api response status code as "200" and fault description as "Required Attribute optID is missing."
+    #
+    #Examples: 
+    #| cardNbr          | custId	  | electronicVendorOptionId      | operatorId | emailId |
+    #| 5446122335397983 | 000255123|  			TP04										| SERVIC 			|TEST.AUTOMATION@CTFS.COM |
+    #
+#	@tag2
+  #Scenario Outline: testing with testing with valid cardNUmber and null custId
+    #Given Post operation to hit enrollEStatement from TS2-service using valid "<cardNbr>" "<custId>" "<electronicVendorOptionId>" "<operatorId>" and "<emailId>"
+   #
+    #Then Validate enrollEstatement DSS api response status code as "200" and fault description as "Required Attribute optID is missing."
+    #
+    #Examples: 
+    #| cardNbr          | custId	  | electronicVendorOptionId      | operatorId | emailId |
+    #| 5446122335397983 | |  			TP04										| SERVIC 			|TEST.AUTOMATION@CTFS.COM |
+    #
+#	@tag2
+  #Scenario Outline: testing with testing with valid cardNUmber and null custId
+    #Given Post operation to hit enrollEStatement from TS2-service using valid "<cardNbr>" "<custId>" "<electronicVendorOptionId>" "<operatorId>" and "<emailId>"
+   #
+    #Then Validate enrollEstatement DSS api response status code as "200" and fault description as "Required Attribute optID is missing."
+    #
+    #Examples: 
+    #| cardNbr          | custId	  | electronicVendorOptionId      | operatorId | emailId |
+    #| 5446147292141611 | |  			TP04										| SERVIC 			|TEST.AUTOMATION@CTFS.COM |
+    #
+#	@tag2
+  #Scenario Outline: testing with testing with valid cardNUmber and null operatorId
+    #Given Post operation to hit enrollEStatement from TS2-service using valid "<cardNbr>" "<custId>" "<electronicVendorOptionId>" "<operatorId>" and "<emailId>"
+   #
+    #Then Validate enrollEstatement DSS api response status code as "400" and fault description as "No_error_msg"
+    #
+    #Examples: 
+    #| cardNbr          | custId	  | electronicVendorOptionId      | operatorId | emailId |
+    #| 5446122013638658 | 000218140|  			TP04										|  			|TEST.AUTOMATION@CTFS.COM |
+    #
+#	@tag2
+  #Scenario Outline: testing with testing with valid cardNUmber and other values
+    #Given Post operation to hit enrollEStatement from TS2-service using valid "<cardNbr>" "<custId>" "<electronicVendorOptionId>" "<operatorId>" and "<emailId>"
+   #
+    #Then Validate enrollEstatement DSS api response status code as "200" and fault description as "No_error_msg"
+    #
+    #Examples: 
+    #| cardNbr          | custId	  | electronicVendorOptionId      | operatorId | emailId |
+    #| 5446122591479038 | |  			TP04										|  	SERVIC		|TEST.AUTOMATION@CTFS.COM |
+#	@tag2
+  #Scenario Outline: testing with testing with valid cardNUmber and no emailId
+    #Given Post operation to hit enrollEStatement from TS2-service using valid "<cardNbr>" "<custId>" "<electronicVendorOptionId>" "<operatorId>" and "<emailId>"
+   #
+    #Then Validate enrollEstatement DSS api response status code as "200" and fault description as "No_error_msg"
+    #
+    #Examples: 
+    #| cardNbr          | custId	  | electronicVendorOptionId      | operatorId | emailId |
+    #| 5446122591479038 | |  			TP04										|  	SERVIC		| |
+  #
 

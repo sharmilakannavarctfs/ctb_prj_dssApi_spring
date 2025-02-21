@@ -14,6 +14,12 @@ public class ApplicationProperties {
     private String dssApiUrlDev;
 	@Value("${dss.api.url.qa}")
     private String dssApiUrlQa;
+	
+	@Value("${dss.api.url.dev.contr}")
+	private String dssApiUrlDevContr;
+
+	@Value("${dss.api.url.qa.contr}")
+	private String dssApiUrlQContr;
     
 	@Value("${web.url.value}")
     private String webAppUrl;
@@ -102,6 +108,26 @@ public class ApplicationProperties {
 		else if(getEnvironment().equals("QA"))
 			return dssApiUrlQa;
 		return null;
+	}
+	
+	public String getDssApiUrl_controller() {
+		if(getEnvironment().equals("DEV"))
+			return dssApiUrlDevContr;
+			else if(getEnvironment().equals("QA"))
+				return dssApiUrlQContr;
+			return null;
+	}
+
+	public void setDssApiUrlDevContr(String dssApiUrlDevContr) {
+		this.dssApiUrlDevContr = dssApiUrlDevContr;
+	}
+
+	public String getDssApiUrlQContr() {
+		return dssApiUrlQContr;
+	}
+
+	public void setDssApiUrlQContr(String dssApiUrlQContr) {
+		this.dssApiUrlQContr = dssApiUrlQContr;
 	}
 
 	public void setDssApiUrl(String dssApiUrl) {
