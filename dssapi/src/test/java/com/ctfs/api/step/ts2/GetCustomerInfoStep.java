@@ -40,7 +40,7 @@ public class GetCustomerInfoStep extends AbstractStep {
 	@Autowired
 	private StepDefinitionDataManager stepDefinitionDataManager;
 
-	@Given("post operation to request getCustomerInfo api to get the customer information "
+	@Given("post operation to request post api to get the customer information "
 			+ "with cardNbr {string} accountId {string} custId {string} and operatorId {string}")
 	public void post_operation(String cardNbr, 
 			String accountId,
